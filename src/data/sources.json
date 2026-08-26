@@ -1,0 +1,146 @@
+[
+  {
+    "id": "collected-shenzhou5-d8cabce68584",
+    "filename": "shenzhou5-01-d8cabce685.jpg",
+    "title": "神舟五号飞船陈列模型",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Shenzhou_5.jpg",
+    "source_name": "维基共享资源（公有领域）",
+    "download_time": "2026-08-25T10:15:55.285399+00:00",
+    "category": "shenzhou5"
+  },
+  {
+    "id": "collected-shenzhou5-2a4d3ed6197b",
+    "filename": "shenzhou5-02-2a4d3ed619.jpg",
+    "title": "神舟五号飞船返回舱复制品",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Shenzhou_5_replica.jpg",
+    "source_name": "维基共享资源（知识共享署名 2.0）",
+    "download_time": "2026-08-25T10:16:07.736615+00:00",
+    "category": "shenzhou5"
+  },
+  {
+    "id": "collected-shenzhou5-4a5bb68eda6f",
+    "filename": "shenzhou5-03-4a5bb68eda.jpg",
+    "title": "神舟五号航天食品展品",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Shenzhou_5_food.jpg",
+    "source_name": "维基共享资源（知识共享署名 2.0）",
+    "download_time": "2026-08-25T10:16:09.233229+00:00",
+    "category": "shenzhou5"
+  },
+  {
+    "id": "collected-tiangong-c3130bc830f9",
+    "filename": "tiangong-01-c3130bc830.jpg",
+    "title": "天和核心舱地面展示舱",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Tianhe_core_module_mockup_at_CSTM_01.jpg",
+    "source_name": "维基共享资源（知识共享署名—相同方式共享 4.0）",
+    "download_time": "2026-08-25T10:17:36.815542+00:00",
+    "category": "tiangong"
+  },
+  {
+    "id": "collected-tiangong-754c526f7813",
+    "filename": "tiangong-02-754c526f78.jpg",
+    "title": "问天实验舱舱内工作场景",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Interior_of_Wentian.jpg",
+    "source_name": "维基共享资源（知识共享署名 4.0）",
+    "download_time": "2026-08-25T10:17:53.149232+00:00",
+    "category": "tiangong"
+  },
+  {
+    "id": "collected-origin-one-16c335bfed1c",
+    "filename": "origin-one-01-16c335bfed.jpg",
+    "title": "东方红一号卫星陈列实物",
+    "source_url": "https://commons.wikimedia.org/wiki/File:DFH-1_Satellite.jpg",
+    "source_name": "维基共享资源（公有领域）",
+    "download_time": "2026-08-25T12:08:25.6423575Z",
+    "category": "origin-one"
+  },
+  {
+    "id": "collected-origin-one-97f7dcfd8831",
+    "filename": "origin-one-02-97f7dcfd88.png",
+    "title": "东方红一号卫星结构示意图",
+    "source_url": "https://commons.wikimedia.org/wiki/File:DFH-1_descriptif.png",
+    "source_name": "维基共享资源（知识共享署名—相同方式共享 4.0）",
+    "download_time": "2026-08-25T10:21:49.659244+00:00",
+    "category": "origin-one"
+  },
+  {
+    "id": "collected-chang-e-8307a82b2343",
+    "filename": "chang-e-01-8307a82b23.png",
+    "title": "嫦娥一号探测器结构示意图",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chang%27e_1_Sch%C3%A9ma_L%C3%A9gend%C3%A9.png",
+    "source_name": "维基共享资源（知识共享署名—相同方式共享 4.0）",
+    "download_time": "2026-08-25T10:22:00.053129+00:00",
+    "category": "chang-e"
+  },
+  {
+    "id": "collected-chang-e-b13ef29ef990",
+    "filename": "chang-e-02-b13ef29ef9.jpg",
+    "title": "嫦娥一号全月球影像图展品",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Moon_map_at_NMC.jpg",
+    "source_name": "维基共享资源（知识共享署名—相同方式共享 4.0）",
+    "download_time": "2026-08-25T10:22:04.501750+00:00",
+    "category": "chang-e"
+  },
+  {
+    "id": "collected-chang-e-350bd2395f82",
+    "filename": "chang-e-03-350bd2395f.jpg",
+    "title": "月球背面首幅全景影像",
+    "source_url": "https://commons.wikimedia.org/wiki/File:The_first_panorama_from_the_far_side_of_the_moon.jpg",
+    "source_name": "维基共享资源（知识共享署名 4.0）",
+    "download_time": "2026-08-25T10:22:10.937307+00:00",
+    "category": "chang-e"
+  },
+  {
+    "id": "collected-tianwen-a88ee557caff",
+    "filename": "tianwen-01-a88ee557ca.png",
+    "title": "天问一号火星环绕轨道示意图",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Trajectoire_orbitale_autour_de_Mars_de_Tianwen-1.png",
+    "source_name": "维基共享资源（知识共享署名—相同方式共享 4.0）",
+    "download_time": "2026-08-25T10:22:15.764042+00:00",
+    "category": "tianwen"
+  },
+  {
+    "id": "collected-tianwen-71c9cb41fccb",
+    "filename": "tianwen-02-71c9cb41fc.png",
+    "title": "天问一号地火转移轨道示意图",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Tianwen-1_orbite_de_transfert_et_manoeuvres.png",
+    "source_name": "维基共享资源（知识共享署名—相同方式共享 4.0）",
+    "download_time": "2026-08-25T10:22:19.607552+00:00",
+    "category": "tianwen"
+  },
+  {
+    "id": "curated-chang-e-22553f7c24a8",
+    "filename": "chang-e-04-22553f7c24.jpg",
+    "title": "嫦娥六号着陆器和上升器月面合影",
+    "source_url": "https://www.cnsa.gov.cn/n6759533/c10543444/content.html",
+    "source_name": "中国国家航天局（官方发布）",
+    "download_time": "2026-08-25T12:08:25.6423575Z",
+    "category": "chang-e"
+  },
+  {
+    "id": "curated-tianwen-206aa3f3bc23",
+    "filename": "tianwen-03-206aa3f3bc.jpg",
+    "title": "天问一号环绕器与火星合影",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Tianwen-1_in_Mars_orbit.jpg",
+    "source_name": "维基共享资源，凌欣/中国国家航天局供图（知识共享署名 4.0）",
+    "download_time": "2026-08-25T12:08:25.6423575Z",
+    "category": "tianwen"
+  },
+  {
+    "id": "curated-tianwen-16526f52a3ea",
+    "filename": "tianwen-04-16526f52a3.png",
+    "title": "祝融号与着陆平台合影",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Zhurong-with-lander-selfie.png",
+    "source_name": "维基共享资源，中国新闻社供图（知识共享署名 4.0）",
+    "download_time": "2026-08-25T12:08:25.6423575Z",
+    "category": "tianwen"
+  },
+  {
+    "id": "curated-tiangong-0e4562ea9470",
+    "filename": "tiangong-03-0e4562ea94.jpg",
+    "title": "中国空间站完整组合体在轨全貌照片",
+    "source_url": "https://www.news.cn/politics/2023-11/28/c_1129997952.htm",
+    "source_name": "新华社/新华网（中国载人航天工程办公室供图）",
+    "download_time": "2026-08-25T12:08:25.6423575Z",
+    "category": "tiangong"
+  }
+]

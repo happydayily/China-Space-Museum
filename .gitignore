@@ -1,0 +1,50 @@
+# 依赖目录
+node_modules/
+
+# Vite 与构建产物
+dist/
+.vite/
+*.log
+
+# 已确认不再需要的图片传输归档
+src/assets/images.zip
+
+# 临时文件、缓存和测试输出
+tmp/
+temp/
+cache/
+coverage/
+test-results/
+playwright-report/
+blob-report/
+cypress/videos/
+cypress/screenshots/
+*.tmp
+*.temp
+
+# 浏览器测试 Profile 和本地浏览器数据
+docs/chrome-*/
+docs/edge-*/
+**/chrome-*/
+**/edge-*/
+**/*profile*/
+**/*Profile*/
+**/User Data/
+**/Cookies
+**/History
+**/Login Data
+**/Local Storage/
+**/Session Storage/
+**/Cache/
+**/Code Cache/
+
+# 系统和编辑器文件
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# 本地环境配置
+.env
+.env.*
+!.env.example

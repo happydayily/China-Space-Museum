@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "provider": {
+    "id": "wikimedia-commons",
+    "name": "Wikimedia Commons",
+    "api_url": "https://commons.wikimedia.org/w/api.php",
+    "search_limit": 24,
+    "max_download_attempts_per_query": 8,
+    "allowed_licenses": ["Public domain", "CC BY", "CC BY-SA", "CC0"]
+  },
+  "defaults": {
+    "max_downloads_per_category": 3,
+    "minimum_bytes": 10240,
+    "maximum_bytes": 20971520,
+    "minimum_width": 480,
+    "minimum_height": 320
+  },
+  "categories": [
+    {
+      "id": "origin-one",
+      "name": "东方红一号",
+      "priorityMission": "东方红一号",
+      "directory": "origin-one",
+      "queries": [
+        {"term": "东方红一号卫星", "searchTerm": "\"东方红一号\" OR \"Dong Fang Hong 1\"", "matchTerms": ["东方红一号", "dong fang hong", "dongfanghong"], "relatedMission": "dongfanghong-1-1970"},
+        {"term": "长征一号火箭", "searchTerm": "\"长征一号\" OR \"Long March 1 rocket\"", "matchTerms": ["长征一号", "long march 1", "chang zheng 1"], "relatedMission": "长征一号"},
+        {"term": "东方红一号发射", "searchTerm": "\"东方红一号发射\" OR \"Dong Fang Hong 1 launch\"", "matchTerms": ["东方红一号", "dong fang hong", "dongfanghong"], "relatedMission": "dongfanghong-1-1970"}
+      ]
+    },
+    {
+      "id": "shenzhou5",
+      "name": "神舟五号",
+      "priorityMission": "神舟五号",
+      "directory": "shenzhou5",
+      "queries": [
+        {"term": "神舟五号飞船", "searchTerm": "\"神舟五号\" OR \"Shenzhou 5\"", "matchTerms": ["神舟五号", "shenzhou 5"], "relatedMission": "shenzhou-5"},
+        {"term": "长征二号F", "searchTerm": "\"长征二号F\" OR \"Long March 2F\"", "matchTerms": ["长征二号f", "long march 2f", "cz-2f"], "relatedMission": "长征二号F"},
+        {"term": "杨利伟", "searchTerm": "\"杨利伟\" OR \"Yang Liwei\"", "matchTerms": ["杨利伟", "yang liwei"], "relatedMission": "shenzhou-5"}
+      ]
+    },
+    {
+      "id": "chang-e",
+      "name": "嫦娥系列",
+      "priorityMission": "嫦娥六号",
+      "directory": "chang-e",
+      "queries": [
+        {"term": "嫦娥一号", "searchTerm": "\"嫦娥一号\" OR \"Chang'e 1\"", "matchTerms": ["嫦娥一号", "chang'e 1", "chang'e-1", "chang’e 1"], "relatedMission": "change-1-2007"},
+        {"term": "嫦娥三号 玉兔", "searchTerm": "\"嫦娥三号\" OR \"Chang'e 3\" OR \"Yutu rover\"", "matchTerms": ["嫦娥三号", "chang'e 3", "chang'e-3", "yutu"], "relatedMission": "change-3-2013"},
+        {"term": "嫦娥五号", "searchTerm": "\"嫦娥五号\" OR \"Chang'e 5\"", "matchTerms": ["嫦娥五号", "chang'e 5", "chang'e-5", "chang’e 5"], "relatedMission": "change-5"},
+        {"term": "嫦娥六号", "searchTerm": "\"嫦娥六号\" OR \"Chang'e 6\"", "matchTerms": ["嫦娥六号", "chang'e 6", "chang'e-6", "chang’e 6"], "relatedMission": "change-6"}
+      ]
+    },
+    {
+      "id": "tianwen",
+      "name": "天问一号",
+      "priorityMission": "天问一号",
+      "directory": "tianwen",
+      "queries": [
+        {"term": "天问一号", "searchTerm": "\"天问一号\" OR \"Tianwen-1\"", "matchTerms": ["天问一号", "tianwen-1", "tianwen 1"], "relatedMission": "tianwen-1"},
+        {"term": "祝融号", "searchTerm": "\"祝融号\" OR \"Zhurong rover\"", "matchTerms": ["祝融号", "zhurong"], "relatedMission": "tianwen-1"},
+        {"term": "火星照片", "searchTerm": "\"Tianwen-1\" Mars OR \"Zhurong\" Mars", "matchTerms": ["tianwen", "zhurong", "天问", "祝融"], "relatedMission": "tianwen-1"}
+      ]
+    },
+    {
+      "id": "tiangong",
+      "name": "中国空间站",
+      "priorityMission": "天宫空间站",
+      "directory": "tiangong",
+      "queries": [
+        {"term": "天和核心舱", "searchTerm": "\"天和核心舱\" OR \"Tianhe core module\"", "matchTerms": ["天和核心舱", "tianhe core module", "tianhe module"], "relatedMission": "tiangong-space-station"},
+        {"term": "问天实验舱", "searchTerm": "\"问天实验舱\" OR \"Wentian module\"", "matchTerms": ["问天实验舱", "wentian"], "relatedMission": "tiangong-space-station"},
+        {"term": "梦天实验舱", "searchTerm": "\"梦天实验舱\" OR \"Mengtian module\"", "matchTerms": ["梦天实验舱", "mengtian"], "relatedMission": "tiangong-space-station"}
+      ]
+    }
+  ]
+}

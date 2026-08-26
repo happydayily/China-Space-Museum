@@ -1,0 +1,150 @@
+[
+  {
+    "id": "space-program-begins-1956",
+    "year": "1956",
+    "title": "中国航天事业起步",
+    "category": "中国航天起步",
+    "description": "国防部第五研究院成立，中国开始系统组织导弹与航天技术研究。",
+    "importance": 5,
+    "featured": true,
+    "historicalSignificance": "中国航天事业由分散探索走向国家体系化建设。",
+    "technicalBreakthrough": "建立导弹与航天器总体研究、试验和组织协同体系。",
+    "image": "",
+    "relatedMission": null
+  },
+  {
+    "id": "dongfanghong-1-1970",
+    "year": "1970",
+    "title": "东方红一号",
+    "category": "卫星时代",
+    "description": "中国第一颗人造地球卫星成功发射，中国成为世界上第五个独立发射人造卫星的国家。",
+    "importance": 5,
+    "featured": true,
+    "historicalSignificance": "中国成为世界上第五个独立发射人造卫星的国家。",
+    "technicalBreakthrough": "突破卫星总体设计、长征一号运载火箭和天地测控技术。",
+    "image": "",
+    "relatedMission": null
+  },
+  {
+    "id": "recoverable-satellite-1975",
+    "year": "1975",
+    "title": "返回式卫星",
+    "category": "卫星时代",
+    "description": "中国首颗返回式遥感卫星成功回收，掌握卫星返回与回收关键技术。",
+    "importance": 4,
+    "image": "",
+    "relatedMission": null
+  },
+  {
+    "id": "project-921-1992",
+    "year": "1992",
+    "title": "921 工程",
+    "category": "载人航天",
+    "description": "中国载人航天工程正式立项，确立飞船、空间实验室和空间站三步走战略。",
+    "importance": 5,
+    "image": "",
+    "relatedMission": null
+  },
+  {
+    "id": "shenzhou-5-2003",
+    "year": "2003",
+    "title": "神舟五号",
+    "category": "载人航天",
+    "description": "杨利伟完成中国首次载人航天飞行，中国成为第三个独立掌握载人航天技术的国家。",
+    "importance": 5,
+    "featured": true,
+    "historicalSignificance": "中国成为世界上第三个独立掌握载人航天技术的国家。",
+    "technicalBreakthrough": "形成载人飞船、生命保障、测控通信与安全返回完整能力。",
+    "image": "",
+    "relatedMission": "shenzhou-5"
+  },
+  {
+    "id": "change-1-2007",
+    "year": "2007",
+    "title": "嫦娥一号",
+    "category": "深空探索",
+    "description": "中国首颗月球探测卫星进入绕月轨道，开启探月工程的深空探索历程。",
+    "importance": 5,
+    "featured": true,
+    "historicalSignificance": "中国自主探月工程完成首次飞行任务，迈出深空探索第一步。",
+    "technicalBreakthrough": "突破地月转移、月球捕获、绕月飞行和月面遥感探测技术。",
+    "image": "",
+    "relatedMission": null
+  },
+  {
+    "id": "change-3-2013",
+    "year": "2013",
+    "title": "嫦娥三号",
+    "category": "深空探索",
+    "description": "嫦娥三号实现中国首次地外天体软着陆和巡视探测，玉兔号踏上月面。",
+    "importance": 4,
+    "image": "",
+    "relatedMission": null
+  },
+  {
+    "id": "beidou-3-2020",
+    "year": "2020",
+    "title": "北斗三号全球卫星导航系统",
+    "category": "卫星时代",
+    "description": "北斗三号全球卫星导航系统正式开通，为全球用户提供定位、导航和授时服务。",
+    "importance": 5,
+    "image": "",
+    "relatedMission": null
+  },
+  {
+    "id": "change-5-2020",
+    "year": "2020",
+    "title": "嫦娥五号",
+    "category": "深空探索",
+    "description": "中国首次实现地外天体采样返回，带回约 1731 克月球样品。",
+    "importance": 5,
+    "image": "",
+    "relatedMission": "change-5"
+  },
+  {
+    "id": "tianwen-1-2021",
+    "year": "2021",
+    "title": "天问一号",
+    "category": "深空探索",
+    "description": "中国首次火星探测任务一次完成环绕、着陆和巡视，祝融号开始火星探测。",
+    "importance": 5,
+    "featured": true,
+    "historicalSignificance": "中国首次火星探测即完成环绕、着陆与巡视三项目标。",
+    "technicalBreakthrough": "突破地火转移、火星捕获、进入下降着陆和火面巡视技术。",
+    "image": "",
+    "relatedMission": "tianwen-1"
+  },
+  {
+    "id": "china-space-station-2022",
+    "year": "2022",
+    "title": "中国空间站",
+    "category": "载人航天",
+    "description": "天和核心舱与问天、梦天实验舱形成 T 字基本构型，中国空间站全面建成。",
+    "importance": 5,
+    "featured": true,
+    "historicalSignificance": "中国拥有长期有人照料的国家级空间实验室。",
+    "technicalBreakthrough": "掌握大型空间组合体建造、交会对接与长期在轨运营技术。",
+    "image": "",
+    "relatedMission": "tiangong-space-station"
+  },
+  {
+    "id": "change-6-2024",
+    "year": "2024",
+    "title": "嫦娥六号",
+    "category": "深空探索",
+    "description": "人类首次实现月球背面采样返回，带回约 1935.3 克珍贵月壤。",
+    "importance": 5,
+    "image": "",
+    "relatedMission": "change-6"
+  },
+  {
+    "id": "crewed-lunar-landing-future",
+    "year": "未来",
+    "title": "载人登月",
+    "category": "未来航天",
+    "description": "面向 2030 年前实现中国人首次登陆月球，开展月面科学考察与相关技术试验。",
+    "importance": 5,
+    "image": "",
+    "relatedMission": null
+  }
+]

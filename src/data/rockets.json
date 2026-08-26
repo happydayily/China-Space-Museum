@@ -1,0 +1,62 @@
+[
+  {
+    "name": "长征一号",
+    "firstFlight": 1970,
+    "height": "29.46 米",
+    "payload": "近地轨道约 300 千克",
+    "introduction": "三级运载火箭，将东方红一号送入太空，开启中国自主进入空间的历史。",
+    "historicalImportance": "中国第一型成功发射卫星的运载火箭。",
+    "technicalAchievement": "形成多级火箭总体设计、固体上面级与卫星入轨能力。",
+    "missions": ["东方红一号"]
+  },
+  {
+    "name": "长征二号F",
+    "firstFlight": 1999,
+    "height": "58.3 米",
+    "payload": "近地轨道约 8.6 吨",
+    "introduction": "面向载人飞行研制的高可靠运载火箭，是神舟飞船往返太空的专用运输系统。",
+    "historicalImportance": "托举中国航天员进入太空，支撑载人航天工程持续实施。",
+    "technicalAchievement": "建立故障检测、逃逸救生与高可靠载人发射技术体系。",
+    "missions": ["神舟载人飞船", "天宫目标飞行器"]
+  },
+  {
+    "name": "长征三号B",
+    "firstFlight": 1996,
+    "height": "56.3 米",
+    "payload": "地球同步转移轨道约 5.5 吨",
+    "introduction": "承担高轨卫星和月球探测器发射任务，是中国高轨运载体系的重要主力。",
+    "historicalImportance": "支撑北斗导航、通信卫星与早期探月任务走向高远轨道。",
+    "technicalAchievement": "成熟应用液氢液氧上面级和高精度地球同步转移轨道入轨技术。",
+    "missions": ["北斗导航卫星", "嫦娥三号", "嫦娥四号"]
+  },
+  {
+    "name": "长征五号",
+    "firstFlight": 2016,
+    "height": "56.97 米",
+    "payload": "近地轨道约 25 吨",
+    "introduction": "中国新一代大型运载火箭，为深空探测和大型空间基础设施提供重型运力。",
+    "historicalImportance": "将嫦娥五号、嫦娥六号与天问一号送往月球和火星。",
+    "technicalAchievement": "突破大直径箭体、大推力无毒无污染发动机与低温推进剂技术。",
+    "missions": ["嫦娥五号", "嫦娥六号", "天问一号"]
+  },
+  {
+    "name": "长征七号",
+    "firstFlight": 2016,
+    "height": "53.1 米",
+    "payload": "近地轨道约 13.5 吨",
+    "introduction": "面向空间站货运任务的新一代中型运载火箭，承担天舟飞船常态化发射。",
+    "historicalImportance": "构成中国空间站长期运营的地面补给生命线。",
+    "technicalAchievement": "实现绿色推进剂、中型运力与高密度可靠发射能力。",
+    "missions": ["天舟货运飞船"]
+  },
+  {
+    "name": "长征十号",
+    "firstFlight": "计划中",
+    "height": "约 92 米（规划）",
+    "payload": "地月转移轨道约 27 吨（规划）",
+    "introduction": "面向载人月球探测研制的新一代运载系统，将承担航天员与月面着陆器发射。",
+    "historicalImportance": "代表中国载人航天由近地空间迈向地月空间的发展方向。",
+    "technicalAchievement": "规划突破大推力并联构型、载人地月转移与重复使用相关技术。",
+    "missions": ["载人登月（规划）"]
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "filename": "chang-e-04-22553f7c24.jpg",
+    "score": 15,
+    "reason": "国家航天局/CNSA 来源 +5；实物照片 +5；横向高清图片 +3；人物/任务场景 +2",
+    "recommendation": "推荐为 main.jpg：符合优先任务和非技术图封面标准"
+  },
+  {
+    "filename": "chang-e-03-350bd2395f.jpg",
+    "score": 12,
+    "reason": "Wikimedia 来源 +2；实物照片 +5；横向高清图片 +3；人物/任务场景 +2",
+    "recommendation": "推荐为 secondary.jpg：适合补充展陈"
+  },
+  {
+    "filename": "chang-e-02-b13ef29ef9.jpg",
+    "score": 10,
+    "reason": "Wikimedia 来源 +2；实物照片 +5；横向高清图片 +3",
+    "recommendation": "画面可展示，但不匹配本类别优先任务，不作为封面"
+  },
+  {
+    "filename": "chang-e-01-8307a82b23.png",
+    "score": 0,
+    "reason": "Wikimedia 来源 +2；工程图 +1；工程示意图 -3",
+    "recommendation": "推荐为 technical.jpg：适合技术说明，不应用作展厅封面"
+  },
+  {
+    "filename": "origin-one-01-16c335bfed.jpg",
+    "score": 13,
+    "reason": "Wikimedia 来源 +2；实物照片 +5；横向高清图片 +3；分辨率宽度 >1920 +3",
+    "recommendation": "推荐为 main.jpg：符合优先任务和非技术图封面标准"
+  },
+  {
+    "filename": "origin-one-02-97f7dcfd88.png",
+    "score": 1,
+    "reason": "Wikimedia 来源 +2；工程图 +1；横向高清图片 +3；工程示意图 -3；黑白结构图 -2",
+    "recommendation": "推荐为 technical.jpg：适合技术说明，不应用作展厅封面"
+  },
+  {
+    "filename": "shenzhou5-01-d8cabce685.jpg",
+    "score": 10,
+    "reason": "Wikimedia 来源 +2；实物照片 +5；横向高清图片 +3",
+    "recommendation": "推荐为 main.jpg：符合优先任务和非技术图封面标准"
+  },
+  {
+    "filename": "shenzhou5-03-4a5bb68eda.jpg",
+    "score": 10,
+    "reason": "Wikimedia 来源 +2；实物照片 +5；横向高清图片 +3",
+    "recommendation": "推荐为 secondary.jpg：适合补充展陈"
+  },
+  {
+    "filename": "shenzhou5-02-2a4d3ed619.jpg",
+    "score": 7,
+    "reason": "Wikimedia 来源 +2；实物照片 +5",
+    "recommendation": "保留为资料图，不推荐作为展厅封面"
+  },
+  {
+    "filename": "tiangong-01-c3130bc830.jpg",
+    "score": 12,
+    "reason": "Wikimedia 来源 +2；实物照片 +5；横向高清图片 +3；人物/任务场景 +2",
+    "recommendation": "推荐为 secondary.jpg：适合补充展陈"
+  },
+  {
+    "filename": "tiangong-03-0e4562ea94.jpg",
+    "score": 12,
+    "reason": "中国载人航天来源 +5；实物照片 +5；人物/任务场景 +2",
+    "recommendation": "推荐为 main.jpg：符合优先任务和非技术图封面标准"
+  },
+  {
+    "filename": "tiangong-02-754c526f78.jpg",
+    "score": 9,
+    "reason": "Wikimedia 来源 +2；实物照片 +5；人物/任务场景 +2",
+    "recommendation": "保留为资料图，不推荐作为展厅封面"
+  },
+  {
+    "filename": "tianwen-03-206aa3f3bc.jpg",
+    "score": 13,
+    "reason": "国家航天局/CNSA 来源 +5；实物照片 +5；横向高清图片 +3",
+    "recommendation": "推荐为 main.jpg：符合优先任务和非技术图封面标准"
+  },
+  {
+    "filename": "tianwen-04-16526f52a3.png",
+    "score": 10,
+    "reason": "Wikimedia 来源 +2；实物照片 +5；横向高清图片 +3",
+    "recommendation": "推荐为 secondary.jpg：适合补充展陈"
+  },
+  {
+    "filename": "tianwen-01-a88ee557ca.png",
+    "score": 8,
+    "reason": "Wikimedia 来源 +2；轨道示意 +3；横向高清图片 +3",
+    "recommendation": "推荐为 technical.jpg：适合技术说明，不应用作展厅封面"
+  },
+  {
+    "filename": "tianwen-02-71c9cb41fc.png",
+    "score": 8,
+    "reason": "Wikimedia 来源 +2；轨道示意 +3；横向高清图片 +3",
+    "recommendation": "保留为资料图，不推荐作为展厅封面"
+  }
+]
