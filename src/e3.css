@@ -243,6 +243,56 @@ body { font-size: 17px; line-height: 1.7; }
 .launch-support-copy--compact h3 { font-size: 22px; }
 .launch-support-copy--compact .story-media .official-media-card--compact { background: rgba(250,249,246,.98); }
 
+/* V5.0-E4.2：每厅三个重点展项，使用不同的展陈构图承接总体 Story。 */
+.deep-dive { padding: 88px max(7vw, calc((100vw - 1380px) / 2)) 96px; background: var(--museum-white); color: var(--museum-ink); }
+.deep-dive--launch { background: #F3F0E9; }
+.deep-dive--satellite { background: #EAF0F1; }
+.deep-dive--human { background: #EEF1EC; }
+.deep-dive--lunar { background: #F0EDF2; }
+.deep-dive--planetary { background: #F3ECE8; }
+.deep-dive-heading { max-width: 760px; }
+.deep-dive-heading h2 { margin: 10px 0 10px; color: var(--museum-ink); font-size: clamp(30px, 2.8vw, 40px); line-height: 1.2; letter-spacing: -.035em; }
+.deep-dive-heading p { margin: 0; color: var(--museum-ink-soft); font-size: 17px; line-height: 1.75; }
+.deep-dive-items { display: grid; gap: 42px; margin-top: 50px; }
+.deep-dive--launch .deep-dive-items, .deep-dive--satellite .deep-dive-items, .deep-dive--lunar .deep-dive-items, .deep-dive--planetary .deep-dive-items { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.deep-dive--human .deep-dive-items { grid-template-columns: minmax(0, 1.25fr) minmax(0, .85fr); }
+.deep-dive-item { min-width: 0; padding-top: 16px; border-top: 1px solid var(--museum-line); }
+.deep-dive-item:nth-child(1) { border-top-color: var(--hall-color); }
+.deep-dive-meta { display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px; }
+.deep-dive-meta b { color: var(--hall-color); font: 500 24px/1 'Microsoft YaHei', sans-serif; }
+.deep-dive-meta time { color: var(--museum-ink-soft); font-size: 13px; }
+.deep-dive-item .asset-media { margin: 0 0 18px; border-color: var(--museum-line); background: var(--museum-white); }
+.deep-dive-item .asset-media img { min-height: 210px; object-fit: cover; }
+.deep-dive-item:first-child .asset-media img { min-height: 300px; }
+.deep-dive-schematic { position: relative; min-height: 210px; margin-bottom: 18px; overflow: hidden; border: 1px solid var(--museum-line-dark); background: var(--museum-deep); color: var(--museum-white); }
+.deep-dive-schematic > span { position: absolute; left: 18px; top: 15px; color: #D0A46A; font-size: 13px; letter-spacing: .08em; }
+.deep-dive-schematic--constellation::before { content: ''; position: absolute; left: 50%; top: 50%; width: 108px; height: 108px; transform: translate(-50%, -50%); border: 1px solid var(--hall-satellite); border-radius: 50%; }
+.deep-dive-schematic--constellation i, .deep-dive-schematic--constellation b, .deep-dive-schematic--constellation em { position: absolute; display: block; width: 12px; height: 12px; border: 1px solid #A8D0D8; border-radius: 50%; background: var(--museum-deep); }
+.deep-dive-schematic--constellation i { left: 22%; top: 28%; }.deep-dive-schematic--constellation b { right: 20%; top: 38%; }.deep-dive-schematic--constellation em { left: 35%; bottom: 22%; }
+.deep-dive-schematic--clouds::before { content: ''; position: absolute; left: 12%; right: 12%; top: 50%; border-top: 1px solid #8DAEB6; }
+.deep-dive-schematic--clouds i { position: absolute; display: block; width: 110px; height: 42px; border: 1px solid #A8D0D8; border-radius: 50%; opacity: .85; }
+.deep-dive-schematic--clouds i:nth-of-type(1) { left: 15%; top: 34%; transform: rotate(-12deg); }.deep-dive-schematic--clouds i:nth-of-type(2) { right: 16%; top: 48%; transform: rotate(9deg); }.deep-dive-schematic--clouds i:nth-of-type(3) { left: 38%; bottom: 16%; transform: rotate(-5deg); }
+.deep-dive-schematic--rendezvous i, .deep-dive-schematic--rendezvous b, .deep-dive-schematic--rendezvous em { position: absolute; top: 50%; display: grid; place-items: center; height: 38px; transform: translateY(-50%); border: 1px solid var(--hall-human); background: var(--museum-deep-2); color: #E4F0EA; font-style: normal; font-size: 13px; font-weight: 400; }
+.deep-dive-schematic--rendezvous i { left: 10%; width: 70px; }.deep-dive-schematic--rendezvous b { left: 43%; width: 58px; }.deep-dive-schematic--rendezvous em { right: 8%; width: 86px; }.deep-dive-schematic--rendezvous::after { content: '························'; position: absolute; left: 24%; right: 24%; top: 50%; transform: translateY(-50%); color: #9CC9B5; letter-spacing: 2px; text-align: center; }
+.deep-dive-schematic--deep-space::before { content: ''; position: absolute; left: 18%; right: 18%; top: 50%; border-top: 1px dashed var(--hall-planetary); }
+.deep-dive-schematic--deep-space i, .deep-dive-schematic--deep-space em { position: absolute; top: 50%; transform: translateY(-50%); color: #E4ECEF; font-style: normal; font-size: 14px; }.deep-dive-schematic--deep-space i { left: 12%; }.deep-dive-schematic--deep-space em { right: 10%; }.deep-dive-schematic--deep-space b { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: #D5A07E; font-size: 28px; }
+.deep-dive-copy > span { color: var(--hall-color); font-size: 14px; }
+.deep-dive-copy h3 { margin: 9px 0 8px; color: var(--museum-ink); font-size: 27px; line-height: 1.25; font-weight: 500; }
+.deep-dive-copy > strong { display: block; margin-bottom: 9px; color: var(--museum-bronze); font-size: 15px; font-weight: 500; }
+.deep-dive-copy > p { margin: 0; color: var(--museum-ink-soft); font-size: 16px; line-height: 1.75; }
+.deep-dive-copy .story-media { margin-top: 16px; }
+.deep-dive-copy button { margin-top: 16px; padding: 9px 13px; border: 1px solid var(--hall-color); background: transparent; color: var(--hall-color); font-size: 14px; cursor: pointer; }
+.deep-dive--launch .deep-dive-item:nth-child(1) .asset-media img, .deep-dive--human .deep-dive-item:nth-child(1) .asset-media img, .deep-dive--planetary .deep-dive-item:nth-child(1) .asset-media img { min-height: 340px; }
+.deep-dive--satellite .deep-dive-item:nth-child(3) .asset-media img { min-height: 260px; }
+.deep-dive--human .deep-dive-item:nth-child(1) { grid-row: span 2; }
+.deep-dive--human .deep-dive-item:nth-child(2) { align-self: start; }
+.deep-dive--human .deep-dive-item:nth-child(3) { align-self: start; }
+.deep-dive--lunar .deep-dive-item:nth-child(1) .asset-media img { min-height: 260px; }
+.deep-dive--lunar .deep-dive-item:nth-child(2) .asset-media img { min-height: 220px; }
+.deep-dive--lunar .deep-dive-item:nth-child(3) { padding-top: 30px; border-top-style: dashed; }
+.deep-dive--planetary .deep-dive-item:nth-child(1) .asset-media img { min-height: 340px; }
+.deep-dive--planetary .deep-dive-item:nth-child(3) { padding-top: 30px; border-top-style: dashed; }
+
 button:focus-visible, a:focus-visible { outline-color: var(--museum-bronze); }
 @media (max-width: 1000px) {
   .satellite-evidence-grid { grid-template-columns: 1fr; gap: 0; }
@@ -265,4 +315,6 @@ button:focus-visible, a:focus-visible { outline-color: var(--museum-bronze); }
   .story-media .official-media-card--feature { grid-template-rows: 150px auto; }
   .story-tour { gap: 14px; overflow-x: auto; }
   .launch-support-media { grid-template-columns: 1fr; gap: 28px; }
+  .deep-dive--launch .deep-dive-items, .deep-dive--satellite .deep-dive-items, .deep-dive--human .deep-dive-items, .deep-dive--lunar .deep-dive-items, .deep-dive--planetary .deep-dive-items { grid-template-columns: 1fr; }
+  .deep-dive--human .deep-dive-item:nth-child(1) { grid-row: auto; }
 }

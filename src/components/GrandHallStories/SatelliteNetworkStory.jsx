@@ -1,6 +1,7 @@
 import AssetMedia from '../AssetMedia/AssetMedia'
 import StoryMedia from '../StoryMedia/StoryMedia'
 import StoryTour from './StoryTour'
+import DeepDiveSection from './DeepDiveSection'
 import { getAssetById } from '../../utils/assetRegistry'
 
 const applications = ['通信', '气象', '遥感', '导航', '资源', '高分']
@@ -13,7 +14,7 @@ export default function SatelliteNetworkStory({ hall, nodes, missions, onOpenMis
         <div className="story-hero-copy title-safe-area"><span className="section-kicker">第 {hall.index} 展厅 · {hall.period}</span><h1>{hall.name}</h1><p className="story-subtitle">{hall.subtitle}</p><p className="story-question">中国如何从第一颗卫星，发展出服务整个社会的天基网络？</p></div>
         <div className="story-hero-visual satellite-hero-visual" aria-label="地球与卫星网络示意"><i>地球</i>{applications.slice(0, 4).map((application, index) => <span key={application} className={`satellite-hero-node satellite-hero-node-${index + 1}`}>{application}</span>)}</div>
       </header>
-      <StoryTour items={[{ id: 'story-why', label: '为什么重要' }, { id: 'satellite-core', label: '天基网络' }, { id: 'satellite-evidence', label: '重点展项' }, { id: 'story-next', label: '下一步' }]} />
+      <StoryTour items={[{ id: 'story-why', label: '为什么重要' }, { id: 'satellite-core', label: '天基网络' }, { id: 'deep-dive', label: '重点展项' }, { id: 'story-next', label: '下一步' }]} />
       <section className="story-why" id="story-why"><span className="section-kicker">为什么这条路线重要？</span><p>{hall.hallWhyItMatters}</p></section>
       <section className="grand-story grand-story--satellite" id="satellite-core">
         <div className="story-heading"><span className="section-kicker">卫星应用网络</span><h2>从单颗卫星，<br />到多系统协同</h2><p>天基能力逐步覆盖通信、气象、遥感、导航、资源和高分辨率对地观测，成为社会运行的空间基础设施。</p></div>
@@ -22,6 +23,7 @@ export default function SatelliteNetworkStory({ hall, nodes, missions, onOpenMis
         <div className="satellite-evidence-grid" id="satellite-evidence"><article><b>导航</b><strong>北斗三号</strong><span>定位、导航、授时进入交通与应急系统。</span><StoryMedia ids={['official-beidou-3-constellation-2020']} mode="compact" color={hall.color} /></article><article><b>气象</b><strong>风云卫星</strong><span>持续观测云图、台风和天气变化。</span><StoryMedia ids={['official-fy4a-cloud-image-2017']} mode="compact" color={hall.color} /></article><article><b>遥感</b><strong>高分工程</strong><span>高分辨率对地观测服务国土与资源管理。</span><StoryMedia ids={['open-gaofen-3-radar-images-2022']} mode="feature" color={hall.color} /></article></div>
         <div className="story-node-strip">{nodes.filter((node) => ['东方红一号', '返回式卫星', '风云气象卫星', '资源与海洋卫星', '高分工程', '北斗三号'].includes(node.name)).map((node) => <span className="story-node" key={node.id}><b>{node.year}</b>{node.name}</span>)}</div>
       </section>
+      <DeepDiveSection variant="satellite" hall={hall} items={[{ year: '2020', label: '导航 · 全球覆盖', title: '北斗三号', metric: '定位 · 导航 · 授时', description: '全球卫星导航系统把时间和位置变成交通、农业、应急可以调用的基础服务。', diagram: 'constellation', diagramLabel: '北斗星座', mediaIds: ['official-beidou-3-constellation-2020'] }, { year: '1988—至今', label: '气象 · 连续观测', title: '风云', metric: '云图 · 台风 · 预报', description: '气象卫星把大范围、连续的云系观测送入天气预报和灾害响应流程。', diagram: 'clouds', diagramLabel: '云图观测', mediaIds: ['official-fy4a-cloud-image-2017'] }, { year: '2010—至今', label: '遥感 · 看见地表', title: '高分', metric: '全天时 · 全天候', description: '雷达遥感不依赖可见光，把海洋、土地与灾害变化转化为可分析的数据。', assetId: 'open-gaofen-3-radar-images-2022' }]} />
       <section className="story-tail story-tail--satellite" id="story-next"><div><span className="section-kicker">空间能力如何进入日常生活</span><h2>看得见天气，找得到方向，连得上远方。</h2></div><div><span className="section-kicker">下一步通向</span><p>更高分辨率、更低轨道、更智能的卫星数据服务。</p></div></section>
     </div>
   )
