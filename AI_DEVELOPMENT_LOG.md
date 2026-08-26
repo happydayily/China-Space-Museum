@@ -1,5 +1,20 @@
 # AI 辅助开发日志
 
+## V4.4.1
+
+### 人工提出的问题
+
+V4.4 页面需要稳定的公网访问和 main 分支自动发布，同时保持现有展厅内容不变。
+
+### Codex 实际修改
+
+配置 Vite /China-Space-Museum/ base，新增 GitHub Pages Actions（checkout、Node LTS、npm ci、build、上传 dist、deploy-pages），新增提示词与迭代记录，并更新 README、CHANGELOG。
+
+### 验证结果
+
+本地 `npm ci` 与 `npm run build` 已通过；远程 Actions、Pages 状态在发布流程中核验。
+
+
 本日志记录“人工提出需求 → AI/Codex 修改 → 人工验收 → 再次迭代”的过程。所有面向人的记录使用中文；代码中的英文技术命名保持原样。
 
 ## V4.4
@@ -80,3 +95,5 @@ JSON 数据解析和 npm run build 已通过；已生成 5 张本地页面验收
 ### 尚待人工确认的问题
 
 东方红一号和神舟五号发射现场照片的公开复用授权仍需后续持续补强；本轮没有以无法确认来源的图片填充展厅。
+
+
