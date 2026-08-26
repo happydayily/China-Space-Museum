@@ -3,7 +3,7 @@ import MissionProcess from '../MissionProcess/MissionProcess'
 import OfficialMedia from '../OfficialMedia/OfficialMedia'
 import { getAssetById, getAssetsByIds } from '../../utils/assetRegistry'
 
-export default function MissionHall({ hall }) {
+export default function MissionHall({ hall, grandHall }) {
   const mainAsset = getAssetById(hall.mainAssetId)
   const secondaryAssets = getAssetsByIds(hall.secondaryAssetIds)
   const technicalAssets = getAssetsByIds(hall.technicalAssetIds)
@@ -13,7 +13,7 @@ export default function MissionHall({ hall }) {
     <main className="mission-hall" style={{ '--hall-color': hall.color }}>
       <header className="mission-hall-hero">
         <div>
-          <span className="section-kicker">第 {hall.index} 展厅 · {hall.period}</span>
+          <span className="section-kicker">重点展项 · {grandHall?.name || hall.period}</span>
           <h1>{hall.name}</h1>
         </div>
         <div className="mission-hall-year">{hall.year}</div>
@@ -33,6 +33,7 @@ export default function MissionHall({ hall }) {
           <span className="section-kicker">展品解读</span>
           <h2>为什么重要</h2>
           <dl>
+            <div><dt>任务重要性</dt><dd>{hall.whyItMatters}</dd></div>
             <div><dt>展品介绍</dt><dd>{mainAsset?.description || hall.introduction}</dd></div>
             <div><dt>历史意义</dt><dd>{narrativeAsset?.historicalImportance || '相关历史档案尚未公开'}</dd></div>
             <div><dt>技术突破</dt><dd>{narrativeAsset?.technicalAchievement || '相关技术档案尚未公开'}</dd></div>

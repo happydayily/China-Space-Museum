@@ -4,7 +4,7 @@
 
 ## 当前版本
 
-V4.4.1，GitHub Pages 自动部署版本。
+V5.0-E3，已完成阶段 A 的本地构建、自动验收截图与截图归档，正在建立对应的 Git 历史检查点。
 
 ## 在线体验
 
@@ -14,12 +14,17 @@ V4.4.1，GitHub Pages 自动部署版本。
 
 - 星空背景与三维地球视觉场景
 - 中国航天历史时间线
-- 五大主题展厅：起源、探月、载人航天、空间站和深空探测
+- 中国航天五大发展主线：进入太空、天基中国、人在太空、奔向月球、走向行星
+- 五大主题展厅与 `#/grand-hall/:grandHallId` 路由
+- 五个独立 GrandHall Story，分别呈现运力、卫星应用、载人航天、探月和行星探测
 - 航天任务影像与展品卡片
 - 长征系列运载火箭谱系
 - 航天技术发展树
 - 五种差异化航天任务过程：历史流程、载人绕飞、探月、火星探测和空间站建造
 - 中国航天官方任务回顾、视频和图集入口
+- 官方媒体与开放许可素材来源记录；任务级 `whyItMatters` 与展厅级 `hallWhyItMatters` 分层
+- 深浅交替的数字博物馆视觉基底
+- 统一 1600×900 视口的六页自动验收截图
 - 图片素材登记、来源记录和质量评估数据
 
 ## 技术栈
@@ -48,6 +53,14 @@ npm run build
 npm run preview
 ```
 
+生成六张最新长页面验收截图：
+
+```bash
+npm run screenshots
+```
+
+截图输出到 `docs/screenshots/review/latest/`；明确的版本验收图另行归档到 `docs/screenshots/<版本号>/`。截图脚本复用本机 Edge/Chrome，不保存浏览器 Profile、缓存或 Cookie。
+
 ## 项目结构
 
 ```text
@@ -59,6 +72,7 @@ tools/                  图片采集、排序和素材来源维护工具
 docs/iterations/        中文迭代记录和人工验收记录
 docs/prompts/           提交给 Codex/AI 的完整中文提示词
 docs/screenshots/       精选版本验收截图
+scripts/                构建辅助与自动验收截图脚本
 dist/                   本地构建产物，不纳入 Git
 node_modules/           npm 依赖安装目录，不纳入 Git
 ```
@@ -78,11 +92,14 @@ node_modules/           npm 依赖安装目录，不纳入 Git
 - [Codex/AI 提示词档案说明](docs/prompts/README.md)
 - [V4.2 正式基线提示词](docs/prompts/v4.2.md)
 - [V4.4 完整中文开发提示词](docs/prompts/v4.4.md)
+- [V5.0-E3 迭代记录](docs/iterations/v5.0-e3.md)
+- [V5.0-E3 中文提示词](docs/prompts/v5.0-e3.md)
 - [AI 辅助开发总日志](AI_DEVELOPMENT_LOG.md)
 - [更新日志](CHANGELOG.md)
 
 ## 后续计划
 
+- 在 V5.0-E4 中继续进行展陈深化与视觉终审，重点处理 Deep Dive、导览和五厅差异化；E4 完成前不进入 V5.0-F。
 - 在后续版本继续补强来源和授权明确的任务历史影像。
 - 为每轮迭代保存完整中文提示词、人工验收结果和遗留问题。
 - 持续整理图片与资料来源，减少重复素材和不必要的构建归档。

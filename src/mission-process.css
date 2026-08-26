@@ -239,7 +239,11 @@
 .official-media { background: linear-gradient(180deg, #071326, #040914); }
 .official-media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 1420px; margin: 0 auto; }
 .official-media-card { display: grid; grid-template-rows: 180px 1fr; min-width: 0; border: 1px solid var(--museum-line); background: rgba(8, 21, 39, .78); }
+.official-media-card--image .official-media-cover { background: #071222; }
 .official-media-cover { position: relative; overflow: hidden; padding: 22px; background: radial-gradient(circle at 70% 30%, color-mix(in srgb, var(--hall-color) 32%, transparent), transparent 34%), linear-gradient(135deg, #163254, #071222); }
+.official-media-cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .68; filter: saturate(.82) contrast(1.04); }
+.official-media-cover::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(4, 12, 24, .18), rgba(4, 12, 24, .76)); pointer-events: none; }
+.official-media-cover > * { z-index: 1; }
 .official-media-cover::before { content: ''; position: absolute; inset: 18px; border: 1px solid color-mix(in srgb, var(--hall-color) 36%, transparent); }
 .official-media-cover span { position: relative; color: var(--hall-color); font-size: 16px; letter-spacing: .1em; }
 .official-media-cover strong { position: absolute; right: 24px; top: 16px; color: rgba(225, 240, 255, .2); font: 54px 'DM Mono'; }
@@ -248,6 +252,9 @@
 .official-media-copy > span { color: var(--hall-color); font-size: 15px; }
 .official-media-copy h3 { min-height: 58px; margin: 10px 0; font-size: 22px; font-weight: 500; line-height: 1.35; }
 .official-media-copy p { margin: 0; color: #8da3bd; font-size: 16px; line-height: 1.65; }
+.official-media-status { display: flex; align-items: center; gap: 10px; margin-top: 16px; color: #8da3bd; font-size: 13px; }
+.official-media-status b { color: var(--hall-color); font-weight: 500; }
+.official-media-status span { padding-left: 10px; border-left: 1px solid rgba(164, 199, 245, .24); }
 .official-media-copy a { display: inline-block; margin-top: 20px; color: #eef7ff; font-size: 16px; text-decoration: none; }
 .official-media-copy a b { color: var(--hall-color); margin-left: 8px; }
 

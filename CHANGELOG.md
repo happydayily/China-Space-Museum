@@ -1,5 +1,13 @@
 # 更新日志
 
+## V5.0-E3
+
+- 将首页与五个主题展厅收束为深浅交替的数字博物馆视觉基底：首页首屏、展厅 Hero、必要的火箭/轨迹/卫星/深空场景保留深色，其余叙事区域使用暖纸白、冷灰白、灰紫白和沙灰等浅色展陈背景。
+- 建立五大发展主线、五大主题展厅、`#/grand-hall/:grandHallId` 路由和五个独立 GrandHall Story，明确任务级 `whyItMatters` 与展厅级 `hallWhyItMatters` 的内容边界。
+- 接入官方媒体链接、开放许可本地 WebP 素材与来源记录；来源、作者和许可证详情默认折叠，降低普通阅读界面的技术噪声。
+- 建立统一 1600×900 视口的 Playwright 自动验收截图流程，生成首页和五个真实展厅的六张 fullPage PNG；E3 验收图归档在 `docs/screenshots/v5.0-e3/`。
+- 当前遗留问题：部分旧任务影像仍需继续补强授权与来源核验；生产构建仍有较大 JavaScript chunk 警告；Deep Dive 第二层、轻量本厅导览和最终视觉终审留待 V5.0-E4。
+
 ## V4.4.1
 
 - 新增 GitHub Pages 自动部署 workflow，支持 main 分支 push 和手动触发。

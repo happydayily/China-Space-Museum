@@ -1,26 +1,35 @@
 import { useEffect, useMemo, useState } from 'react'
 import SpaceScene from './components/SpaceScene/SpaceScene'
 import Timeline from './components/Timeline/Timeline'
-import MissionViewer from './components/MissionViewer/MissionViewer'
-import RocketGallery from './components/RocketGallery/RocketGallery'
 import TechTree from './components/TechTree/TechTree'
-import ExhibitionCard from './components/ExhibitionCard/ExhibitionCard'
 import HallPage from './pages/HallPage/HallPage'
+import GrandHallPage from './pages/GrandHallPage/GrandHallPage'
+import DevelopmentLines from './components/DevelopmentLines/DevelopmentLines'
 import halls from './data/halls.json'
+import grandHalls from './data/grandHalls.json'
 
-function hallIdFromLocation() {
-  return window.location.hash.match(/^#hall\/([^/]+)$/)?.[1] ?? null
+function routeFromLocation() {
+  const hash = window.location.hash
+  const missionId = hash.match(/^#hall\/([^/]+)$/)?.[1]
+  if (missionId) return { type: 'mission', id: missionId }
+  const grandHallId = hash.match(/^#grand-hall\/([^/]+)$/)?.[1]
+  if (grandHallId) return { type: 'grandHall', id: grandHallId }
+  return { type: 'home', id: null }
 }
 
 export default function App() {
-  const [activeHallId, setActiveHallId] = useState(hallIdFromLocation)
+  const [route, setRoute] = useState(routeFromLocation)
   const activeHall = useMemo(
-    () => halls.find((hall) => hall.id === activeHallId) ?? null,
-    [activeHallId],
+    () => halls.find((hall) => hall.id === route.id) ?? null,
+    [route],
+  )
+  const activeGrandHall = useMemo(
+    () => grandHalls.find((hall) => hall.id === route.id) ?? null,
+    [route],
   )
 
   useEffect(() => {
-    const syncLocation = () => setActiveHallId(hallIdFromLocation())
+    const syncLocation = () => setRoute(routeFromLocation())
     window.addEventListener('popstate', syncLocation)
     window.addEventListener('hashchange', syncLocation)
     return () => {
@@ -29,19 +38,35 @@ export default function App() {
     }
   }, [])
 
-  const openHall = (hallId) => {
-    window.history.pushState({}, '', `#hall/${hallId}`)
-    setActiveHallId(hallId)
+  const openMission = (missionId) => {
+    window.history.pushState({}, '', `#hall/${missionId}`)
+    setRoute({ type: 'mission', id: missionId })
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const closeHall = () => {
+  const openGrandHall = (grandHallId) => {
+    window.history.pushState({}, '', `#grand-hall/${grandHallId}`)
+    setRoute({ type: 'grandHall', id: grandHallId })
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const closeToHome = () => {
     window.history.pushState({}, '', window.location.pathname)
-    setActiveHallId(null)
+    setRoute({ type: 'home', id: null })
     window.scrollTo({ top: 0 })
   }
 
-  if (activeHall) return <HallPage hall={activeHall} onBack={closeHall} />
+  const closeToGrandHall = (grandHallId) => {
+    if (!grandHallId) return closeToHome()
+    openGrandHall(grandHallId)
+  }
+
+  if (route.type === 'mission' && activeHall) {
+    return <HallPage hall={activeHall} onBack={closeToHome} onBackToGrandHall={closeToGrandHall} />
+  }
+  if (route.type === 'grandHall' && activeGrandHall) {
+    return <GrandHallPage hall={activeGrandHall} onBack={closeToHome} onOpenMission={openMission} />
+  }
 
   return (
     <main className="museum-shell">
@@ -52,9 +77,9 @@ export default function App() {
           <span className="brand-mark">中</span>
           <span>中国航天<br /><em>数字博物馆</em></span>
         </div>
-        <div className="status"><span className="status-dot" />数字展览 · V4.4</div>
+        <div className="status"><span className="status-dot" />数字展览 · V5.0</div>
         <button className="enter-button" onClick={() => document.getElementById('halls')?.scrollIntoView({ behavior: 'smooth' })}>
-          选择展厅 <span>↘</span>
+          选择主线 <span>↘</span>
         </button>
       </header>
 
@@ -63,7 +88,7 @@ export default function App() {
           <p className="eyebrow">中国航天发展史 · 1956—2026</p>
           <h1><small>《</small>中国航天发展史<small>》</small></h1>
           <p>从东方红一号到中国空间站<br />进入一座生长在星河中的数字博物馆</p>
-          <button className="primary-button" onClick={() => document.getElementById('halls')?.scrollIntoView({ behavior: 'smooth' })}>
+          <button className="primary-button" onClick={() => document.getElementById('development-lines')?.scrollIntoView({ behavior: 'smooth' })}>
             开始参观 <span>↓</span>
           </button>
         </div>
@@ -72,22 +97,14 @@ export default function App() {
       </section>
 
       <section className="museum-entrance" id="halls">
-        <div className="entrance-heading">
-          <div><span className="section-kicker">五大主题展厅</span><h2>选择一段航天史，<br />进入任务现场。</h2></div>
-          <p>五个独立展厅连接卫星、载人航天、探月、火星与空间站。每张图片都保留来源和版权记录。</p>
-        </div>
-        <div className="exhibition-grid">
-          {halls.map((hall) => <ExhibitionCard hall={hall} onEnter={openHall} key={hall.id} />)}
-        </div>
+        <DevelopmentLines onEnter={openGrandHall} />
       </section>
 
-      <Timeline />
-      <MissionViewer />
-      <RocketGallery />
-      <TechTree />
+      <Timeline compact />
+      <TechTree compact />
       <footer className="footer">
         <span>中国航天发展史数字博物馆</span>
-        <span>愿人类探索永无止境 · V4.4</span>
+        <span>愿人类探索永无止境 · V5.0</span>
       </footer>
     </main>
   )

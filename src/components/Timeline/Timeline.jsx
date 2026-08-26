@@ -3,7 +3,7 @@ import timeline from '../../data/timeline.json'
 import ImageViewer from '../ImageViewer/ImageViewer'
 import { findRelatedAsset } from '../../utils/assetRegistry'
 
-export default function Timeline({ category }) {
+export default function Timeline({ category, compact = false }) {
   const items = useMemo(
     () => category ? timeline.filter((item) => item.category === category) : timeline.filter((item) => item.featured),
     [category],
@@ -29,12 +29,14 @@ export default function Timeline({ category }) {
   }, [items])
 
   return (
-    <section className="timeline-section narrative-timeline">
+    <section className={`timeline-section narrative-timeline ${compact ? 'timeline-section--compact' : ''}`}>
       <div className="section-heading">
-        <span className="section-kicker">滚动历史 · {String(items.length).padStart(2, '0')} 个节点</span>
-        <h2>七十年，向星河深处。</h2>
-        <p>向下滚动，让关键年份依次点亮。</p>
+        <span className="section-kicker">共同时间底座 · {String(items.length).padStart(2, '0')} 个节点</span>
+        <h2>{compact ? '中国航天关键时刻' : '七十年，向星河深处。'}</h2>
+        <p>{compact ? '六个跨主线时刻，串起五条发展路径。' : '向下滚动，让关键年份依次点亮。'}</p>
       </div>
+      {compact ? <div className="timeline-compact-grid">{items.map((item) => <article key={item.id}><time>{item.year}</time><h3>{item.title}</h3><p>{item.description}</p></article>)}</div> : null}
+      {!compact ? (
       <div className="timeline-story" ref={storyRef}>
         <div className="timeline-spine" aria-hidden="true" />
         {items.map((item, index) => {
@@ -68,6 +70,7 @@ export default function Timeline({ category }) {
           )
         })}
       </div>
+      ) : null}
     </section>
   )
 }

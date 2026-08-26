@@ -1,7 +1,19 @@
 import mediaLinks from '../../data/mediaLinks.json'
+import assets from '../../data/assets.json'
+import OfficialMediaCard from '../OfficialMediaCard/OfficialMediaCard'
 
-export default function OfficialMedia({ mission, color }) {
-  const links = mediaLinks.filter((item) => item.mission === mission)
+export default function OfficialMedia({ mission, hallId, color }) {
+  const linkedMedia = mediaLinks.filter((item) => (mission && item.mission === mission) || (hallId && item.hallId === hallId))
+  const imageMedia = assets
+    .filter((item) => hallId && item.hallId === hallId && item.usageStatus)
+    .map((item) => ({
+      ...item,
+      title: item.sourceTitle || item.name,
+      type: item.mediaType || 'official-image',
+      source: item.sourceName,
+      url: item.sourceUrl,
+    }))
+  const links = [...imageMedia, ...linkedMedia]
   if (!links.length) return null
 
   return (
@@ -11,19 +23,7 @@ export default function OfficialMedia({ mission, color }) {
         <p>以下内容来自中国航天官方机构、新华社或央视官方平台。项目不保存大型视频文件。</p>
       </header>
       <div className="official-media-grid">
-        {links.map((item, index) => (
-          <article className="official-media-card" key={item.id}>
-            <div className="official-media-cover">
-              <span>{item.type}</span><strong>{String(index + 1).padStart(2, '0')}</strong><i>▶</i>
-            </div>
-            <div className="official-media-copy">
-              <span>{item.source}</span>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-              <a href={item.url} target="_blank" rel="noreferrer">查看官方影像 <b>↗</b></a>
-            </div>
-          </article>
-        ))}
+        {links.map((item, index) => <OfficialMediaCard item={item} index={index} mode={item.displayMode || 'feature'} key={item.id} />)}
       </div>
     </section>
   )

@@ -1,0 +1,246 @@
+/* V5.0-E3：从科技 Dashboard 收束为现代数字博物馆的浅色展陈基底。 */
+:root {
+  font-family: "Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: #18242F;
+  background: #F2EFE7;
+  --museum-deep: #0B1724;
+  --museum-deep-2: #142434;
+  --museum-paper: #F2EFE7;
+  --museum-paper-alt: #E9EDF0;
+  --museum-white: #FAF9F6;
+  --museum-ink: #18242F;
+  --museum-ink-soft: #52606B;
+  --museum-line: #C9C3B8;
+  --museum-line-dark: #344555;
+  --museum-bronze: #B47732;
+  --hall-launch: #B86F2E;
+  --hall-satellite: #3E7488;
+  --hall-human: #4D7B6D;
+  --hall-lunar: #706383;
+  --hall-planetary: #A55F4C;
+}
+
+html, body { background: var(--museum-paper); color: var(--museum-ink); }
+body, button, a { font-family: "Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif; }
+body { font-size: 17px; line-height: 1.7; }
+.museum-shell { background: var(--museum-paper); color: var(--museum-ink); }
+.noise { display: none; }
+.topbar, .museum-hero { background: var(--museum-deep); color: var(--museum-white); }
+.topbar { border-bottom-color: rgba(201,195,184,.24); }
+.brand-mark { border-color: var(--museum-bronze); color: var(--museum-bronze); }
+.brand em, .status { color: #B7C1C9; }
+.status-dot { background: var(--museum-bronze); box-shadow: none; }
+.enter-button, .primary-button { border-color: rgba(242,239,231,.55); color: var(--museum-white); }
+.primary-button { background: var(--museum-bronze); border-color: var(--museum-bronze); color: var(--museum-white); }
+.enter-button span, .primary-button span, .eyebrow, .section-kicker { color: #D0A46A; }
+.museum-hero-copy h1 { max-width: none; margin: 28px 0 30px; font-size: clamp(52px, 4.4vw, 64px); line-height: 1.12; letter-spacing: -.045em; text-shadow: none; }
+.museum-hero-copy > p:not(.eyebrow) { color: #D7DFE4; font-size: 18px; line-height: 1.75; }
+.hero-orbit-label, .hero-year { color: #B7C8D2; }
+.hero-orbit-label strong { color: var(--museum-white); }
+.orbit-line { border-color: #8FA8B2; }
+.hero-year span { color: #AAB7BD; }
+
+.museum-entrance, .development-lines { background: var(--museum-paper) !important; color: var(--museum-ink); }
+.development-lines { padding-top: 100px; padding-bottom: 100px; border-top: 1px solid var(--museum-line); }
+.development-lines .section-heading h2, .timeline-section--compact .section-heading h2 { color: var(--museum-ink); font-size: clamp(32px, 3vw, 40px); line-height: 1.2; letter-spacing: -.035em; }
+.development-lines .section-heading p { color: var(--museum-ink-soft); font-size: 18px; line-height: 1.75; }
+.development-network-wrap { margin-top: 52px; padding: 18px 0 12px; border: 1px solid var(--museum-line); background: var(--museum-white); box-shadow: none; }
+.development-network > g.network-lane:nth-of-type(3) { --line-tone: var(--hall-launch); }
+.development-network > g.network-lane:nth-of-type(4) { --line-tone: var(--hall-satellite); }
+.development-network > g.network-lane:nth-of-type(5) { --line-tone: var(--hall-human); }
+.development-network > g.network-lane:nth-of-type(6) { --line-tone: var(--hall-lunar); }
+.development-network > g.network-lane:nth-of-type(7) { --line-tone: var(--hall-planetary); }
+.network-years text { fill: var(--museum-ink-soft) !important; font-size: 13px; }
+.network-lane-path { stroke: var(--line-tone, var(--museum-line-dark)) !important; stroke-width: 2 !important; opacity: .72; }
+.network-lane.is-hovered .network-lane-path { stroke-width: 3 !important; opacity: 1; }
+.network-lane.is-dimmed { opacity: .28; }
+.network-node circle { fill: var(--museum-white) !important; stroke: var(--line-tone, var(--museum-line-dark)) !important; stroke-width: 2; }
+.network-lane.is-hovered .network-node circle { fill: var(--line-tone, var(--museum-line-dark)) !important; }
+.network-node text, .network-lane-label { fill: var(--line-tone, var(--museum-ink-soft)) !important; color: var(--line-tone, var(--museum-ink-soft)); }
+.network-lane-label { font-size: 15px; font-weight: 500; }
+.network-crossing, .network-crossing.is-active { stroke: var(--museum-line-dark) !important; stroke-width: 1 !important; opacity: .55; }
+.development-network-hint, .development-network-note { color: var(--museum-ink-soft); font-size: 14px; }
+.development-network-note strong { color: var(--museum-bronze); }
+.development-network-note span { border-left-color: var(--museum-line); }
+
+.timeline-section--compact { padding-top: 86px; padding-bottom: 86px; border-top: 1px solid var(--museum-line); background: var(--museum-white) !important; color: var(--museum-ink); }
+.timeline-section--compact .section-kicker { color: var(--museum-bronze); }
+.timeline-section--compact .section-heading p { color: var(--museum-ink-soft); font-size: 17px; }
+.timeline-section--compact .timeline-compact-grid { gap: 0; background: transparent; }
+.timeline-section--compact .timeline-compact-grid article, .timeline-section--compact .timeline-compact-grid article:nth-child(2), .timeline-section--compact .timeline-compact-grid article:nth-child(3), .timeline-section--compact .timeline-compact-grid article:nth-child(5) { min-height: 165px; padding: 24px 28px 24px 0; border-top: 1px solid var(--museum-line); background: transparent !important; }
+.timeline-section--compact .timeline-compact-grid time { color: var(--museum-bronze); font-size: 14px; }
+.timeline-section--compact .timeline-compact-grid h3 { margin: 13px 0 7px; color: var(--museum-ink); font-size: 21px; font-weight: 500; }
+.timeline-section--compact .timeline-compact-grid p { color: var(--museum-ink-soft); font-size: 16px; line-height: 1.7; }
+.tech-section--compact { padding-top: 86px; padding-bottom: 92px; background: var(--museum-deep) !important; color: var(--museum-white); }
+.tech-section--compact .section-heading h2 { color: var(--museum-white); font-size: clamp(32px, 3vw, 40px); }
+.tech-section--compact .section-heading p { color: #C4D0D6; font-size: 17px; }
+.tech-section--compact .tech-tree { border-top-color: var(--museum-line-dark); }
+.tech-section--compact .tech-branch { border-right-color: rgba(201,195,184,.25); }
+.tech-section--compact .branch-node, .tech-section--compact .branch-arrow { color: #D0A46A; }
+.tech-section--compact .tech-branch h3 { color: var(--museum-white); font-size: 21px; }
+.tech-section--compact .tech-branch p { color: #B7C4CC; font-size: 16px; }
+.footer { background: var(--museum-deep); color: #B4C0C7; }
+
+.grand-hall-page--access-to-space { --hall-color: var(--hall-launch) !important; }
+.grand-hall-page--space-based-china { --hall-color: var(--hall-satellite) !important; }
+.grand-hall-page--humans-in-space { --hall-color: var(--hall-human) !important; }
+.grand-hall-page--to-the-moon { --hall-color: var(--hall-lunar) !important; }
+.grand-hall-page--toward-planets { --hall-color: var(--hall-planetary) !important; }
+.grand-hall-page { background: var(--museum-paper); color: var(--museum-ink); }
+.grand-hall-page .hall-page-nav { background: var(--museum-deep); color: var(--museum-white); border-bottom: 1px solid rgba(201,195,184,.25); }
+.grand-hall-page .hall-page-nav button { color: #D7E0E5; border-color: rgba(242,239,231,.38); background: transparent; }
+.grand-breadcrumb { background: var(--museum-white) !important; color: var(--museum-ink-soft); border-bottom-color: var(--museum-line); }
+.grand-breadcrumb strong { color: var(--museum-ink); }
+.story-page { background: transparent !important; color: var(--museum-ink); }
+.story-hero { min-height: 430px; padding-top: 58px; padding-bottom: 58px; background: var(--museum-deep) !important; }
+.story-hero h1 { max-width: 760px; color: var(--museum-white) !important; font-size: clamp(46px, 3.6vw, 56px); line-height: 1.2; letter-spacing: -.035em; }
+.story-subtitle { color: #E4EBEE; font-size: 20px; font-weight: 500; }
+.story-question { color: #C4D0D6; font-size: 18px; line-height: 1.75; }
+.story-hero--launch, .story-hero--satellite, .story-hero--human, .story-hero--lunar, .story-hero--planetary { background: var(--museum-deep) !important; }
+.story-hero-visual * { box-shadow: none !important; }
+.launch-hero-visual { border-left-color: color-mix(in srgb, var(--hall-color) 60%, transparent); background: repeating-linear-gradient(180deg, transparent 0 31%, rgba(242,239,231,.09) 31% 32%, transparent 32% 63%); }
+.launch-hero-visual i { background: #D8D9D5; box-shadow: none; }
+.launch-hero-visual i:after { background: var(--hall-color); filter: none; opacity: .7; }
+.launch-hero-visual b, .launch-hero-visual span, .launch-hero-visual em { color: #D0A46A; }
+.satellite-hero-visual { border-color: color-mix(in srgb, var(--hall-color) 70%, transparent); }
+.satellite-hero-visual i { background: #28556B; color: #F0F4F2; box-shadow: none; }
+.satellite-hero-node { border-color: var(--hall-color); color: #E5EEF1; background: var(--museum-deep-2); }
+.human-hero-visual { border-color: color-mix(in srgb, var(--hall-color) 70%, transparent); }
+.human-hero-visual:after { border-top-color: var(--hall-color); }
+.human-hero-visual span, .human-hero-visual i, .human-hero-visual b { border-color: var(--hall-color); background: var(--museum-deep-2); color: #E4F0EA; }
+.lunar-hero-visual:after { border-top-color: var(--hall-color); }
+.lunar-hero-visual i { background: #436B7D; box-shadow: none; }
+.lunar-hero-visual b { background: #B6B4B0; box-shadow: none; }
+.planetary-hero-visual i { background: #477C8C; box-shadow: none; }
+.planetary-hero-visual b { background: var(--hall-planetary); box-shadow: none; }
+
+.story-why { padding-top: 52px; padding-bottom: 58px; background: var(--museum-paper) !important; border-top-color: var(--museum-line); border-bottom-color: var(--museum-line); }
+.story-why .section-kicker { color: var(--hall-color); }
+.story-why p { max-width: 840px; color: var(--museum-ink); font-size: 18px; line-height: 1.8; }
+.grand-story { color: var(--museum-ink); background: var(--museum-paper-alt) !important; }
+.grand-hall-page--access-to-space .grand-story { background: #ECEFF1 !important; }
+.grand-hall-page--space-based-china .grand-story { background: #EAF0F1 !important; }
+.grand-hall-page--humans-in-space .grand-story { background: #EEF1EC !important; }
+.grand-hall-page--to-the-moon .grand-story { background: #EEEBF0 !important; }
+.grand-hall-page--toward-planets .grand-story { background: #F1EAE6 !important; }
+.story-heading h2 { max-width: 700px; font-size: clamp(32px, 2.8vw, 40px); color: var(--museum-ink); letter-spacing: -.035em; }
+.story-heading p { max-width: 840px; color: var(--museum-ink-soft); font-size: 18px; line-height: 1.75; }
+.story-node { border-color: var(--museum-line); color: var(--museum-ink); background: transparent; font-size: 15px; }
+.story-node b { color: var(--hall-color); }
+.story-node em { color: var(--museum-ink-soft); }
+.story-node--planned { border-color: #9BA4AA; opacity: 1; }
+.story-node--ongoing { border-color: var(--museum-bronze); box-shadow: inset 3px 0 var(--museum-bronze); }
+.story-tail { background: var(--museum-white) !important; color: var(--museum-ink); border-top: 1px solid var(--museum-line); }
+.story-tail h2 { max-width: 650px; font-size: clamp(30px, 2.8vw, 40px); color: var(--museum-ink); }
+.story-tail p { color: var(--museum-ink-soft); font-size: 18px; line-height: 1.75; }
+.story-tail-link { border-left-color: var(--hall-color); }
+.story-tail button, .story-mission-link, .satellite-origin-card button { border-color: var(--hall-color); color: var(--hall-color); background: transparent; }
+
+.grand-story--launch .launch-ladder, .grand-story--satellite .satellite-network, .grand-story--planetary .planetary-distance { background: var(--museum-deep) !important; color: var(--museum-white); box-shadow: none; }
+.grand-story--launch .launch-ladder { gap: 0; padding: 24px 18px 0; border: 1px solid var(--museum-line-dark); }
+.launch-step { min-height: 0; padding: 18px 16px 22px; background: transparent !important; border-right: 1px solid rgba(201,195,184,.22); border-bottom: 0; }
+.launch-step:last-child { border-right: 0; }
+.launch-step>span, .launch-step small { color: #C5A16F; }
+.launch-step h3 { color: var(--museum-white); font-size: 21px; }
+.launch-step p { color: #C9D3D8; font-size: 15px; line-height: 1.6; }
+.rocket-silhouette { background: #D6D9D6; box-shadow: none; }
+.rocket-silhouette:after { background: var(--hall-color); filter: none; opacity: .72; }
+.payload-bar { background: #C28A4C; }
+.grand-story--satellite .satellite-network { border: 1px solid var(--museum-line-dark); border-radius: 2px; }
+.grand-story--satellite .satellite-core { border-color: var(--hall-color); color: var(--museum-white); }
+.grand-story--satellite .satellite-core i { background: var(--hall-color); box-shadow: none; }
+.grand-story--satellite .satellite-orbit b { color: #E4ECEF; }
+.grand-story--satellite .satellite-link { background: #9CB5BD; }
+.satellite-evidence-grid { grid-template-columns: 1fr 1.15fr 1.45fr; gap: 30px; background: transparent; }
+.satellite-evidence-grid article { min-height: 210px; padding: 22px 22px 22px 0; border-top: 1px solid var(--museum-line); background: transparent; }
+.satellite-evidence-grid article:first-child { border-top-color: var(--hall-satellite); }
+.satellite-evidence-grid b { color: var(--hall-satellite); font-size: 14px; }
+.satellite-evidence-grid strong { color: var(--museum-ink); font-size: 24px; }
+.satellite-evidence-grid span { color: var(--museum-ink-soft); font-size: 16px; line-height: 1.65; }
+.human-chapters { gap: 0; background: transparent; }
+.human-chapters>article, .human-chapter-feature, .human-chapter-station { background: transparent !important; }
+.human-chapters>article { min-height: 360px; padding: 26px 26px 26px 0; border-top: 1px solid var(--museum-line); }
+.human-chapter-feature, .human-chapter-station { padding: 20px 0 0 24px !important; border-left: 1px solid var(--museum-line); }
+.human-chapters>article>span, .human-chapters article>div>span { color: var(--hall-human); font-size: 14px; }
+.human-chapters h3 { color: var(--museum-ink); font-size: 28px; }
+.human-chapters p { color: var(--museum-ink-soft); font-size: 17px; line-height: 1.75; }
+.human-chapters article>b { color: var(--hall-human); font-size: 15px; }
+.human-chapter-feature button, .human-chapter-station button { border-color: var(--hall-human); color: var(--hall-human); }
+.human-stage-strip { border-top-color: var(--hall-human); }
+.human-stage-strip span { color: var(--museum-ink-soft); }
+.human-stage-strip b { color: var(--hall-human); }
+.story-page .asset-media, .story-page .asset-placeholder { border-color: var(--museum-line); background: var(--museum-white); box-shadow: none; }
+.story-page .asset-media img { filter: none; }
+.story-page .asset-media figcaption { background: linear-gradient(transparent, rgba(24,36,47,.75)); color: var(--museum-white); }
+.lunar-main-route { border-bottom-color: var(--hall-lunar); }
+.lunar-main-route:before { border-top-color: var(--hall-lunar); }
+.lunar-main-route article>b { border-color: var(--hall-lunar); color: var(--hall-lunar); background: var(--museum-white); }
+.lunar-main-route article>span { background: var(--hall-lunar); }
+.lunar-main-route time { color: var(--hall-lunar); }
+.lunar-main-route h3 { color: var(--museum-ink); }
+.lunar-main-route p { color: var(--museum-ink-soft); }
+.lunar-side-branch { border-color: var(--hall-lunar); border-left: 3px solid var(--hall-lunar); background: rgba(250,249,246,.75); }
+.lunar-side-branch span { color: var(--hall-lunar); }
+.lunar-side-branch strong { color: var(--museum-ink); }
+.lunar-future-path { color: var(--hall-lunar); border-top-color: var(--museum-line); }
+.planetary-distance { min-height: 340px; border: 1px solid var(--museum-line-dark); }
+.distance-earth, .distance-mars { color: var(--museum-white); }
+.distance-earth i, .distance-mars i { box-shadow: none; }
+.distance-earth i { background: #477C8C; }
+.distance-mars i { background: var(--hall-planetary); }
+.distance-moon, .distance-flight, .distance-beyond { color: #CBD4D8; }
+.distance-flight { border-top-color: var(--hall-planetary); }
+.distance-flight b { color: #D5A07E; font-size: 30px; }
+.distance-beyond { background: transparent; }
+.planetary-anchor-grid { gap: 45px; }
+.planetary-anchor-grid article { padding: 25px 0 0; background: transparent; border-top: 1px solid var(--museum-line); border-left: 0; }
+.planetary-anchor-grid article>div>span { color: var(--hall-planetary); }
+.planetary-anchor-grid h3 { color: var(--museum-ink); font-size: 27px; }
+.planetary-anchor-grid p { color: var(--museum-ink-soft); font-size: 17px; }
+.planetary-future { border-top-color: var(--museum-line); }
+
+.grand-hall-page--access-to-space .story-media { --hall-color: var(--hall-launch) !important; }
+.grand-hall-page--space-based-china .story-media { --hall-color: var(--hall-satellite) !important; }
+.grand-hall-page--humans-in-space .story-media { --hall-color: var(--hall-human) !important; }
+.grand-hall-page--to-the-moon .story-media { --hall-color: var(--hall-lunar) !important; }
+.grand-hall-page--toward-planets .story-media { --hall-color: var(--hall-planetary) !important; }
+.story-media .official-media-card { background: var(--museum-white); color: var(--museum-ink); box-shadow: none; }
+.story-media .official-media-card--feature { border-color: var(--museum-line); }
+.story-media .official-media-card--feature .official-media-cover { background: var(--museum-deep-2); }
+.story-media .official-media-card--feature .official-media-cover::before { border-color: rgba(242,239,231,.3); }
+.story-media .official-media-card--feature .official-media-copy { background: var(--museum-white); }
+.story-media .official-media-card--feature .official-media-copy>span, .story-media .official-media-card--inline .official-media-copy>span, .story-media .official-media-card--compact .official-media-copy>span { color: var(--museum-ink-soft); }
+.story-media .official-media-copy h3 { color: var(--museum-ink); }
+.story-media .official-media-copy p { color: var(--museum-ink-soft); }
+.story-media .official-media-status b { color: var(--museum-bronze); }
+.story-media .official-media-card--inline, .story-media .official-media-card--compact { border-left-color: var(--hall-color); }
+.story-media .official-media-inline-mark { color: var(--hall-color) !important; }
+.story-media .official-media-copy a { color: var(--museum-ink); }
+.story-media .official-media-copy a b { color: var(--museum-bronze); }
+.official-media-details { margin-top: 8px; color: var(--museum-ink-soft); font-size: 12px; line-height: 1.55; }
+.official-media-details summary { color: var(--museum-bronze); cursor: pointer; }
+.official-media-details p { margin: 7px 0 0; color: var(--museum-ink-soft) !important; font-size: 12px !important; }
+.official-media-details a { color: var(--museum-bronze) !important; }
+.story-media-attribution { color: var(--museum-ink-soft) !important; }
+
+button:focus-visible, a:focus-visible { outline-color: var(--museum-bronze); }
+@media (max-width: 1000px) {
+  .satellite-evidence-grid { grid-template-columns: 1fr; gap: 0; }
+  .satellite-evidence-grid article { min-height: 0; padding: 24px 0; }
+  .launch-step { padding-left: 12px; padding-right: 12px; }
+}
+@media (max-width: 800px) {
+  .museum-hero-copy h1 { font-size: clamp(42px, 12vw, 56px); }
+  .development-lines { padding-top: 72px; padding-bottom: 72px; }
+  .development-network-wrap { overflow-x: auto; }
+  .development-network { min-width: 850px; }
+  .timeline-section--compact, .tech-section--compact { padding-top: 68px; padding-bottom: 68px; }
+  .timeline-section--compact .timeline-compact-grid { grid-template-columns: 1fr; }
+  .timeline-section--compact .timeline-compact-grid article { min-height: 0; }
+  .grand-story--launch .launch-ladder { padding: 12px 12px 0; }
+  .launch-step { border-right: 0; border-bottom: 1px solid rgba(201,195,184,.22); }
+  .launch-step:last-child { border-bottom: 0; }
+  .human-chapters>article, .human-chapter-feature, .human-chapter-station { border-left: 0; padding-left: 0 !important; }
+  .human-chapters>article { min-height: 0; padding-bottom: 28px; }
+  .story-media .official-media-card--feature { grid-template-rows: 150px auto; }
+}

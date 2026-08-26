@@ -1,0 +1,52 @@
+[
+  {
+    "id": "access-to-space",
+    "name": "进入太空",
+    "shortName": "运载能力",
+    "color": "#ffb15c",
+    "grandHallId": "access-to-space",
+    "displayOrder": 1,
+    "summary": "运载火箭、发射场与测控体系构成所有航天任务的进入能力。",
+    "relatedLineIds": ["satellite-applications", "human-spaceflight", "lunar-exploration", "planetary-exploration"]
+  },
+  {
+    "id": "satellite-applications",
+    "name": "天基中国",
+    "shortName": "卫星应用",
+    "color": "#62d6ff",
+    "grandHallId": "space-based-china",
+    "displayOrder": 2,
+    "summary": "通信、遥感、气象、导航等卫星系统服务社会运行。",
+    "relatedLineIds": ["access-to-space"]
+  },
+  {
+    "id": "human-spaceflight",
+    "name": "人在太空",
+    "shortName": "载人航天",
+    "color": "#75e6c3",
+    "grandHallId": "humans-in-space",
+    "displayOrder": 3,
+    "summary": "从载人飞船验证走向空间站长期运营。",
+    "relatedLineIds": ["access-to-space"]
+  },
+  {
+    "id": "lunar-exploration",
+    "name": "奔向月球",
+    "shortName": "探月工程",
+    "color": "#b48cff",
+    "grandHallId": "to-the-moon",
+    "displayOrder": 4,
+    "summary": "以绕、落、回为阶梯，迈向月背采样和月球科研。",
+    "relatedLineIds": ["access-to-space", "planetary-exploration"]
+  },
+  {
+    "id": "planetary-exploration",
+    "name": "走向行星",
+    "shortName": "行星探测",
+    "color": "#ff718d",
+    "grandHallId": "toward-planets",
+    "displayOrder": 5,
+    "summary": "从天问一号出发，走向小行星、火星采样和更远太阳系。",
+    "relatedLineIds": ["access-to-space", "lunar-exploration"]
+  }
+]
