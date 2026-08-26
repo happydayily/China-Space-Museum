@@ -69,7 +69,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Chang%27e_1_Sch%C3%A9ma_L%C3%A9gend%C3%A9.png",
     "source_name": "维基共享资源（知识共享署名—相同方式共享 4.0）",
     "download_time": "2026-08-25T10:22:00.053129+00:00",
-    "category": "chang-e"
+    "category": "chang-e",
+    "usage_note": "中文重绘示意，非官方原图；依据该条原始资料的公开技术信息制作，仅用于中文展陈解读。"
   },
   {
     "id": "collected-chang-e-b13ef29ef990",
@@ -96,7 +97,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Trajectoire_orbitale_autour_de_Mars_de_Tianwen-1.png",
     "source_name": "维基共享资源（知识共享署名—相同方式共享 4.0）",
     "download_time": "2026-08-25T10:22:15.764042+00:00",
-    "category": "tianwen"
+    "category": "tianwen",
+    "usage_note": "中文重绘示意，非官方原图；依据该条原始资料的公开技术信息制作，仅用于中文展陈解读。"
   },
   {
     "id": "collected-tianwen-71c9cb41fccb",
@@ -105,7 +107,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Tianwen-1_orbite_de_transfert_et_manoeuvres.png",
     "source_name": "维基共享资源（知识共享署名—相同方式共享 4.0）",
     "download_time": "2026-08-25T10:22:19.607552+00:00",
-    "category": "tianwen"
+    "category": "tianwen",
+    "usage_note": "中文重绘示意，非官方原图；依据该条原始资料的公开技术信息制作，仅用于中文展陈解读。"
   },
   {
     "id": "curated-chang-e-22553f7c24a8",
@@ -142,5 +145,23 @@
     "source_name": "新华社/新华网（中国载人航天工程办公室供图）",
     "download_time": "2026-08-25T12:08:25.6423575Z",
     "category": "tiangong"
+  },
+  {
+    "id": "curated-dongfanghong-1-news-1970",
+    "filename": "dongfanghong-1-news.jpg",
+    "title": "《人民日报》报道东方红一号发射成功",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dongfanghong-1_news.jpg",
+    "source_name": "维基共享资源（《人民日报》1970 年报道，公有领域）",
+    "category": "origin-one",
+    "usage_note": "历史档案，用于说明东方红一号发射成功的社会记录。"
+  },
+  {
+    "id": "curated-shenzhou5-yang-liwei-2003",
+    "filename": "shenzhou5-yang-liwei-in-space.png",
+    "title": "杨利伟在神舟五号飞船内展示国旗和联合国旗",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Shenzhou_5_in_space_Yang_Liwei.png",
+    "source_name": "维基共享资源（中国新闻社，知识共享署名 4.0）",
+    "category": "shenzhou5",
+    "usage_note": "真实任务影像，用于说明中国首次载人航天飞行。"
   }
 ]

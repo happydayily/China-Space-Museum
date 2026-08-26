@@ -19,7 +19,8 @@
     "relatedMission": "dongfanghong-1-1970",
     "historicalImportance": "中国第一颗人造地球卫星",
     "technicalAchievement": "突破卫星总体设计、运载火箭和天地测控技术",
-    "displayRole": "main"
+    "displayRole": "main",
+    "exhibitType": "馆藏展品"
   },
   {
     "id": "asset-recoverable-satellite",
@@ -52,18 +53,20 @@
     "relatedMission": "shenzhou-5",
     "historicalImportance": "中国首次载人航天飞行",
     "technicalAchievement": "突破载人飞船、生命保障、测控通信和安全返回技术",
-    "displayRole": "main"
+    "displayRole": "main",
+    "exhibitType": "馆藏展品"
   },
   {
     "id": "collected-chang-e-8307a82b2343",
     "name": "嫦娥一号探测器结构示意图",
     "category": "chang-e",
-    "localPath": "images/chang-e/chang-e-01-8307a82b23.png",
-    "description": "嫦娥一号探测器主要设备与天线布局示意图，属于技术结构资料。",
+    "localPath": "images/chang-e/chang-e-1-structure-zh.svg",
+    "description": "嫦娥一号探测器构型的中文重绘示意，用于了解主要部件布局。",
     "relatedMission": "change-1-2007",
     "historicalImportance": "中国自主探月工程的首次飞行任务",
     "technicalAchievement": "突破地月转移、月球捕获和绕月遥感探测技术",
-    "displayRole": "technical"
+    "displayRole": "technical",
+    "exhibitType": "技术图解"
   },
   {
     "id": "collected-chang-e-350bd2395f82",
@@ -74,7 +77,8 @@
     "relatedMission": "change-4",
     "historicalImportance": "首次实现月球背面软着陆与巡视探测",
     "technicalAchievement": "突破月背着陆、巡视和中继通信技术",
-    "displayRole": "secondary"
+    "displayRole": "secondary",
+    "exhibitType": "真实任务影像"
   },
   {
     "id": "asset-change-5",
@@ -96,18 +100,20 @@
     "relatedMission": "change-6",
     "historicalImportance": "人类首次月球背面采样返回",
     "technicalAchievement": "突破月背智能采样、月面起飞和高速再入返回技术",
-    "displayRole": "main"
+    "displayRole": "main",
+    "exhibitType": "真实任务影像"
   },
   {
     "id": "collected-tianwen-a88ee557caff",
     "name": "天问一号火星环绕轨道示意图",
     "category": "tianwen",
-    "localPath": "images/tianwen/tianwen-01-a88ee557ca.png",
-    "description": "天问一号进入火星轨道后的捕获、变轨、环绕与着陆阶段示意图。",
+    "localPath": "images/tianwen/tianwen-mars-orbit-zh.svg",
+    "description": "天问一号火星环绕阶段的中文重绘示意，梳理捕获、环绕与着陆分离流程。",
     "relatedMission": "tianwen-1",
     "historicalImportance": "中国首次自主火星探测任务",
     "technicalAchievement": "一次突破火星环绕、着陆、巡视与深空通信技术",
-    "displayRole": "technical"
+    "displayRole": "technical",
+    "exhibitType": "技术图解"
   },
   {
     "id": "collected-tiangong-c3130bc830f9",
@@ -118,7 +124,8 @@
     "relatedMission": "tiangong-space-station",
     "historicalImportance": "中国长期有人照料的国家级空间实验室",
     "technicalAchievement": "掌握大型空间组合体建造、交会对接和长期运营技术",
-    "displayRole": "secondary"
+    "displayRole": "secondary",
+    "exhibitType": "馆藏展品"
   },
   {
     "id": "asset-beidou-3",
@@ -217,7 +224,8 @@
     "relatedMission": "shenzhou-5",
     "historicalImportance": "中国首次载人航天飞行",
     "technicalAchievement": "突破载人飞船、生命保障、测控通信和安全返回技术",
-    "displayRole": "secondary"
+    "displayRole": "secondary",
+    "exhibitType": "馆藏展品"
   },
   {
     "id": "collected-shenzhou5-4a5bb68eda6f",
@@ -228,7 +236,8 @@
     "relatedMission": "shenzhou-5",
     "historicalImportance": "中国首次载人航天飞行",
     "technicalAchievement": "突破载人飞船、生命保障、测控通信和安全返回技术",
-    "displayRole": "secondary"
+    "displayRole": "secondary",
+    "exhibitType": "馆藏展品"
   },
   {
     "id": "collected-tiangong-754c526f7813",
@@ -239,7 +248,8 @@
     "relatedMission": "tiangong-space-station",
     "historicalImportance": "中国长期有人照料的国家级空间实验室",
     "technicalAchievement": "掌握大型空间组合体建造、交会对接和长期运营技术",
-    "displayRole": "secondary"
+    "displayRole": "secondary",
+    "exhibitType": "真实任务影像"
   },
   {
     "id": "collected-origin-one-97f7dcfd8831",
@@ -250,7 +260,8 @@
     "relatedMission": "dongfanghong-1-1970",
     "historicalImportance": "中国第一颗人造地球卫星",
     "technicalAchievement": "突破卫星总体设计、运载火箭和天地测控技术",
-    "displayRole": "technical"
+    "displayRole": "technical",
+    "exhibitType": "技术图解"
   },
   {
     "id": "collected-chang-e-b13ef29ef990",
@@ -261,18 +272,20 @@
     "relatedMission": "change-1-2007",
     "historicalImportance": "中国自主探月工程的首次飞行任务",
     "technicalAchievement": "突破地月转移、月球捕获和绕月遥感探测技术",
-    "displayRole": "technical"
+    "displayRole": "technical",
+    "exhibitType": "任务成果"
   },
   {
     "id": "collected-tianwen-71c9cb41fccb",
     "name": "天问一号地火转移轨道示意图",
     "category": "tianwen",
-    "localPath": "images/tianwen/tianwen-02-71c9cb41fc.png",
-    "description": "天问一号从地球出发至火星捕获期间的转移轨道与中途修正示意图。",
+    "localPath": "images/tianwen/tianwen-earth-mars-transfer-zh.svg",
+    "description": "天问一号地火转移的中文重绘示意，展示出发、中途修正与火星捕获。",
     "relatedMission": "tianwen-1",
     "historicalImportance": "中国首次自主火星探测任务",
     "technicalAchievement": "一次突破火星环绕、着陆、巡视与深空通信技术",
-    "displayRole": "technical"
+    "displayRole": "technical",
+    "exhibitType": "技术图解"
   },
   {
     "id": "curated-tianwen-206aa3f3bc23",
@@ -283,7 +296,8 @@
     "relatedMission": "tianwen-1",
     "historicalImportance": "中国首次自主火星探测任务",
     "technicalAchievement": "一次突破火星环绕、着陆、巡视与深空通信技术",
-    "displayRole": "main"
+    "displayRole": "main",
+    "exhibitType": "真实任务影像"
   },
   {
     "id": "curated-tianwen-16526f52a3ea",
@@ -294,7 +308,8 @@
     "relatedMission": "tianwen-1",
     "historicalImportance": "中国首次自主火星探测任务",
     "technicalAchievement": "一次突破火星环绕、着陆、巡视与深空通信技术",
-    "displayRole": "secondary"
+    "displayRole": "secondary",
+    "exhibitType": "真实任务影像"
   },
   {
     "id": "curated-tiangong-0e4562ea9470",
@@ -305,6 +320,31 @@
     "relatedMission": "tiangong-space-station",
     "historicalImportance": "中国长期有人照料的国家级空间实验室",
     "technicalAchievement": "掌握大型空间组合体建造、交会对接和长期运营技术",
+    "displayRole": "main",
+    "exhibitType": "真实任务影像"
+  },
+  {
+    "id": "curated-dongfanghong-1-news-1970",
+    "name": "《人民日报》报道东方红一号发射成功",
+    "category": "origin-one",
+    "localPath": "images/origin-one/dongfanghong-1-news.jpg",
+    "exhibitType": "历史档案",
+    "description": "1970年4月26日《人民日报》刊载的东方红一号发射成功报道。",
+    "relatedMission": "dongfanghong-1-1970",
+    "historicalImportance": "记录中国第一颗人造地球卫星发射成功后的历史时刻",
+    "technicalAchievement": "东方红一号由长征一号成功送入预定轨道",
+    "displayRole": "main"
+  },
+  {
+    "id": "curated-shenzhou5-yang-liwei-2003",
+    "name": "杨利伟在神舟五号飞船内展示国旗和联合国旗",
+    "category": "shenzhou5",
+    "localPath": "images/shenzhou5/shenzhou5-yang-liwei-in-space.png",
+    "exhibitType": "真实任务影像",
+    "description": "杨利伟在神舟五号飞行期间于舱内展示国旗和联合国旗。",
+    "relatedMission": "shenzhou-5",
+    "historicalImportance": "2003年，中国首次实现载人航天飞行",
+    "technicalAchievement": "完成载人飞船在轨运行、天地测控与安全返回验证",
     "displayRole": "main"
   }
 ]

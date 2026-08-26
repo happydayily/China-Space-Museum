@@ -18,7 +18,7 @@ export default function AssetGallery({ assets = [], title }) {
         <AssetMedia asset={activeAsset} label={activeAsset?.name ?? title} />
         <div className="asset-gallery-caption">
           <div>
-            <span>影像资料</span>
+            <span>{activeAsset?.exhibitType || '历史档案'}</span>
             <strong>{activeAsset?.name ?? title}</strong>
           </div>
           <p>{activeAsset?.description ?? '该任务暂无公开影像。'}</p>

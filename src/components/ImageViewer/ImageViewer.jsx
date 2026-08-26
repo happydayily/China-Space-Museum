@@ -18,7 +18,7 @@ export default function ImageViewer({ asset, label, variant = 'main' }) {
   const [failed, setFailed] = useState(false)
   const modalRef = useRef(null)
   const title = asset?.name || label || '数字航天展品'
-  const roleLabels = { main: '任务代表视觉', secondary: '辅助展品', technical: '技术解释', archive: '历史档案' }
+  const exhibitType = asset?.exhibitType || '历史档案'
 
   useEffect(() => setFailed(false), [imageUrl])
 
@@ -48,11 +48,12 @@ export default function ImageViewer({ asset, label, variant = 'main' }) {
           <span className="image-viewer-scan" />
           <span className="image-viewer-zoom">放大查看 <b>↗</b></span>
         </button>
-        {variant !== 'card' && (
+        {(
           <figcaption>
-            <span>{roleLabels[asset?.displayRole] || '历史档案'}</span>
+            <span>{exhibitType}</span>
             <strong>{title}</strong>
-            <small>{source?.source_name || '馆藏档案'}</small>
+            <p>{asset?.description || '暂无公开说明。'}</p>
+            <small>来源：{source?.source_name || '馆藏档案'}</small>
           </figcaption>
         )}
       </figure>
@@ -71,7 +72,7 @@ export default function ImageViewer({ asset, label, variant = 'main' }) {
           </div>
           <aside className="lightbox-meta">
             <div>
-              <span>展品名称</span>
+              <span>{exhibitType}</span>
               <h2>{title}</h2>
               <p>{asset?.description || '暂无公开说明。'}</p>
             </div>

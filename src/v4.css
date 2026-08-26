@@ -553,3 +553,8 @@ body { font-size: 20px; }
   .rocket-narrative { grid-template-columns: 1fr; }
   .technical-archive { padding: 34px 0; border-left: 0; border-top: 1px solid var(--museum-line); }
 }
+
+/* V4.3 航天影像与中文展陈身份 */
+.image-viewer figcaption p { grid-column: 1 / -1; margin: 2px 0 0; color: #a9bdd4; font-size: 18px; line-height: 1.65; }
+.image-viewer figcaption small { grid-column: 1 / -1; }
+.image-viewer figcaption span { text-transform: none; }

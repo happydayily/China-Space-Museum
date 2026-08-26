@@ -9,14 +9,46 @@
     "introduction": "从白手起家的航天事业，到《东方红》乐曲响彻太空，中国由此拥有了通向宇宙的第一张名片。",
     "missionId": "dongfanghong-1-1970",
     "color": "#ffb15c",
-    "mainAssetId": "collected-origin-one-16c335bfed1c",
-    "secondaryAssetIds": [],
-    "technicalAssetIds": ["collected-origin-one-97f7dcfd8831"],
+    "mainAssetId": "curated-dongfanghong-1-news-1970",
+    "secondaryAssetIds": [
+      "collected-origin-one-16c335bfed1c"
+    ],
+    "technicalAssetIds": [
+      "collected-origin-one-97f7dcfd8831"
+    ],
     "trajectory": [
-      {"label": "地球", "position": [-3, -1, 0]},
-      {"label": "发射", "position": [-1.6, 0.6, 0.2]},
-      {"label": "椭圆轨道", "position": [1, 1.25, 0]},
-      {"label": "太空播音", "position": [3, 0.25, -0.2]}
+      {
+        "label": "地球",
+        "position": [
+          -3,
+          -1,
+          0
+        ]
+      },
+      {
+        "label": "发射",
+        "position": [
+          -1.6,
+          0.6,
+          0.2
+        ]
+      },
+      {
+        "label": "椭圆轨道",
+        "position": [
+          1,
+          1.25,
+          0
+        ]
+      },
+      {
+        "label": "太空播音",
+        "position": [
+          3,
+          0.25,
+          -0.2
+        ]
+      }
     ]
   },
   {
@@ -29,14 +61,46 @@
     "introduction": "杨利伟乘神舟五号完成中国首次载人航天飞行，中国成为世界上第三个独立掌握载人航天技术的国家。",
     "missionId": "shenzhou-5",
     "color": "#58c4ff",
-    "mainAssetId": "collected-shenzhou5-d8cabce68584",
-    "secondaryAssetIds": ["collected-shenzhou5-2a4d3ed6197b", "collected-shenzhou5-4a5bb68eda6f"],
+    "mainAssetId": "curated-shenzhou5-yang-liwei-2003",
+    "secondaryAssetIds": [
+      "collected-shenzhou5-d8cabce68584",
+      "collected-shenzhou5-2a4d3ed6197b",
+      "collected-shenzhou5-4a5bb68eda6f"
+    ],
     "technicalAssetIds": [],
     "trajectory": [
-      {"label": "地球", "position": [-3, -1, 0]},
-      {"label": "发射", "position": [-1.7, 0.4, 0]},
-      {"label": "近地轨道", "position": [0.2, 1.45, 0.35]},
-      {"label": "返回着陆", "position": [3, -1, -0.15]}
+      {
+        "label": "地球",
+        "position": [
+          -3,
+          -1,
+          0
+        ]
+      },
+      {
+        "label": "发射",
+        "position": [
+          -1.7,
+          0.4,
+          0
+        ]
+      },
+      {
+        "label": "近地轨道",
+        "position": [
+          0.2,
+          1.45,
+          0.35
+        ]
+      },
+      {
+        "label": "返回着陆",
+        "position": [
+          3,
+          -1,
+          -0.15
+        ]
+      }
     ]
   },
   {
@@ -50,14 +114,54 @@
     "missionId": "change-6",
     "color": "#b48cff",
     "mainAssetId": "asset-change-6",
-    "secondaryAssetIds": ["collected-chang-e-350bd2395f82"],
-    "technicalAssetIds": ["collected-chang-e-8307a82b2343", "collected-chang-e-b13ef29ef990"],
+    "secondaryAssetIds": [
+      "collected-chang-e-350bd2395f82"
+    ],
+    "technicalAssetIds": [
+      "collected-chang-e-8307a82b2343",
+      "collected-chang-e-b13ef29ef990"
+    ],
     "trajectory": [
-      {"label": "地球", "position": [-3, -1, 0]},
-      {"label": "地月转移", "position": [-1.2, 0.9, 0.35]},
-      {"label": "绕月轨道", "position": [0.8, 1.2, -0.15]},
-      {"label": "月面着陆", "position": [2, 0.1, 0.35]},
-      {"label": "采样返回", "position": [3, -1, 0]}
+      {
+        "label": "地球",
+        "position": [
+          -3,
+          -1,
+          0
+        ]
+      },
+      {
+        "label": "地月转移",
+        "position": [
+          -1.2,
+          0.9,
+          0.35
+        ]
+      },
+      {
+        "label": "绕月轨道",
+        "position": [
+          0.8,
+          1.2,
+          -0.15
+        ]
+      },
+      {
+        "label": "月面着陆",
+        "position": [
+          2,
+          0.1,
+          0.35
+        ]
+      },
+      {
+        "label": "采样返回",
+        "position": [
+          3,
+          -1,
+          0
+        ]
+      }
     ]
   },
   {
@@ -71,13 +175,46 @@
     "missionId": "tianwen-1",
     "color": "#ff718d",
     "mainAssetId": "curated-tianwen-206aa3f3bc23",
-    "secondaryAssetIds": ["curated-tianwen-16526f52a3ea"],
-    "technicalAssetIds": ["collected-tianwen-a88ee557caff", "collected-tianwen-71c9cb41fccb"],
+    "secondaryAssetIds": [
+      "curated-tianwen-16526f52a3ea"
+    ],
+    "technicalAssetIds": [
+      "collected-tianwen-a88ee557caff",
+      "collected-tianwen-71c9cb41fccb"
+    ],
     "trajectory": [
-      {"label": "地球", "position": [-3, -1, 0]},
-      {"label": "地火转移", "position": [-0.8, 1.35, 0.45]},
-      {"label": "火星环绕", "position": [1.8, 0.5, -0.2]},
-      {"label": "火面巡视", "position": [3, -1, 0.25]}
+      {
+        "label": "地球",
+        "position": [
+          -3,
+          -1,
+          0
+        ]
+      },
+      {
+        "label": "地火转移",
+        "position": [
+          -0.8,
+          1.35,
+          0.45
+        ]
+      },
+      {
+        "label": "火星环绕",
+        "position": [
+          1.8,
+          0.5,
+          -0.2
+        ]
+      },
+      {
+        "label": "火面巡视",
+        "position": [
+          3,
+          -1,
+          0.25
+        ]
+      }
     ]
   },
   {
@@ -91,13 +228,44 @@
     "missionId": "tiangong-space-station",
     "color": "#75e6c3",
     "mainAssetId": "curated-tiangong-0e4562ea9470",
-    "secondaryAssetIds": ["collected-tiangong-c3130bc830f9", "collected-tiangong-754c526f7813"],
+    "secondaryAssetIds": [
+      "collected-tiangong-c3130bc830f9",
+      "collected-tiangong-754c526f7813"
+    ],
     "technicalAssetIds": [],
     "trajectory": [
-      {"label": "地球", "position": [-3, -1, 0]},
-      {"label": "核心舱入轨", "position": [-1.2, 0.8, 0.2]},
-      {"label": "交会对接", "position": [1, 1.3, -0.2]},
-      {"label": "空间站组合体", "position": [3, 0.25, 0.2]}
+      {
+        "label": "地球",
+        "position": [
+          -3,
+          -1,
+          0
+        ]
+      },
+      {
+        "label": "核心舱入轨",
+        "position": [
+          -1.2,
+          0.8,
+          0.2
+        ]
+      },
+      {
+        "label": "交会对接",
+        "position": [
+          1,
+          1.3,
+          -0.2
+        ]
+      },
+      {
+        "label": "空间站组合体",
+        "position": [
+          3,
+          0.25,
+          0.2
+        ]
+      }
     ]
   }
 ]
