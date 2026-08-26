@@ -1,0 +1,280 @@
+.mission-process,
+.official-media {
+  position: relative;
+  padding: 96px 6vw;
+  border-top: 1px solid var(--museum-line);
+  background: #040914;
+}
+
+.process-header,
+.official-media-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 60px;
+  max-width: 1420px;
+  margin: 0 auto 48px;
+}
+
+.process-header h2,
+.official-media-heading h2 {
+  margin: 15px 0 0;
+  font-size: clamp(42px, 5vw, 72px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -.055em;
+}
+
+.process-header > p,
+.official-media-heading > p {
+  max-width: 500px;
+  margin: 0;
+  color: #8fa5c1;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.process-stages {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.process-stages li { min-width: 0; }
+.process-stages button {
+  width: 100%;
+  height: 100%;
+  min-height: 150px;
+  padding: 20px;
+  border: 1px solid var(--museum-line);
+  color: #dbe9f8;
+  background: rgba(11, 28, 50, .62);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color .3s, background .3s, transform .3s;
+}
+
+.process-stages button:hover,
+.process-stages li.active button {
+  border-color: var(--hall-color);
+  background: color-mix(in srgb, var(--hall-color) 10%, #0b1c32);
+  transform: translateY(-2px);
+}
+
+.process-stages button > span {
+  display: block;
+  color: var(--hall-color);
+  font: 16px 'DM Mono';
+}
+
+.process-stages button strong { display: block; margin-top: 12px; font-size: 20px; font-weight: 500; }
+.process-stages button p { margin: 9px 0 0; color: #8298b5; font-size: 16px; line-height: 1.55; }
+.process-stages--compact { grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: start; }
+.process-stages--compact button { min-height: 104px; padding: 15px 17px; }
+.process-stages--compact button p { display: none; }
+.process-stages--compact button strong { font-size: 17px; line-height: 1.4; }
+
+.historical-process-layout,
+.crewed-process-layout,
+.station-process-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(420px, .92fr);
+  gap: 28px;
+  max-width: 1420px;
+  margin: 0 auto;
+}
+
+.historical-archive-card {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+  border: 1px solid var(--museum-line);
+  background: #0a1728;
+}
+
+.historical-archive-card img { width: 100%; height: 100%; min-height: 520px; object-fit: cover; filter: sepia(.2) contrast(1.06) brightness(.7); }
+.historical-archive-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(transparent 28%, rgba(3, 9, 19, .96)); }
+.historical-archive-card > div { position: absolute; z-index: 1; left: 32px; right: 32px; bottom: 30px; }
+.historical-archive-card span { color: var(--hall-color); font-size: 16px; letter-spacing: .12em; }
+.historical-archive-card strong { display: block; margin-top: 12px; font-size: 30px; font-weight: 500; }
+.historical-archive-card p { margin: 15px 0 0; color: #b4c6db; font-size: 18px; }
+
+.process-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1420px;
+  margin: -18px auto 28px;
+  border: 1px solid var(--museum-line);
+}
+
+.process-stats > div { padding: 20px 24px; border-right: 1px solid var(--museum-line); }
+.process-stats > div:last-child { border-right: 0; }
+.process-stats span { display: block; color: #7890ad; font-size: 15px; }
+.process-stats strong { display: block; margin-top: 7px; color: var(--hall-color); font: 26px 'DM Mono'; }
+
+.crew-orbit-visual {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+  border: 1px solid var(--museum-line);
+  background: radial-gradient(circle at 48% 48%, #173962 0, #071426 32%, #040914 70%);
+}
+
+.orbit-earth {
+  position: absolute;
+  left: 50%; top: 49%;
+  width: 168px; height: 168px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  color: #dff3ff;
+  background: radial-gradient(circle at 35% 30%, #77d0ef, #25679d 52%, #102a50 72%);
+  box-shadow: 0 0 55px rgba(72, 169, 224, .32);
+}
+
+.orbit-earth span { font-size: 18px; }
+.near-earth-orbit { position: absolute; left: 50%; top: 49%; width: 520px; height: 270px; border: 2px solid rgba(88, 196, 255, .62); border-radius: 50%; transform: translate(-50%, -50%) rotate(-10deg); box-shadow: 0 0 25px rgba(88, 196, 255, .15); }
+.near-earth-orbit::before { content: ''; position: absolute; inset: 28px; border: 1px dashed rgba(88, 196, 255, .22); border-radius: 50%; }
+.crew-spacecraft { position: absolute; left: 50%; top: 50%; width: 18px; height: 18px; margin: -9px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 7px rgba(88, 196, 255, .18), 0 0 25px #58c4ff; animation: crew-orbit-spin 5.5s linear infinite; }
+@keyframes crew-orbit-spin { from { transform: rotate(0deg) translateX(260px) rotate(0deg); } to { transform: rotate(360deg) translateX(260px) rotate(-360deg); } }
+.orbit-count { position: absolute; top: 24px; right: 26px; text-align: right; }
+.orbit-count strong { display: block; color: var(--hall-color); font: 48px 'DM Mono'; }
+.orbit-count span { color: #9db1c9; font-size: 16px; }
+.active-stage-readout,
+.lunar-active-stage,
+.mars-stage-readout,
+.station-active-stage { position: absolute; z-index: 2; left: 26px; right: 26px; bottom: 22px; padding: 18px 20px; border: 1px solid var(--museum-line); background: rgba(3, 10, 22, .84); backdrop-filter: blur(14px); }
+.active-stage-readout span,
+.lunar-active-stage span,
+.mars-stage-readout span,
+.station-active-stage span { color: var(--hall-color); font: 15px 'DM Mono'; }
+.active-stage-readout strong,
+.lunar-active-stage strong,
+.mars-stage-readout strong,
+.station-active-stage strong { display: block; margin-top: 7px; font-size: 22px; font-weight: 500; }
+.active-stage-readout p,
+.lunar-active-stage p,
+.mars-stage-readout p,
+.station-active-stage p { margin: 7px 0 0; color: #99aec7; font-size: 16px; line-height: 1.55; }
+
+.lunar-mission-tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; max-width: 1420px; margin: 0 auto 18px; }
+.lunar-mission-tabs button { padding: 17px; border: 1px solid var(--museum-line); color: #a9bdd5; background: rgba(9, 23, 42, .72); text-align: left; cursor: pointer; }
+.lunar-mission-tabs button.active { border-color: var(--hall-color); color: #fff; background: color-mix(in srgb, var(--hall-color) 11%, #09172a); }
+.lunar-mission-tabs strong, .lunar-mission-tabs span { display: block; }
+.lunar-mission-tabs strong { font-size: 20px; font-weight: 500; }
+.lunar-mission-tabs span { margin-top: 6px; color: #7f95b1; font-size: 15px; }
+.lunar-process-visual { position: relative; max-width: 1420px; height: 510px; margin: 0 auto 18px; overflow: hidden; border: 1px solid var(--museum-line); background: radial-gradient(circle at 78% 38%, rgba(180, 140, 255, .16), transparent 24%), radial-gradient(circle at 18% 58%, rgba(74, 163, 222, .2), transparent 24%), #050c18; }
+.lunar-process-visual svg { position: absolute; inset: 40px 4% 90px; width: 92%; height: calc(100% - 130px); }
+.lunar-route-base, .lunar-route-progress { fill: none; stroke-width: 3; }
+.lunar-route-base { stroke: #284362; stroke-dasharray: 9 12; }
+.lunar-route-progress { stroke: var(--hall-color); stroke-linecap: round; transition: stroke-dasharray .5s; }
+.lunar-earth, .lunar-moon { position: absolute; display: grid; place-items: center; border-radius: 50%; }
+.lunar-earth { left: 11%; top: 44%; width: 115px; height: 115px; color: white; background: radial-gradient(circle at 35% 30%, #8cdcf4, #285f9a 58%, #102b50); box-shadow: 0 0 38px rgba(90, 185, 235, .3); }
+.lunar-moon { right: 12%; top: 33%; width: 92px; height: 92px; color: #273044; background: radial-gradient(circle at 35% 30%, #f0f1e9, #9ea4a8 68%, #5a6068); box-shadow: 0 0 32px rgba(220, 225, 235, .2); }
+.lunar-earth span, .lunar-moon span { font-size: 16px; }
+.lunar-vehicle { position: absolute; left: calc(18% + var(--process-progress) * 62%); top: 39%; transition: left .6s; }
+.lunar-vehicle i { display: block; width: 18px; height: 18px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 7px color-mix(in srgb, var(--hall-color) 22%, transparent), 0 0 24px var(--hall-color); }
+.lunar-active-stage { max-width: 570px; }
+.lunar-stats { position: absolute; right: 26px; bottom: 24px; display: flex; gap: 25px; }
+.lunar-stats span { color: #7f95b1; font-size: 15px; }
+.lunar-stats strong { display: block; margin-top: 4px; color: var(--hall-color); font: 21px 'DM Mono'; }
+.mission-process--lunar > .process-stages { max-width: 1420px; margin: 0 auto; grid-template-columns: repeat(4, 1fr); }
+
+.mars-visual { position: relative; max-width: 1420px; height: 440px; margin: 0 auto 18px; overflow: hidden; border: 1px solid var(--museum-line); background: radial-gradient(circle at 12% 20%, rgba(255, 213, 115, .13), transparent 16%), radial-gradient(circle at 82% 44%, rgba(223, 91, 72, .18), transparent 22%), #050c18; }
+.mars-sun, .mars-earth, .mars-planet { position: absolute; display: grid; place-items: center; border-radius: 50%; transition: opacity .4s, transform .4s; }
+.mars-sun { left: 7%; top: 14%; width: 78px; height: 78px; color: #50380f; background: #ffd36b; box-shadow: 0 0 55px rgba(255, 210, 100, .45); }
+.mars-earth { left: 25%; top: 58%; width: 58px; height: 58px; color: #fff; background: #2d80ba; }
+.mars-planet { right: 16%; top: 24%; width: 108px; height: 108px; color: #ffe4d8; background: radial-gradient(circle at 30% 30%, #e99368, #9a4033 68%, #54231e); box-shadow: 0 0 38px rgba(235, 109, 78, .22); }
+.mars-sun span, .mars-earth span, .mars-planet span { font-size: 15px; }
+.mars-transfer-line { position: absolute; left: 29%; top: 35%; width: 48%; height: 33%; border-top: 2px dashed #d97968; border-radius: 50%; transform: rotate(-14deg); }
+.mars-transfer-line i { position: absolute; right: 46%; top: -8px; width: 16px; height: 16px; border-radius: 50%; background: #fff; box-shadow: 0 0 20px #ff718d; }
+.mars-lander { position: absolute; right: 18%; top: 52%; width: 85px; height: 100px; opacity: .18; transition: opacity .4s, transform .4s; }
+.mars-lander i { display: block; width: 52px; height: 34px; border: 3px solid #e8f2ff; border-radius: 50% 50% 20% 20%; transform: rotate(14deg); }
+.mars-rover { position: absolute; right: 29%; bottom: 50px; color: #ffd5ca; opacity: .15; transition: opacity .4s, transform .4s; }
+.mars-rover i { display: block; width: 70px; height: 32px; border: 3px solid #eef7ff; border-radius: 6px; box-shadow: -15px 20px 0 -9px #eef7ff, 15px 20px 0 -9px #eef7ff; }
+.mars-rover span { display: block; margin-top: 16px; font-size: 15px; }
+.mars-visual--landing .mars-lander { opacity: 1; transform: translateY(34px); }
+.mars-visual--roving .mars-rover { opacity: 1; transform: translateX(38px); }
+.mars-visual--landing .mars-transfer-line, .mars-visual--roving .mars-transfer-line { opacity: .25; }
+.mars-stage-readout { max-width: 570px; }
+.mars-chapters { display: grid; grid-template-columns: 1.2fr .9fr .9fr; gap: 12px; max-width: 1420px; margin: 0 auto; }
+.mars-chapters article { padding: 22px; border: 1px solid var(--museum-line); background: rgba(9, 23, 42, .68); opacity: .62; transition: opacity .3s, border-color .3s; }
+.mars-chapters article.active { opacity: 1; border-color: var(--hall-color); }
+.mars-chapters header > span { color: var(--hall-color); font-size: 25px; }
+.mars-chapters header p { margin: 8px 0 18px; color: #8399b5; font-size: 15px; line-height: 1.55; }
+.mars-chapters ol { margin: 0; padding: 0; list-style: none; }
+.mars-chapters li button { display: grid; grid-template-columns: 34px 1fr; gap: 8px; width: 100%; padding: 10px 0; border: 0; border-top: 1px solid var(--museum-line); color: #a9bdd3; background: transparent; text-align: left; cursor: pointer; }
+.mars-chapters li.active button { color: #fff; }
+.mars-chapters li button span { color: var(--hall-color); font: 14px 'DM Mono'; }
+.mars-chapters li button strong { font-size: 16px; font-weight: 400; }
+
+.station-assembly { position: relative; min-height: 555px; overflow: hidden; border: 1px solid var(--museum-line); background: radial-gradient(circle at 50% 38%, rgba(117, 230, 195, .13), transparent 35%), #050c18; }
+.station-orbit-line { position: absolute; left: -10%; right: -10%; top: 30%; height: 210px; border: 1px dashed rgba(117, 230, 195, .2); border-radius: 50%; transform: rotate(-8deg); }
+.station-module { position: absolute; left: 50%; top: 42%; display: flex; align-items: center; justify-content: center; transition: transform .8s cubic-bezier(.2,.8,.2,1), opacity .45s; }
+.station-module i { display: block; width: 160px; height: 54px; border: 3px solid #d7edf0; border-radius: 26px 8px 8px 26px; background: linear-gradient(90deg, #dce9eb, #6f8992); box-shadow: 0 0 25px rgba(117, 230, 195, .2); }
+.station-module i::before, .station-module i::after { content: ''; position: absolute; top: 17px; width: 110px; height: 20px; border: 1px solid #78c3dc; background: repeating-linear-gradient(90deg, #29607a 0 14px, #65a5bd 15px 17px); }
+.station-module i::before { right: 100%; }
+.station-module i::after { left: 100%; }
+.station-module strong { position: absolute; color: #07101d; font-size: 15px; font-weight: 700; }
+.station-module--tianhe { transform: translate(-50%, -50%) rotate(90deg); z-index: 2; }
+.station-module--wentian, .station-module--mengtian { opacity: .12; }
+.station-assembly:not(.station-assembly--tianhe) .station-module--wentian { opacity: 1; }
+.station-assembly--wentian-front .station-module--wentian { transform: translate(-50%, 105%) rotate(90deg); }
+.station-assembly--wentian-shifting .station-module--wentian { transform: translate(-120%, -10%) rotate(42deg); }
+.station-assembly--l-shape .station-module--wentian,
+.station-assembly--mengtian-front .station-module--wentian,
+.station-assembly--mengtian-shifting .station-module--wentian,
+.station-assembly--t-shape .station-module--wentian,
+.station-assembly--operation .station-module--wentian { transform: translate(-152%, -50%); }
+.station-assembly--mengtian-front .station-module--mengtian { opacity: 1; transform: translate(-50%, 105%) rotate(90deg); }
+.station-assembly--mengtian-shifting .station-module--mengtian { opacity: 1; transform: translate(20%, -10%) rotate(-42deg); }
+.station-assembly--t-shape .station-module--mengtian,
+.station-assembly--operation .station-module--mengtian { opacity: 1; transform: translate(52%, -50%); }
+.station-assembly--operation .station-module { filter: drop-shadow(0 0 12px rgba(117,230,195,.35)); }
+.station-active-stage { max-width: 570px; }
+
+.official-media { background: linear-gradient(180deg, #071326, #040914); }
+.official-media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 1420px; margin: 0 auto; }
+.official-media-card { display: grid; grid-template-rows: 180px 1fr; min-width: 0; border: 1px solid var(--museum-line); background: rgba(8, 21, 39, .78); }
+.official-media-cover { position: relative; overflow: hidden; padding: 22px; background: radial-gradient(circle at 70% 30%, color-mix(in srgb, var(--hall-color) 32%, transparent), transparent 34%), linear-gradient(135deg, #163254, #071222); }
+.official-media-cover::before { content: ''; position: absolute; inset: 18px; border: 1px solid color-mix(in srgb, var(--hall-color) 36%, transparent); }
+.official-media-cover span { position: relative; color: var(--hall-color); font-size: 16px; letter-spacing: .1em; }
+.official-media-cover strong { position: absolute; right: 24px; top: 16px; color: rgba(225, 240, 255, .2); font: 54px 'DM Mono'; }
+.official-media-cover i { position: absolute; left: 50%; top: 54%; width: 50px; height: 50px; display: grid; place-items: center; border: 1px solid rgba(220, 240, 255, .6); border-radius: 50%; color: #fff; background: rgba(5, 14, 28, .55); font-style: normal; transform: translate(-50%, -50%); }
+.official-media-copy { padding: 24px; }
+.official-media-copy > span { color: var(--hall-color); font-size: 15px; }
+.official-media-copy h3 { min-height: 58px; margin: 10px 0; font-size: 22px; font-weight: 500; line-height: 1.35; }
+.official-media-copy p { margin: 0; color: #8da3bd; font-size: 16px; line-height: 1.65; }
+.official-media-copy a { display: inline-block; margin-top: 20px; color: #eef7ff; font-size: 16px; text-decoration: none; }
+.official-media-copy a b { color: var(--hall-color); margin-left: 8px; }
+
+@media (max-width: 1050px) {
+  .historical-process-layout, .crewed-process-layout, .station-process-layout { grid-template-columns: 1fr; }
+  .process-stages--compact { grid-template-columns: repeat(3, 1fr); }
+  .mission-process--lunar > .process-stages { grid-template-columns: repeat(3, 1fr); }
+  .official-media-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 760px) {
+  .mission-process, .official-media { padding: 76px 6vw; }
+  .process-header, .official-media-heading { display: block; }
+  .process-header > p, .official-media-heading > p { margin-top: 24px; }
+  .process-stages, .process-stages--compact, .mission-process--lunar > .process-stages { grid-template-columns: 1fr; }
+  .process-stats { grid-template-columns: 1fr; }
+  .process-stats > div { border-right: 0; border-bottom: 1px solid var(--museum-line); }
+  .lunar-mission-tabs { grid-template-columns: repeat(2, 1fr); }
+  .lunar-process-visual, .crew-orbit-visual, .station-assembly { height: 500px; min-height: 500px; }
+  .near-earth-orbit { width: 330px; height: 210px; }
+  @keyframes crew-orbit-spin { from { transform: rotate(0deg) translateX(165px) rotate(0deg); } to { transform: rotate(360deg) translateX(165px) rotate(-360deg); } }
+  .lunar-stats { top: 20px; bottom: auto; }
+  .mars-chapters, .official-media-grid { grid-template-columns: 1fr; }
+  .mars-visual { height: 520px; }
+  .official-media-card { grid-template-rows: 160px 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crew-spacecraft { animation: none; transform: translateX(260px); }
+}

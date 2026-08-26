@@ -52,7 +52,7 @@ export default function App() {
           <span className="brand-mark">中</span>
           <span>中国航天<br /><em>数字博物馆</em></span>
         </div>
-        <div className="status"><span className="status-dot" />数字展览 · V4.3</div>
+        <div className="status"><span className="status-dot" />数字展览 · V4.4</div>
         <button className="enter-button" onClick={() => document.getElementById('halls')?.scrollIntoView({ behavior: 'smooth' })}>
           选择展厅 <span>↘</span>
         </button>
@@ -87,7 +87,7 @@ export default function App() {
       <TechTree />
       <footer className="footer">
         <span>中国航天发展史数字博物馆</span>
-        <span>愿人类探索永无止境 · V4.3</span>
+        <span>愿人类探索永无止境 · V4.4</span>
       </footer>
     </main>
   )

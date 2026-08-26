@@ -1,0 +1,160 @@
+[
+  {
+    "id": "origin-one",
+    "layout": "historical",
+    "title": "历史任务流程",
+    "kicker": "中国第一次把自己的卫星送入太空",
+    "description": "用四个真实历史阶段说明东方红一号任务，不再模拟没有解释价值的飞行弧线。",
+    "stages": [
+      { "id": "launch", "title": "长征一号发射", "description": "1970年4月24日，长征一号运载火箭在酒泉卫星发射中心点火升空。" },
+      { "id": "orbit", "title": "卫星进入预定轨道", "description": "火箭将东方红一号准确送入预定椭圆轨道，中国由此具备独立发射人造卫星的能力。" },
+      { "id": "operation", "title": "东方红一号开始在轨运行", "description": "卫星完成轨道测控并开展在轨工作，设计寿命20天，实际工作28天。" },
+      { "id": "broadcast", "title": "《东方红》乐曲信号播发", "description": "卫星向地面播发《东方红》乐曲信号，太空中第一次传来中国的声音。" }
+    ]
+  },
+  {
+    "id": "shenzhou5",
+    "layout": "crewedOrbit",
+    "title": "飞行过程",
+    "kicker": "中国首次载人航天飞行",
+    "description": "近地轨道绕飞与返回过程逐阶段点亮，突出神舟五号独有的飞行时间和绕地圈数。",
+    "stats": [
+      { "label": "飞行时间", "value": "21小时23分" },
+      { "label": "绕地飞行", "value": "14圈" },
+      { "label": "飞行日期", "value": "2003年10月15—16日" }
+    ],
+    "stages": [
+      { "id": "jiuquan", "title": "酒泉发射", "description": "长征二号F运载火箭托举神舟五号发射升空。" },
+      { "id": "separation", "title": "船箭分离并进入近地轨道", "description": "飞船与火箭分离，进入近地椭圆轨道，随后变轨至约343千米圆轨道。" },
+      { "id": "in-orbit", "title": "杨利伟在轨飞行", "description": "杨利伟完成状态监视、天地通话与在轨生活等任务。" },
+      { "id": "fourteen-orbits", "title": "绕地飞行14圈", "description": "飞船在轨自主运行14圈，持续接受天地测控支持。" },
+      { "id": "deorbit", "title": "制动离轨", "description": "飞船接收返回参数，完成调姿、轨道舱分离与制动。" },
+      { "id": "reentry", "title": "返回舱再入大气层", "description": "返回舱与推进舱分离，穿越黑障区后开伞减速。" },
+      { "id": "landing", "title": "内蒙古主着陆场返回", "description": "返回舱安全着陆，杨利伟在飞行21小时23分后自主出舱。" }
+    ]
+  },
+  {
+    "id": "chang-e",
+    "layout": "lunar",
+    "title": "探月过程",
+    "kicker": "从绕月、落月到采样返回",
+    "description": "选择不同嫦娥任务，比较中国探月工程从绕、落到回的能力演进。",
+    "defaultMission": "change-6",
+    "missions": [
+      {
+        "id": "change-1",
+        "name": "嫦娥一号",
+        "summary": "首次绕月探测",
+        "stages": [
+          { "id": "launch", "title": "发射入轨", "description": "长征三号甲运载火箭发射嫦娥一号。" },
+          { "id": "transfer", "title": "地月转移", "description": "探测器经调相轨道飞向月球。" },
+          { "id": "braking", "title": "近月制动", "description": "实施制动后被月球引力捕获。" },
+          { "id": "orbit", "title": "环月探测", "description": "获取全月影像并开展月球科学探测。" }
+        ]
+      },
+      {
+        "id": "change-3",
+        "name": "嫦娥三号",
+        "summary": "首次月面软着陆与巡视",
+        "stages": [
+          { "id": "launch", "title": "发射入轨", "description": "嫦娥三号进入地月转移轨道。" },
+          { "id": "transfer", "title": "地月转移", "description": "探测器飞向月球并完成轨道修正。" },
+          { "id": "orbit", "title": "环月飞行", "description": "近月制动后进入环月轨道。" },
+          { "id": "landing", "title": "月面软着陆", "description": "着陆器在虹湾区域实现软着陆。" },
+          { "id": "rover", "title": "玉兔号巡视", "description": "玉兔号驶离着陆器开展月面巡视。" }
+        ]
+      },
+      {
+        "id": "change-5",
+        "name": "嫦娥五号",
+        "summary": "首次月球采样返回",
+        "stages": [
+          { "id": "launch", "title": "发射入轨", "description": "嫦娥五号由长征五号发射。" },
+          { "id": "transfer", "title": "地月转移", "description": "探测器组合体飞向月球。" },
+          { "id": "orbit", "title": "近月制动与环月", "description": "进入环月轨道并择机分离。" },
+          { "id": "landing", "title": "月面着陆", "description": "着陆上升组合体在月球正面软着陆。" },
+          { "id": "sample", "title": "月面采样", "description": "通过钻取与表取完成样品采集封装。" },
+          { "id": "ascent", "title": "月面起飞", "description": "上升器携带样品进入环月轨道。" },
+          { "id": "rendezvous", "title": "月轨交会对接", "description": "上升器与轨道返回组合体对接并转移样品。" },
+          { "id": "return", "title": "月地转移与再入", "description": "返回器携带月球样品返回地球。" }
+        ]
+      },
+      {
+        "id": "change-6",
+        "name": "嫦娥六号",
+        "summary": "世界首次月球背面采样返回",
+        "stats": [{ "label": "任务周期", "value": "53天" }, { "label": "返回样品", "value": "1935.3克" }],
+        "stages": [
+          { "id": "launch", "title": "发射入轨", "description": "长征五号遥八运载火箭将探测器送入地月转移轨道。" },
+          { "id": "transfer", "title": "地月转移", "description": "探测器组合体跨越地月空间飞向月球。" },
+          { "id": "braking", "title": "近月制动", "description": "实施制动并被月球引力捕获。" },
+          { "id": "orbit", "title": "环月飞行", "description": "组合体进入环月逆行轨道并准备分离。" },
+          { "id": "descent", "title": "着陆下降", "description": "着陆上升组合体与轨返组合体分离并下降。" },
+          { "id": "far-side-landing", "title": "月背着陆", "description": "在南极—艾特肯盆地预选区域实现月背软着陆。" },
+          { "id": "sampling", "title": "月背采样", "description": "通过钻取与表取完成世界首次月背采样。" },
+          { "id": "ascent", "title": "月面起飞", "description": "上升器携带样品从月球背面点火起飞。" },
+          { "id": "rendezvous", "title": "月轨交会对接与样品转移", "description": "上升器与轨返组合体完成对接并转移样品。" },
+          { "id": "earthbound", "title": "月地转移", "description": "轨返组合体携带样品踏上返回地球的航程。" },
+          { "id": "reentry", "title": "再入返回地球", "description": "返回器在内蒙古四子王旗预定区域安全着陆。" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tianwen",
+    "layout": "mars",
+    "title": "火星探测过程",
+    "kicker": "一次任务完成环绕、着陆与巡视",
+    "description": "以“奔火、落火、巡火”三章解释天问一号的行星际飞行、火星着陆和长期探测。",
+    "chapters": [
+      {
+        "id": "cruise",
+        "title": "奔火",
+        "description": "从地球出发，经过行星际飞行被火星捕获。",
+        "stages": [
+          { "id": "launch", "title": "文昌发射", "description": "长征五号遥四运载火箭发射天问一号。" },
+          { "id": "transfer", "title": "地火转移", "description": "探测器开展约202天的行星际飞行。" },
+          { "id": "capture", "title": "火星捕获", "description": "近火制动后进入环火轨道。" },
+          { "id": "parking", "title": "火星停泊轨道", "description": "环绕器对预选着陆区开展成像和环境探测。" }
+        ]
+      },
+      {
+        "id": "landing",
+        "title": "落火",
+        "description": "着陆巡视器独立完成进入、下降和着陆。",
+        "stages": [
+          { "id": "separation", "title": "着陆巡视器分离", "description": "着陆巡视器与环绕器分离，准备进入火星大气。" },
+          { "id": "entry", "title": "进入火星大气", "description": "气动减速与降落伞减速依次展开。" },
+          { "id": "soft-landing", "title": "减速、悬停避障和软着陆", "description": "动力减速后悬停成像、避障并在乌托邦平原软着陆。" }
+        ]
+      },
+      {
+        "id": "roving",
+        "title": "巡火",
+        "description": "祝融号驶上火星表面，环绕器承担中继与科学探测。",
+        "stages": [
+          { "id": "drive-off", "title": "祝融号驶离着陆平台", "description": "祝融号沿坡道驶上火星表面。" },
+          { "id": "surface", "title": "火星表面巡视", "description": "火星车开展地形、物质、气象与次表层探测。" },
+          { "id": "relay", "title": "环绕器中继与科学探测", "description": "环绕器为火星车提供通信中继并开展火星全球遥感。" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tiangong",
+    "layout": "stationAssembly",
+    "title": "空间站建造过程",
+    "kicker": "三舱逐步形成T字基本构型",
+    "description": "通过舱段组装和转位变化理解中国空间站如何从天和核心舱发展为国家太空实验室。",
+    "stages": [
+      { "id": "tianhe", "title": "天和核心舱发射", "description": "天和核心舱入轨，中国空间站在轨建造全面展开。", "formation": "tianhe" },
+      { "id": "wentian-dock", "title": "问天实验舱发射并对接", "description": "问天实验舱对接天和核心舱前向端口。", "formation": "wentian-front" },
+      { "id": "wentian-shift", "title": "问天转位", "description": "问天实验舱与前向端口分离并实施平面转位。", "formation": "wentian-shifting" },
+      { "id": "l-shape", "title": "两舱形成L字构型", "description": "问天对接侧向端口，组合体由一字构型变为L字构型。", "formation": "l-shape" },
+      { "id": "mengtian-dock", "title": "梦天实验舱发射并对接", "description": "梦天实验舱对接天和核心舱前向端口。", "formation": "mengtian-front" },
+      { "id": "mengtian-shift", "title": "梦天转位", "description": "梦天实验舱分离并转向另一侧永久停泊口。", "formation": "mengtian-shifting" },
+      { "id": "t-shape", "title": "三舱形成T字基本构型", "description": "问天与梦天分列天和两侧，中国空间站在轨组装完成。", "formation": "t-shape" },
+      { "id": "operation", "title": "进入长期在轨运营", "description": "三舱协同运行，支持航天员长期驻留和空间科学实验。", "formation": "operation" }
+    ]
+  }
+]

@@ -1,5 +1,6 @@
 import ImageViewer from '../ImageViewer/ImageViewer'
-import MissionTrajectory from '../MissionTrajectory/MissionTrajectory'
+import MissionProcess from '../MissionProcess/MissionProcess'
+import OfficialMedia from '../OfficialMedia/OfficialMedia'
 import { getAssetById, getAssetsByIds } from '../../utils/assetRegistry'
 
 export default function MissionHall({ hall }) {
@@ -67,7 +68,8 @@ export default function MissionHall({ hall }) {
         </div>
       </section>
 
-      <MissionTrajectory hall={hall} />
+      <MissionProcess hall={hall} />
+      <OfficialMedia mission={hall.id} color={hall.color} />
     </main>
   )
 }
