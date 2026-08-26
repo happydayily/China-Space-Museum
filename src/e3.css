@@ -223,6 +223,26 @@ body { font-size: 17px; line-height: 1.7; }
 .official-media-details a { color: var(--museum-bronze) !important; }
 .story-media-attribution { color: var(--museum-ink-soft) !important; }
 
+/* V5.0-E4.1：标题安全区、轻量本厅导览与媒体脱离运力阶梯。 */
+.story-hero { isolation: isolate; }
+.story-hero-copy { position: relative; z-index: 3; min-width: 0; max-width: 760px; padding-right: clamp(24px, 4vw, 72px); }
+.story-hero-copy h1 { color: var(--museum-white) !important; }
+.story-hero .story-hero-visual { position: relative; z-index: 1; overflow: hidden; margin-left: auto; }
+.story-hero .story-hero-visual > * { pointer-events: none; }
+.story-tour { position: sticky; top: 0; z-index: 8; display: flex; align-items: center; gap: 24px; min-height: 48px; padding: 0 max(7vw, calc((100vw - 1380px) / 2)); border-bottom: 1px solid var(--museum-line); background: rgba(250,249,246,.96); color: var(--museum-ink-soft); backdrop-filter: none; }
+.story-tour span { color: var(--museum-bronze); font-size: 13px; letter-spacing: .08em; white-space: nowrap; }
+.story-tour a { padding: 14px 0 12px; border-bottom: 2px solid transparent; color: var(--museum-ink-soft); font-size: 14px; text-decoration: none; white-space: nowrap; }
+.story-tour a:hover, .story-tour a:focus-visible { border-bottom-color: var(--hall-color); color: var(--museum-ink); }
+.launch-support-media { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(260px, .7fr); gap: 42px; margin-top: 46px; padding-top: 36px; border-top: 1px solid rgba(201,195,184,.28); }
+.launch-support-copy { min-width: 0; }
+.launch-support-copy h3 { margin: 9px 0 8px; color: var(--museum-white); font-size: 26px; font-weight: 500; }
+.launch-support-copy p { max-width: 620px; margin: 0; color: #C9D3D8; font-size: 16px; line-height: 1.7; }
+.launch-support-copy .story-media { margin-top: 18px; }
+.launch-support-copy .story-media .official-media-card--feature { grid-template-rows: 220px auto; }
+.launch-support-copy--compact { padding-top: 4px; }
+.launch-support-copy--compact h3 { font-size: 22px; }
+.launch-support-copy--compact .story-media .official-media-card--compact { background: rgba(250,249,246,.98); }
+
 button:focus-visible, a:focus-visible { outline-color: var(--museum-bronze); }
 @media (max-width: 1000px) {
   .satellite-evidence-grid { grid-template-columns: 1fr; gap: 0; }
@@ -243,4 +263,6 @@ button:focus-visible, a:focus-visible { outline-color: var(--museum-bronze); }
   .human-chapters>article, .human-chapter-feature, .human-chapter-station { border-left: 0; padding-left: 0 !important; }
   .human-chapters>article { min-height: 0; padding-bottom: 28px; }
   .story-media .official-media-card--feature { grid-template-rows: 150px auto; }
+  .story-tour { gap: 14px; overflow-x: auto; }
+  .launch-support-media { grid-template-columns: 1fr; gap: 28px; }
 }
