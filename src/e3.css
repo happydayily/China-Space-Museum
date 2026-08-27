@@ -791,6 +791,51 @@ button:focus-visible, a:focus-visible { outline-color: var(--museum-bronze); }
   .planetary-chain-items p { margin: 8px 0 0; color: var(--museum-ink-soft); font-size: 14px; line-height: 1.65; }
 }
 
+/* V5.0 readability maintenance: PC body copy only; headings and mobile rules stay frozen. */
+@media (min-width: 801px) {
+  :root {
+    --font-body: 18px;
+    --font-body-large: 20px;
+    --font-caption: 16px;
+    --font-meta: 15px;
+  }
+
+  body { font-size: var(--font-body); line-height: 1.7; }
+  .development-lines .section-heading p,
+  .development-connection,
+  .development-line-copy,
+  .development-line-milestones { font-size: var(--font-body); line-height: 1.7; }
+  .grand-hall-intro p,
+  .grand-hall-details p,
+  .story-why p,
+  .story-heading p,
+  .deep-dive-heading p { font-size: var(--font-body); line-height: 1.75; }
+  .grand-hall-why p { font-size: var(--font-body-large); line-height: 1.75; }
+  .launch-step p,
+  .launch-support-copy p,
+  .satellite-use-cases p,
+  .human-chapters p,
+  .planetary-anchor-grid p,
+  .deep-dive-copy > p,
+  .timeline-compact-wall p,
+  .tech-section--compact .tech-branch p { font-size: var(--font-body); line-height: 1.7; }
+  .launch-step small,
+  .grand-node small,
+  .story-media-meta,
+  .deep-dive-item .asset-media figcaption,
+  .story-page .asset-media figcaption { font-size: var(--font-caption); line-height: 1.6; }
+  .official-media-source-line > span,
+  .official-media-card--inline .official-media-source-line > span,
+  .official-media-card--compact .official-media-source-line > span,
+  .official-media-details,
+  .official-media-details summary,
+  .official-media-details dl,
+  .official-media-details dd a { font-size: var(--font-meta); line-height: 1.6; }
+  .official-media-details dl > div { grid-template-columns: 84px minmax(0, 1fr); }
+  .prologue-register p { font-size: var(--font-body); line-height: 1.7; }
+  .tech-section--compact .section-heading p { font-size: var(--font-body); line-height: 1.7; }
+}
+
 @media (max-width: 1000px) {
   .lunar-route-map { grid-template-columns: 1fr; gap: 30px; }
   .lunar-route-map .lunar-side-branch { margin-top: 0; }

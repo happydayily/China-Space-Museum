@@ -1,16 +1,45 @@
-# 中国航天发展史数字博物馆
+# 中国航天发展史数字博物馆 · China Space Museum
 
-这是一个使用 React、Vite 和 Three.js 构建的中国航天发展史可视化数字博物馆项目。项目在人工提出需求、AI/Codex 辅助实现、人工验收和持续迭代的协作方式下逐步建设。
+中国航天发展可视化 × 交互式数字博物馆 × AI/Codex 协作开发全过程
+
+本项目从一条简单的中国航天时间轴出发，经过 V1 → V5 持续迭代，逐步发展为包含五大发展主线、五座主题展厅、真实任务影像、来源登记、自动 QA、本地一键启动和 GitHub Pages 在线发布体系的数字博物馆。项目以中文展陈为主，技术目录、变量和 API 保持原有英文命名。
 
 ## 当前版本
 
 V5.0，已完成五厅策展去模板化与正式版桌面视觉收口；当前仍只维护并验收 `1600×900` 桌面端，不修改移动端和平板端。
 
+## 重要入口
+
+- 🌐 [在线参观](https://happydayily.github.io/China-Space-Museum/)
+- 📖 [V1 → V5 完整开发复盘](docs/V1-V5_AI开发复盘.md)
+- 🖼 [V5.0 正式版截图](docs/screenshots/v5.0/)
+- 🤖 [AI / Codex 开发记录](AI_DEVELOPMENT_LOG.md)
+- 📝 [CHANGELOG](CHANGELOG.md)
+- 💬 [Prompt 档案](docs/prompts/README.md)
+
+在线版与本地版使用同一套页面内容。需要在开发电脑启动本地展馆时，可双击根目录的 `中国航天博物馆启动器.cmd`；它会检查本地环境、调用 `npm.cmd run dev` 启动 Vite 服务并自动打开 Microsoft Edge。
+
 ## 在线参观
 
 [打开中国航天数字博物馆](https://happydayily.github.io/China-Space-Museum/)
 
-在线版与本地版使用同一套页面内容。需要在开发电脑启动本地展馆时，可双击根目录的 `中国航天博物馆启动器.cmd`；它会检查本地环境、调用 `npm.cmd run dev` 启动 Vite 服务并自动打开 Microsoft Edge。
+正式版主要验收 1600×900 PC 桌面端；移动端和平板端不属于 V5.0 的正式支持范围。
+
+## 从 V1 到 V5
+
+```text
+时间轴
+  → 航天视觉网页
+  → 数据和数字资产系统
+  → 五大主题数字展厅
+  → 策展去模板化
+  → 来源与事实核验
+  → 自动截图 / QA
+  → Git / Tag / Pages
+  → V5.0
+```
+
+完整背景、失败记录、版本演化和 Human × ChatGPT × Codex 分工，见 [V1 → V5 完整开发复盘](docs/V1-V5_AI开发复盘.md)。
 
 ## 当前能力
 
