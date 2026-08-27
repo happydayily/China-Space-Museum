@@ -13,7 +13,7 @@ export default function HumanSpaceflightStory({ hall, nodes, missions, onOpenMis
         <div className="story-hero-copy title-safe-area"><span className="section-kicker">第 {hall.index} 展厅 · {hall.period}</span><h1>{hall.name}</h1><p className="story-subtitle">{hall.subtitle}</p><p className="story-question">中国如何从无人验证，走到长期有人驻留？</p></div>
         <div className="story-hero-visual human-hero-visual" aria-label="飞船与空间站对接示意"><span>飞船</span><i>对接</i><b>空间站</b></div>
       </header>
-      <StoryTour items={[{ id: 'story-why', label: '为什么重要' }, { id: 'human-core', label: '三个人的阶段' }, { id: 'deep-dive', label: '重点展项' }, { id: 'story-next', label: '下一步' }]} />
+      <StoryTour items={[{ id: 'story-why', label: '为什么重要' }, { id: 'human-core', label: '三章路线' }, { id: 'deep-dive', label: '重点展项' }, { id: 'story-next', label: '下一步' }]} />
       <section className="story-why" id="story-why"><span className="section-kicker">为什么这条路线重要？</span><p>{hall.hallWhyItMatters}</p></section>
       <section className="grand-story grand-story--human" id="human-core">
         <div className="story-heading"><span className="section-kicker">载人航天三章</span><h2>从把人送上去，<br />到让人在轨道上工作</h2><p>载人航天的进步，体现在任务持续时间、空间活动复杂度和轨道生活能力的连续增加。</p></div>

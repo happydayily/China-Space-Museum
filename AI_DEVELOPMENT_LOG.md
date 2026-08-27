@@ -8,6 +8,12 @@
 - 使用中国载人航天工程官网、中国国家航天局和北斗官网资料复核新增事实；未下载新媒体、程序、依赖或远程脚本。
 - `npm.cmd run build`、`npm.cmd run screenshots` 和 Edge 路由/资源/交互 QA 通过；六张截图仍固定输出到 `docs/screenshots/review/latest/`，移动端冻结。
 
+## V5.0-RC3.2-PC
+
+- 在 RC3.1 内容深化后进行桌面视觉终审，只调整字体、间距、信息对比度、来源权重和轻量 focus/hover 状态。
+- 没有新增图片、视频、程序或依赖；移动端、平板端和启动器保持不变。
+- 完成 `npm.cmd run build`、六张 PC 截图和 Edge 页面验收，保留既有 Three.js 大 chunk 警告。
+
 ## V5.0-RC2-PC
 
 ### 本轮范围

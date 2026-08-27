@@ -4,7 +4,7 @@
 
 ## 当前版本
 
-V5.0-RC3.1-PC，已完成首页序厅与五厅策展深化；本轮只维护并验收 `1600×900` 桌面端，不修改移动端和平板端。
+V5.0-RC3.2-PC，已完成首页序厅、五厅策展深化与桌面视觉终审；本轮只维护并验收 `1600×900` 桌面端，不修改移动端和平板端。
 
 ## 在线参观
 
@@ -112,6 +112,8 @@ node_modules/           npm 依赖安装目录，不纳入 Git
 - [V5.0-RC2-PC 中文开发记录](docs/prompts/v5.0-rc2-pc.md)
 - [V5.0-RC3.1-PC 迭代记录](docs/iterations/v5.0-rc3.1-pc.md)
 - [V5.0-RC3.1-PC 中文开发记录](docs/prompts/v5.0-rc3.1-pc.md)
+- [V5.0-RC3.2-PC 迭代记录](docs/iterations/v5.0-rc3.2-pc.md)
+- [V5.0-RC3.2-PC 中文开发记录](docs/prompts/v5.0-rc3.2-pc.md)
 - [AI 辅助开发总日志](AI_DEVELOPMENT_LOG.md)
 - [更新日志](CHANGELOG.md)
 

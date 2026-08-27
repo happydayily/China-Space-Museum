@@ -328,9 +328,9 @@ button:focus-visible, a:focus-visible { outline-color: var(--museum-bronze); }
 .deep-dive-item .asset-media figcaption { position: static; padding: 10px 0 0; background: none; color: var(--museum-ink-soft); font-size: 14px; line-height: 1.55; }
 .deep-dive-item .deep-dive-schematic { min-height: 240px; }
 .deep-dive-item .deep-dive-copy > p { max-width: 45em; }
-.story-page .asset-media figcaption { position: static; padding: 10px 0 0; background: none; color: var(--museum-ink-soft); font-size: 14px; line-height: 1.55; }
-.grand-story--launch .launch-support-copy h3 { color: var(--museum-ink); }
-.grand-story--launch .launch-support-copy p { color: var(--museum-ink-soft); }
+  .story-page .asset-media figcaption { position: static; padding: 10px 0 0; background: none; color: var(--museum-ink-soft); font-size: 14px; line-height: 1.55; }
+  .grand-story--launch .launch-support-copy h3 { color: var(--museum-ink); }
+  .grand-story--launch .launch-support-copy p { color: var(--museum-ink-soft); }
 
 /* 进入太空：小档案 → 中等能力 → 占据半幅的长征五号主展品。 */
 .deep-dive--layout-scale .deep-dive-items { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 34px 26px; align-items: start; }
@@ -532,4 +532,19 @@ button:focus-visible, a:focus-visible { outline-color: var(--museum-bronze); }
   .planetary-engineering-chain span { color: var(--hall-planetary); font: 13px 'DM Mono'; }
   .planetary-engineering-chain strong { display: block; margin-top: 13px; color: var(--museum-ink); font-size: 20px; font-weight: 600; }
   .planetary-engineering-chain p { margin: 9px 0 0; color: var(--museum-ink-soft); font-size: 15px; line-height: 1.7; }
+}
+
+/* V5.0-RC3.2-PC：视觉终审，降低来源噪声并收紧桌面阅读节奏。 */
+@media (min-width: 801px) {
+  .story-page .story-heading { margin-bottom: 4px; }
+  .story-page .story-media-meta { color: var(--museum-ink-soft); font-size: 13px; opacity: .82; }
+  .story-page .story-media .official-media-copy > span { font-size: 13px; opacity: .82; }
+  .story-page .story-media .official-media-status { opacity: .78; }
+  .story-page .story-media .official-media-details { opacity: .78; }
+  .story-page .story-media .official-media-copy a { font-size: 13px; }
+  .satellite-use-cases article, .launch-capability-chain article, .human-people-strip > div, .planetary-engineering-chain article { transition: background-color .2s ease, border-color .2s ease; }
+  .satellite-use-cases article:hover, .satellite-use-cases article:focus-within { background: rgba(255,255,255,.34); }
+  .launch-capability-chain article:hover, .human-people-strip > div:hover, .planetary-engineering-chain article:hover { background: rgba(255,255,255,.24); }
+  .satellite-use-cases article:focus-within, .launch-capability-chain article:focus-within, .human-people-strip > div:focus-within, .planetary-engineering-chain article:focus-within { outline: 2px solid var(--museum-bronze); outline-offset: 4px; }
+  .lunar-sample-note a { opacity: .8; }
 }
