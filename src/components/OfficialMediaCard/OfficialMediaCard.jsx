@@ -18,12 +18,24 @@ const mediaLabels = {
   '官方回顾': '官方资料',
 }
 
-function SourceDetails({ item, attribution, license }) {
-  if (!attribution && !item.licenseUrl && !item.licenseNote) return null
+function SourceDetails({ item, type, source, url, attribution, license, usageStatus }) {
+  const title = item.sourceTitle || item.title || item.name
+  const hasDetails = Boolean(type || source || title || url || attribution || license || item.licenseNote || usageStatus)
+  if (!hasDetails) return null
   return (
     <details className="official-media-details">
-      <summary>来源详情</summary>
-      <p>{attribution ? `署名：${attribution}` : null}{license ? ` · ${license}` : null}{item.licenseNote ? ` · ${item.licenseNote}` : null}{item.licenseUrl ? <> · <a href={item.licenseUrl} target="_blank" rel="noreferrer">许可页面 ↗</a></> : null}</p>
+      <summary>授权与来源登记</summary>
+      <dl>
+        {type ? <div><dt>资料类型</dt><dd>{type}</dd></div> : null}
+        {source ? <div><dt>来源机构</dt><dd>{source}</dd></div> : null}
+        {title ? <div><dt>原始标题</dt><dd>{title}</dd></div> : null}
+        {attribution ? <div><dt>作者 / 署名</dt><dd>{attribution}</dd></div> : null}
+        {license ? <div><dt>许可</dt><dd>{license}</dd></div> : null}
+        {item.licenseNote ? <div><dt>授权说明</dt><dd>{item.licenseNote}</dd></div> : null}
+        {usageStatus ? <div><dt>使用状态</dt><dd>{statusLabels[usageStatus] || usageStatus}</dd></div> : null}
+        {url ? <div><dt>来源页面</dt><dd><a href={url} target="_blank" rel="noreferrer">打开来源页面 ↗</a></dd></div> : null}
+        {item.licenseUrl ? <div><dt>许可页面</dt><dd><a href={item.licenseUrl} target="_blank" rel="noreferrer">打开许可页面 ↗</a></dd></div> : null}
+      </dl>
     </details>
   )
 }
@@ -36,7 +48,6 @@ export default function OfficialMediaCard({ item, index = 0, mode = item.display
   const imageSource = resolveAssetSource(item) || item.thumbnailUrl
   const attribution = item.attribution || item.author
   const license = item.license || item.licenseNote
-  const shortLicense = item.license || (item.mediaType === 'official-video' ? '官方外链' : '官方来源')
   const actionLabel = item.mediaType === 'official-video' ? '观看官方影像' : '查看来源'
 
   if (mode === 'inline' || mode === 'compact') {
@@ -44,12 +55,10 @@ export default function OfficialMediaCard({ item, index = 0, mode = item.display
       <article className={`official-media-card official-media-card--${mode}`}>
         <div className="official-media-inline-mark" aria-hidden="true">{item.mediaType === 'official-video' ? '▶' : '◌'}</div>
         <div className="official-media-copy">
-          <span>{type} · {source}{item.year ? ` · ${item.year}` : ''} · {shortLicense}</span>
+          <div className="official-media-source-line"><span>{source}{item.year ? ` · ${item.year}` : ''}</span>{url ? <a href={url} target="_blank" rel="noreferrer" aria-label={`${actionLabel}：${item.title || item.sourceTitle || ''}`}>来源详情 <b>↗</b></a> : null}</div>
           <h3>{item.title || item.sourceTitle}</h3>
           {item.description ? <p>{item.description}</p> : null}
-          <div className="official-media-status"><b>{statusLabels[usageStatus] || '资料状态待标注'}</b></div>
-          <SourceDetails item={item} attribution={attribution} license={license} />
-          {url ? <a href={url} target="_blank" rel="noreferrer" aria-label={`${actionLabel}：${item.title || item.sourceTitle || ''}`}>{actionLabel} <b>↗</b></a> : null}
+          <SourceDetails item={item} type={type} source={source} url={url} attribution={attribution} license={license} usageStatus={usageStatus} />
         </div>
       </article>
     )
@@ -62,12 +71,10 @@ export default function OfficialMediaCard({ item, index = 0, mode = item.display
         <span>{type}</span><strong>{String(index + 1).padStart(2, '0')}</strong><i aria-hidden="true">{item.mediaType === 'official-video' ? '▶' : '✦'}</i>
       </div>
       <div className="official-media-copy">
-        <span>{source}{item.year ? ` · ${item.year}` : ''}</span>
+        <div className="official-media-source-line"><span>{source}{item.year ? ` · ${item.year}` : ''}</span>{url ? <a href={url} target="_blank" rel="noreferrer" aria-label={`${actionLabel}：${item.title || item.sourceTitle || ''}`}>来源详情 <b>↗</b></a> : null}</div>
         <h3>{item.title || item.sourceTitle}</h3>
         {item.description ? <p>{item.description}</p> : null}
-        <div className="official-media-status"><b>{item.year ? `${item.year} · ${shortLicense}` : (statusLabels[usageStatus] || '资料状态待标注')}</b></div>
-        <SourceDetails item={item} attribution={attribution} license={license} />
-        {url ? <a href={url} target="_blank" rel="noreferrer" aria-label={`${actionLabel}：${item.title || item.sourceTitle || ''}`}>{actionLabel} <b>↗</b></a> : null}
+        <SourceDetails item={item} type={type} source={source} url={url} attribution={attribution} license={license} usageStatus={usageStatus} />
       </div>
     </article>
   )

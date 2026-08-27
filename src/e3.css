@@ -548,3 +548,252 @@ button:focus-visible, a:focus-visible { outline-color: var(--museum-bronze); }
   .satellite-use-cases article:focus-within, .launch-capability-chain article:focus-within, .human-people-strip > div:focus-within, .planetary-engineering-chain article:focus-within { outline: 2px solid var(--museum-bronze); outline-offset: 4px; }
   .lunar-sample-note a { opacity: .8; }
 }
+
+/* V5.0-RC4.1-PC：去掉最后的统一来源行和首页卡片式历史墙，保留资料登记完整性。 */
+@media (min-width: 801px) {
+  .official-media-source-line {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 14px;
+    min-width: 0;
+  }
+  .official-media-source-line > span {
+    min-width: 0;
+    overflow: hidden;
+    color: var(--museum-ink-soft);
+    font-size: 13px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .official-media-source-line > a,
+  .official-media-copy .official-media-source-line > a {
+    flex: 0 0 auto;
+    margin-top: 0;
+    color: var(--museum-bronze);
+    font-size: 12px;
+    text-decoration: none;
+  }
+  .official-media-source-line > a:hover,
+  .official-media-source-line > a:focus-visible { text-decoration: underline; }
+  .official-media-details { margin-top: 10px; }
+  .official-media-details summary { font-size: 12px; }
+  .official-media-details dl {
+    display: grid;
+    gap: 6px;
+    margin: 8px 0 0;
+    color: var(--museum-ink-soft);
+    font-size: 12px;
+    line-height: 1.55;
+  }
+  .official-media-details dl > div { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 8px; }
+  .official-media-details dt { color: var(--museum-ink-soft); }
+  .official-media-details dd { min-width: 0; margin: 0; overflow-wrap: anywhere; }
+  .official-media-details dd a { margin-top: 0; color: var(--museum-bronze) !important; font-size: 12px; }
+  .official-media-card--feature .official-media-source-line > span { color: var(--museum-ink-soft); }
+  .official-media-card--feature .official-media-source-line > a { color: var(--hall-color); }
+  .official-media-card--inline .official-media-source-line > span,
+  .official-media-card--compact .official-media-source-line > span { font-size: 12px; }
+  .official-media-card--inline .official-media-details,
+  .official-media-card--compact .official-media-details { opacity: .72; }
+
+  .timeline-compact-wall {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0;
+    margin-top: 52px;
+    background: transparent;
+  }
+  .timeline-compact-wall .timeline-wall-rule {
+    position: absolute;
+    z-index: 0;
+    top: 74px;
+    left: 0;
+    right: 0;
+    border-top: 1px solid rgba(164,199,245,.35);
+  }
+  .timeline-compact-wall > article {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    min-height: 255px !important;
+    padding: 0 22px !important;
+    border: 0 !important;
+    border-left: 1px solid rgba(164,199,245,.16) !important;
+    background: transparent !important;
+    background-image: none !important;
+  }
+  .timeline-section--compact .timeline-compact-wall > article[data-emphasis="major"],
+  .timeline-section--compact .timeline-compact-wall > article[data-emphasis="supporting"] {
+    background: transparent !important;
+    background-image: none !important;
+  }
+  .timeline-compact-wall > article:first-of-type { padding-left: 0 !important; border-left: 0 !important; }
+  .timeline-compact-wall > article:last-of-type { padding-right: 0 !important; }
+  .timeline-compact-wall time {
+    position: absolute;
+    top: 0;
+    left: 22px;
+    color: #ffb15c;
+    font: 500 26px 'DM Mono';
+  }
+  .timeline-compact-wall > article:first-of-type time { left: 0; }
+  .timeline-compact-wall .timeline-wall-index {
+    position: absolute;
+    top: 40px;
+    left: 22px;
+    color: #829bb7;
+    font: 11px 'DM Mono';
+    letter-spacing: .03em;
+  }
+  .timeline-compact-wall > article:first-of-type .timeline-wall-index { left: 0; }
+  .timeline-wall-marker {
+    position: absolute;
+    top: 69px;
+    left: 22px;
+    width: 11px;
+    height: 11px;
+    border: 2px solid #829bb7;
+    border-radius: 50%;
+    background: #08182c;
+  }
+  .timeline-compact-wall > article:first-of-type .timeline-wall-marker { left: 0; }
+  .timeline-compact-wall > article[data-emphasis="major"] .timeline-wall-marker {
+    width: 15px;
+    height: 15px;
+    top: 67px;
+    border-color: #ffb15c;
+    background: #ffb15c;
+    box-shadow: 0 0 0 5px rgba(255,177,92,.1);
+  }
+  .timeline-compact-wall > article > div {
+    align-self: flex-start;
+    margin-top: 108px;
+    padding-right: 8px;
+  }
+  .timeline-compact-wall h3 {
+    margin: 0;
+    color: var(--museum-ink) !important;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.35;
+  }
+  .timeline-section--compact .timeline-compact-wall > article h3 { margin-top: 0 !important; }
+  .timeline-compact-wall > article[data-emphasis="major"] h3 { color: #a2602a !important; font-size: 23px; }
+  .timeline-compact-wall p { margin: 10px 0 0; color: var(--museum-ink-soft); font-size: 14px; line-height: 1.65; }
+
+  .satellite-use-cases { align-items: start; }
+  .satellite-use-cases > article {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding-bottom: 24px;
+    background: transparent !important;
+  }
+  .satellite-use-cases > article:hover,
+  .satellite-use-cases > article:focus-within { background: rgba(255,255,255,.16) !important; }
+  .satellite-use-cases .satellite-output {
+    margin-top: 20px;
+    padding: 13px 0 12px;
+    border-top: 1px solid rgba(98,214,255,.24);
+    border-bottom: 1px solid rgba(98,214,255,.14);
+  }
+  .satellite-use-cases .satellite-output small {
+    display: block;
+    color: #7fa7b2;
+    font-size: 12px;
+    letter-spacing: .08em;
+  }
+  .satellite-use-cases .satellite-output b {
+    display: block;
+    margin-top: 6px;
+    color: var(--museum-ink);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.45;
+  }
+  .satellite-use-cases > article .story-media { width: 100%; margin-top: 16px; }
+  .satellite-use-cases > article .story-media--feature .official-media-card--feature { grid-template-rows: 105px auto; }
+  .satellite-use-cases > article .story-media--compact { margin-top: auto; padding-top: 16px; }
+  .satellite-use-cases > article .story-media--compact .official-media-card { border-left-color: var(--hall-satellite); }
+
+  .human-chapter-person {
+    display: block;
+    margin-top: 13px;
+    padding-left: 12px;
+    border-left: 2px solid rgba(117,230,195,.5);
+    color: var(--museum-ink-soft);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .lunar-route-map {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(320px, .65fr);
+    gap: 44px;
+    align-items: start;
+    margin-top: 63px;
+  }
+  .lunar-route-map .lunar-main-route {
+    margin-top: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+  .lunar-route-map .lunar-side-branch {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: auto;
+    margin-top: 38px;
+    padding: 18px 20px 16px;
+    border: 1px solid rgba(180,140,255,.5);
+    border-left: 3px solid #b48cff;
+    background: rgba(250,249,246,.48);
+  }
+  .lunar-route-map .lunar-side-branch::before {
+    content: '';
+    position: absolute;
+    top: 45px;
+    left: -45px;
+    width: 42px;
+    border-top: 1px solid rgba(180,140,255,.65);
+  }
+  .lunar-side-branch header { display: grid; gap: 7px; }
+  .lunar-side-branch header span { color: #8b6fba; font: 12px 'DM Mono'; letter-spacing: .05em; }
+  .lunar-side-branch header strong { color: var(--museum-ink); font-size: 18px; font-weight: 600; }
+  .lunar-branch-sequence { display: grid; gap: 8px; margin-top: 18px; }
+  .lunar-branch-sequence article { display: grid; grid-template-columns: 58px minmax(0, 1fr); gap: 4px 10px; align-items: baseline; padding: 8px 0; border-top: 1px solid rgba(180,140,255,.2); }
+  .lunar-branch-sequence article b { color: #8b6fba; font: 12px 'DM Mono'; }
+  .lunar-branch-sequence article strong { color: var(--museum-ink); font-size: 16px; font-weight: 600; }
+  .lunar-branch-sequence article span { grid-column: 2; color: var(--museum-ink-soft); font-size: 13px; line-height: 1.5; }
+  .lunar-branch-sequence > i { color: #8b6fba; font-style: normal; line-height: 1; text-align: center; }
+  .lunar-route-map .lunar-side-branch .story-media { margin-top: 12px; }
+
+  .planetary-engineering-chain {
+    display: grid;
+    grid-template-columns: 190px minmax(0, 1fr);
+    gap: 30px;
+    align-items: start;
+    padding: 22px 0 18px;
+    border-top: 1px solid rgba(255,113,141,.42);
+    border-bottom: 1px solid rgba(255,113,141,.16);
+  }
+  .planetary-chain-intro span { color: var(--hall-planetary); font: 13px 'DM Mono'; }
+  .planetary-chain-intro p { margin: 10px 0 0; color: var(--museum-ink-soft); font-size: 14px; line-height: 1.6; }
+  .planetary-chain-items { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .planetary-chain-items article { min-height: 0; padding: 0 22px 0 0; border-right: 1px solid rgba(255,113,141,.18); background: transparent !important; }
+  .planetary-chain-items article:last-child { padding-right: 0; border-right: 0; }
+  .planetary-chain-items article:hover { background: transparent !important; }
+  .planetary-chain-items span { color: var(--hall-planetary); font: 13px 'DM Mono'; }
+  .planetary-chain-items strong { display: block; margin-top: 10px; color: var(--museum-ink); font-size: 18px; font-weight: 600; line-height: 1.35; }
+  .planetary-chain-items p { margin: 8px 0 0; color: var(--museum-ink-soft); font-size: 14px; line-height: 1.65; }
+}
+
+@media (max-width: 1000px) {
+  .lunar-route-map { grid-template-columns: 1fr; gap: 30px; }
+  .lunar-route-map .lunar-side-branch { margin-top: 0; }
+  .lunar-route-map .lunar-side-branch::before { display: none; }
+  .planetary-engineering-chain { grid-template-columns: 1fr; gap: 18px; }
+}

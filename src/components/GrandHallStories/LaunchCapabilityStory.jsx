@@ -16,7 +16,7 @@ export default function LaunchCapabilityStory({ hall, nodes, onOpenMission }) {
         <div className="story-hero-copy title-safe-area"><span className="section-kicker">第 {hall.index} 展厅 · {hall.period}</span><h1>{hall.name}</h1><p className="story-subtitle">{hall.subtitle}</p><p className="story-question">中国怎样一步步获得把更大航天器送到更远轨道的能力？</p></div>
         <div className="story-hero-visual launch-hero-visual" aria-label="火箭高度与上升示意"><i /><b>高度</b><span>近地轨道</span><em>深空任务</em></div>
       </header>
-      <StoryTour items={[{ id: 'story-why', label: '为什么重要' }, { id: 'launch-core', label: '运力阶梯' }, { id: 'deep-dive', label: '重点展项' }, { id: 'story-next', label: '下一步' }]} />
+      <StoryTour items={[{ id: 'story-why', label: '为什么重要' }, { id: 'launch-core', label: '运力阶梯' }, { id: 'deep-dive', label: '运力与任务' }, { id: 'story-next', label: '下一步' }]} />
       <section className="story-why" id="story-why"><span className="section-kicker">为什么这条路线重要？</span><p>{hall.hallWhyItMatters}</p></section>
       <section className="grand-story grand-story--launch" id="launch-core">
         <div className="story-heading"><span className="section-kicker">运力阶梯</span><h2>从“能送上去”<br />到“能送得更大、更远”</h2><p>火箭高度和运力不只是参数变化，它们直接打开了卫星、空间站、月球与火星任务的边界。</p></div>

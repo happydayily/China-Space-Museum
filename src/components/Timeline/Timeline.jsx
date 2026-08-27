@@ -37,7 +37,7 @@ export default function Timeline({ category, compact = false }) {
         <h2>{compact ? '中国航天关键时刻' : '七十年，向星河深处。'}</h2>
         <p>{compact ? '六个节点，串起五条发展路径；主展项与支撑节点各有位置。' : '向下滚动，让关键年份依次点亮。'}</p>
       </div>
-      {compact ? <div className="timeline-compact-grid">{items.map((item) => <article data-emphasis={primaryCompactIds.has(item.id) ? 'major' : 'supporting'} key={item.id}><time>{item.year}</time><h3>{item.title}</h3><p>{item.description}</p></article>)}</div> : null}
+      {compact ? <div className="timeline-compact-grid timeline-compact-wall" aria-label="中国航天历史展墙"><div className="timeline-wall-rule" aria-hidden="true" />{items.map((item, index) => <article data-emphasis={primaryCompactIds.has(item.id) ? 'major' : 'supporting'} key={item.id}><time>{item.year}</time><span className="timeline-wall-index">{String(index + 1).padStart(2, '0')} · {item.category}</span><i className="timeline-wall-marker" aria-hidden="true" /><div><h3>{item.title}</h3><p>{item.description}</p></div></article>)}</div> : null}
       {!compact ? (
       <div className="timeline-story" ref={storyRef}>
         <div className="timeline-spine" aria-hidden="true" />
