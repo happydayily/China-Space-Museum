@@ -82,7 +82,10 @@ export default function App() {
           <span className="brand-mark">中</span>
           <span>中国航天<br /><em>数字博物馆</em></span>
         </div>
-        <div className="status"><span className="status-dot" />数字展览 · V5.0</div>
+        <div className="topbar-status-group">
+          <div className="status"><span className="status-dot" />数字展览 · V5.0</div>
+          <a className="online-link" href="https://happydayily.github.io/China-Space-Museum/" target="_blank" rel="noreferrer">在线展馆 ↗</a>
+        </div>
         <button className="enter-button" onClick={() => document.getElementById('halls')?.scrollIntoView({ behavior: 'smooth' })}>
           选择主线 <span>↘</span>
         </button>

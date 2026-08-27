@@ -29,6 +29,9 @@ body { font-size: 17px; line-height: 1.7; }
 .topbar { border-bottom-color: rgba(201,195,184,.24); }
 .brand-mark { border-color: var(--museum-bronze); color: var(--museum-bronze); }
 .brand em, .status { color: #B7C1C9; }
+.topbar-status-group { display: flex; align-items: center; gap: 24px; }
+.online-link { color: #D0A46A; font-size: 12px; text-decoration: none; white-space: nowrap; }
+.online-link:hover, .online-link:focus-visible { color: var(--museum-white); text-decoration: underline; text-underline-offset: 4px; }
 .status-dot { background: var(--museum-bronze); box-shadow: none; }
 .enter-button, .primary-button { border-color: rgba(242,239,231,.55); color: var(--museum-white); }
 .primary-button { background: var(--museum-bronze); border-color: var(--museum-bronze); color: var(--museum-white); }

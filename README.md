@@ -4,11 +4,13 @@
 
 ## 当前版本
 
-V5.0-RC1-PC，已完成 V5.0-F 之后的 PC 桌面终审、展陈细节收束、入口性能拆分和六页自动验收；本轮只冻结并验收 `1600×900` 桌面端，不修改移动端和平板端。
+V5.0-RC2-PC，已完成本地启动器、在线参观入口和 PC 桌面终审；本轮只维护并验收 `1600×900` 桌面端，不修改移动端和平板端。
 
-## 在线体验
+## 在线参观
 
-[打开中国航天数字博物馆](https://happydailyly.github.io/China-Space-Museum/)
+[打开中国航天数字博物馆](https://happydayily.github.io/China-Space-Museum/)
+
+在线版与本地版使用同一套页面内容。需要在开发电脑启动本地展馆时，可双击根目录的 `中国航天博物馆启动器.cmd`；它会检查本地环境、调用 `npm.cmd run dev` 启动 Vite 服务并自动打开 Microsoft Edge。
 
 ## 当前能力
 
@@ -75,6 +77,7 @@ docs/iterations/        中文迭代记录和人工验收记录
 docs/prompts/           提交给 Codex/AI 的完整中文提示词
 docs/screenshots/       精选版本验收截图
 scripts/                构建辅助与自动验收截图脚本
+中国航天博物馆启动器.cmd  本地一键启动入口
 dist/                   本地构建产物，不纳入 Git
 node_modules/           npm 依赖安装目录，不纳入 Git
 ```
@@ -105,12 +108,14 @@ node_modules/           npm 依赖安装目录，不纳入 Git
 - [V5.0-RC1-PC 迭代记录](docs/iterations/v5.0-rc1-pc.md)
 - [V5.0-RC1-PC 中文提示词](docs/prompts/v5.0-rc1-pc.md)
 - [当前六张 PC 验收截图](docs/screenshots/review/latest/)
+- [V5.0-RC2-PC 迭代记录](docs/iterations/v5.0-rc2-pc.md)
+- [V5.0-RC2-PC 中文开发记录](docs/prompts/v5.0-rc2-pc.md)
 - [AI 辅助开发总日志](AI_DEVELOPMENT_LOG.md)
 - [更新日志](CHANGELOG.md)
 
 ## 后续计划
 
-- V5.0-RC1-PC 已完成 PC 桌面终审；当前等待人工/ChatGPT 对六张 `1600×900` PC 截图进行最终验收，不创建正式 `v5.0` 标签。
+- V5.0-RC2-PC 已完成产品化与 PC 桌面终审；当前等待人工/ChatGPT 对六张 `1600×900` PC 截图进行最终验收，不创建正式 `v5.0` 标签。
 - 移动端与平板端在本轮明确冻结；发现的响应式问题统一记录到 V5.1 TODO，不为 PC 终审扩展截图或修改响应式结构。
 - 后续继续补强来源和授权明确的任务历史影像，不批量下载授权不清晰的媒体。
 - 为每轮迭代保存完整中文提示词、人工验收结果和遗留问题。

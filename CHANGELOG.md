@@ -1,5 +1,12 @@
 # 更新日志
 
+## V5.0-RC2-PC
+
+- 增加纯 CMD 根目录启动器 `中国航天博物馆启动器.cmd`：双击后检查本地 Node/npm、调用 `npm.cmd run dev` 启动 Vite 服务，并自动使用 Microsoft Edge 打开本地展馆；不下载或执行任何远程内容。
+- 增加低视觉权重的“在线展馆”入口，指向 GitHub Pages；在线版与本地版共用同一套页面内容。
+- 完成 PC 展陈终审检查；没有重做五大发展主线、五座展厅或移动端结构，没有新增图片和视频。
+- 截图继续只覆盖 `docs/screenshots/review/latest/` 的六张 `1600×900` PC fullPage PNG。
+
 ## V5.0-RC1-PC 工作树清理
 
 - 工作树只保留 `docs/screenshots/review/latest/` 下六张最新 `1600×900` PC fullPage PNG；历史 V4/V5 截图副本已从工作树移除，继续通过 Git commit / Tag 查询。
