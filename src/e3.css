@@ -842,3 +842,169 @@ button:focus-visible, a:focus-visible { outline-color: var(--museum-bronze); }
   .lunar-route-map .lunar-side-branch::before { display: none; }
   .planetary-engineering-chain { grid-template-columns: 1fr; gap: 18px; }
 }
+
+/* V5.0 PC readability pass: exhibition copy is intentionally spacious; mobile remains unchanged. */
+@media (min-width: 801px) {
+  :root {
+    --font-body: 24px;
+    --font-body-core: 26px;
+    --font-exhibit: 32px;
+    --font-year: 23px;
+    --font-caption: 18px;
+    --font-meta: 18px;
+  }
+
+  .museum-prologue {
+    padding-top: 112px;
+    padding-bottom: 112px;
+  }
+  .prologue-register {
+    column-gap: 48px;
+    row-gap: 30px;
+  }
+  .prologue-register article {
+    min-height: 0;
+    padding: 10px 24px 30px 0;
+  }
+  .prologue-register time {
+    font: 600 var(--font-year)/1.2 'DM Mono';
+  }
+  .prologue-register h3 {
+    margin: 18px 0 12px;
+    font-size: var(--font-exhibit);
+    line-height: 1.25;
+  }
+  .prologue-register p {
+    max-width: 25em;
+    font-size: var(--font-body-core);
+    line-height: 1.7;
+  }
+
+  .timeline-compact-wall time {
+    font-size: var(--font-year);
+    font-weight: 600;
+  }
+  .timeline-compact-wall h3,
+  .timeline-compact-wall > article[data-emphasis="major"] h3 {
+    font-size: var(--font-exhibit);
+    line-height: 1.3;
+  }
+  .timeline-compact-wall p {
+    max-width: 20em;
+    font-size: var(--font-body);
+    line-height: 1.7;
+  }
+  .tech-section--compact .tech-branch h3 {
+    font-size: 30px;
+    line-height: 1.3;
+  }
+  .tech-section--compact .tech-branch p {
+    max-width: 18em;
+    font-size: var(--font-body);
+    line-height: 1.7;
+  }
+  .tech-section--compact .branch-relation {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .story-page .story-hero .section-kicker { font-size: 20px; }
+  .story-page .story-subtitle { font-size: 24px; }
+  .story-page .story-question { font-size: 22px; line-height: 1.7; }
+  .story-page .story-why p {
+    max-width: 34em;
+    font-size: var(--font-body-core);
+    line-height: 1.7;
+  }
+  .story-page .story-heading p,
+  .story-page .story-tail p,
+  .deep-dive-heading p {
+    max-width: 34em;
+    font-size: var(--font-body-core);
+    line-height: 1.7;
+  }
+  .story-page .story-node {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  .story-page .story-node b { font-size: var(--font-year); font-weight: 600; }
+  .story-page time,
+  .story-page .grand-node time,
+  .story-page .deep-dive-meta time { font-size: var(--font-year); line-height: 1.3; font-weight: 600; }
+
+  .launch-step h3,
+  .satellite-use-cases h3,
+  .human-chapters h3,
+  .planetary-anchor-grid h3,
+  .deep-dive-copy h3 {
+    font-size: var(--font-exhibit);
+    line-height: 1.3;
+  }
+  .launch-step p,
+  .satellite-use-cases p,
+  .human-chapters p,
+  .planetary-anchor-grid p,
+  .deep-dive-copy > p,
+  .launch-support-copy p,
+  .lunar-sample-note p,
+  .planetary-chain-intro p,
+  .planetary-chain-items p {
+    max-width: 34em;
+    font-size: var(--font-body-core);
+    line-height: 1.7;
+  }
+  .launch-step small,
+  .satellite-use-cases strong,
+  .launch-capability-chain strong,
+  .human-people-strip strong,
+  .lunar-sample-note strong,
+  .planetary-engineering-chain strong,
+  .planetary-chain-items strong {
+    font-size: 22px;
+    line-height: 1.45;
+  }
+  .launch-capability-chain p,
+  .human-people-strip p,
+  .planetary-engineering-chain p,
+  .satellite-use-case-note,
+  .lunar-branch-sequence article span {
+    font-size: 20px;
+    line-height: 1.7;
+  }
+  .lunar-route-map .lunar-main-route h3,
+  .lunar-side-branch header strong {
+    font-size: 30px;
+    line-height: 1.3;
+  }
+
+  .deep-dive-copy > strong,
+  .deep-dive-copy > span,
+  .planetary-chain-intro span,
+  .planetary-chain-items span { font-size: 18px; }
+  .deep-dive-item .asset-media figcaption,
+  .story-page .asset-media figcaption,
+  .story-media-caption,
+  .story-media-attribution,
+  .story-page .story-media-meta,
+  .story-media .official-media-attribution { font-size: var(--font-caption) !important; line-height: 1.6; opacity: 1; }
+
+  .official-media-source-line > span,
+  .official-media-source-line > a,
+  .official-media-copy .official-media-source-line > a,
+  .official-media-details,
+  .official-media-details summary,
+  .official-media-details dl,
+  .official-media-details dd a,
+  .story-page .story-media .official-media-copy > span,
+  .story-page .story-media .official-media-copy a,
+  .story-page .story-media .official-media-status,
+  .story-page .story-media .official-media-details {
+    font-size: var(--font-meta) !important;
+    line-height: 1.6;
+  }
+  .official-media-source-line { flex-wrap: wrap; }
+  .official-media-source-line > span { white-space: normal; overflow-wrap: anywhere; }
+  .story-media .official-media-copy h3 { font-size: 22px !important; line-height: 1.35; }
+  .story-media .official-media-copy p { font-size: 18px !important; line-height: 1.6; }
+  .official-media-details dl > div { grid-template-columns: 96px minmax(0, 1fr); }
+}
