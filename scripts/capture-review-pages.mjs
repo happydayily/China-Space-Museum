@@ -5,10 +5,7 @@ import { spawn } from 'node:child_process'
 import { chromium } from 'playwright'
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
-const outputDirectories = [
-  join(projectRoot, 'docs', 'screenshots', 'review', 'latest'),
-  join(projectRoot, 'docs', 'screenshots', 'v5.0'),
-]
+const outputDirectory = join(projectRoot, 'docs', 'screenshots', 'review', 'latest')
 const port = Number(process.env.REVIEW_SCREENSHOT_PORT || 4173)
 const baseUrl = `http://127.0.0.1:${port}`
 const outputFiles = [
@@ -124,7 +121,7 @@ async function inspectPage(page) {
   })
 }
 
-async function capturePage(page, name, route, outputPaths) {
+async function capturePage(page, name, route, outputPath) {
   const runtimeErrors = []
   const failedResponses = []
   const onPageError = (error) => runtimeErrors.push(error.message)
@@ -146,12 +143,10 @@ async function capturePage(page, name, route, outputPaths) {
     if (inspection.missingImageAlt.length) throw new Error(`图片缺少 alt：${inspection.missingImageAlt.join('、')}`)
     if (inspection.missingLinkLabel.length) throw new Error(`链接缺少可访问名称：${inspection.missingLinkLabel.join('、')}`)
     if (inspection.hasHorizontalOverflow) throw new Error('页面存在横向溢出。')
-    for (const outputPath of outputPaths) {
-      await page.screenshot({ path: outputPath, fullPage: true, type: 'png' })
-      const size = statSync(outputPath).size
-      if (!size) throw new Error('截图文件大小为 0。')
-    }
-    console.log(`✓ ${name} -> ${outputPaths.join('、')}`)
+    await page.screenshot({ path: outputPath, fullPage: true, type: 'png' })
+    const size = statSync(outputPath).size
+    if (!size) throw new Error('截图文件大小为 0。')
+    console.log(`✓ ${name} -> ${outputPath} (${size} bytes)`)
   } finally {
     page.off('pageerror', onPageError)
     page.off('console', onConsole)
@@ -160,10 +155,8 @@ async function capturePage(page, name, route, outputPaths) {
 }
 
 async function main() {
-  for (const outputDirectory of outputDirectories) {
-    mkdirSync(outputDirectory, { recursive: true })
-    for (const fileName of outputFiles) rmSync(join(outputDirectory, fileName), { force: true })
-  }
+  mkdirSync(outputDirectory, { recursive: true })
+  for (const fileName of outputFiles) rmSync(join(outputDirectory, fileName), { force: true })
 
   const grandHalls = readJson('grandHalls.json').sort((a, b) => String(a.index).localeCompare(String(b.index), 'zh-CN'))
   if (grandHalls.length !== 5) throw new Error(`grandHalls.json 当前读取到 ${grandHalls.length} 个展厅，预期 5 个。`)
@@ -185,7 +178,7 @@ async function main() {
     try {
       for (const [name, route, fileName] of pages) {
         try {
-          await capturePage(page, name, route, outputDirectories.map((directory) => join(directory, fileName)))
+          await capturePage(page, name, route, join(outputDirectory, fileName))
         } catch (error) {
           failures.push(`1600×900 · ${name}: ${error.message}`)
           console.error(`✗ 1600×900 · ${name}: ${error.message}`)
@@ -200,7 +193,7 @@ async function main() {
     if (server) await new Promise((resolvePromise) => setTimeout(resolvePromise, 250))
   }
 
-  const missing = outputDirectories.flatMap((directory) => outputFiles.filter((fileName) => !existsSync(join(directory, fileName)) || statSync(join(directory, fileName)).size === 0).map((fileName) => join(directory, fileName)))
+  const missing = outputFiles.filter((fileName) => !existsSync(join(outputDirectory, fileName)) || statSync(join(outputDirectory, fileName)).size === 0).map((fileName) => join(outputDirectory, fileName))
   if (missing.length || failures.length) {
     if (missing.length) console.error(`缺少 1600×900 截图：${missing.join('、')}`)
     process.exitCode = 1

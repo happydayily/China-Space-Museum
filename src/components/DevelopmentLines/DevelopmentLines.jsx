@@ -35,7 +35,7 @@ export default function DevelopmentLines({ onEnter }) {
             const dimmed = isDimmed(lane.id)
             return <g className={`network-lane ${dimmed ? 'is-dimmed' : ''} ${hovered === lane.id ? 'is-hovered' : ''}`} key={lane.id} onMouseEnter={() => setHovered(lane.id)} onMouseLeave={() => setHovered(null)} onFocus={() => setHovered(lane.id)} onBlur={() => setHovered(null)} onClick={() => onEnter(line.grandHallId)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); onEnter(line.grandHallId) } }} role="button" tabIndex="0" aria-label={`进入${line.name}主题展厅`}>
               <path className="network-lane-path" d={`M48 ${laneY[lane.id]} H950`} style={{ stroke: line.color }} />
-              {lane.nodes.map(([year, label]) => <g className="network-node" key={`${year}-${label}`}><circle cx={xForYear(year)} cy={laneY[lane.id]} r={hovered === lane.id ? 7 : 5} style={{ stroke: line.color }} /><text x={xForYear(year)} y={laneY[lane.id] - 14} textAnchor="middle">{label}</text></g>)}
+              {lane.nodes.map(([year, label], index) => <g className={`network-node network-node--${index + 1}`} key={`${year}-${label}`}><circle cx={xForYear(year)} cy={laneY[lane.id]} r={hovered === lane.id ? 7 : 5} style={{ stroke: line.color }} /><text x={xForYear(year)} y={laneY[lane.id] - 14} textAnchor="middle">{label}</text></g>)}
               <text className="network-lane-label" x="10" y={laneY[lane.id] + 5} style={{ fill: line.color }}>{line.name}</text>
             </g>
           })}
