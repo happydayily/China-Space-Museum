@@ -4,7 +4,7 @@ import StoryTour from './StoryTour'
 import DeepDiveSection from './DeepDiveSection'
 import { getAssetById } from '../../utils/assetRegistry'
 
-const stages = [['绕', '嫦娥一号', '2007', '进入绕月轨道', null], ['落', '嫦娥三号', '2013', '月面软着陆与巡视', null], ['回', '嫦娥五号', '2020', '月球采样返回', 'media-lunar-change5-launch-live']]
+const stages = [['绕', '嫦娥一号', '2007', '进入绕月轨道，建立地月转移与月球捕获能力', null], ['落', '嫦娥三号', '2013', '动力下降、悬停避障与月面软着陆', null], ['回', '嫦娥五号', '2020', '采样、起飞、月轨交会与返回', 'media-lunar-change5-launch-live']]
 
 export default function LunarExplorationStory({ hall, nodes, missions, onOpenMission }) {
   const mission = missions.find((item) => item.id === 'chang-e')

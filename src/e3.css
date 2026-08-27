@@ -427,3 +427,35 @@ button:focus-visible, a:focus-visible { outline-color: var(--museum-bronze); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* V5.0-RC1-PC：只增强 1600px 桌面展陈，不改变移动端响应式结构。 */
+.route-loading { min-height: 100vh; display: grid; place-items: center; background: var(--museum-deep); color: var(--museum-white); font-size: 18px; }
+
+@media (min-width: 801px) {
+  .museum-hero { isolation: isolate; overflow: hidden; }
+  .museum-hero::before { content: ''; position: absolute; z-index: 1; width: 520px; height: 520px; right: 9%; top: 52%; transform: translateY(-50%); border: 1px solid rgba(143,168,178,.14); border-radius: 50%; background: radial-gradient(circle at 34% 34%, rgba(71,124,140,.12), transparent 59%); pointer-events: none; }
+  .museum-hero::after { content: ''; position: absolute; z-index: 1; width: 820px; height: 260px; right: -4%; top: 26%; transform: rotate(-13deg); border: 1px solid rgba(208,164,106,.11); border-radius: 50%; box-shadow: 0 0 0 32px rgba(208,164,106,.018); pointer-events: none; }
+  .museum-hero-copy, .hero-orbit-label, .hero-year { z-index: 2; }
+
+  .development-network .network-lane:focus-visible { outline: 2px solid var(--museum-bronze); outline-offset: 6px; }
+  .development-network .network-lane:focus-visible .network-lane-path { stroke-width: 3 !important; opacity: 1; }
+
+  .timeline-section--compact .timeline-compact-grid article[data-emphasis="major"] { min-height: 190px; padding-top: 29px; border-top: 2px solid var(--museum-bronze); background: linear-gradient(180deg, rgba(180,119,50,.08), transparent 68%) !important; }
+  .timeline-section--compact .timeline-compact-grid article[data-emphasis="major"] time { font-size: 16px; font-weight: 600; }
+  .timeline-section--compact .timeline-compact-grid article[data-emphasis="major"] h3 { margin-top: 15px; font-size: clamp(23px, 1.7vw, 29px); font-weight: 600; }
+  .timeline-section--compact .timeline-compact-grid article[data-emphasis="supporting"] { opacity: .78; }
+  .timeline-section--compact .timeline-compact-grid article[data-emphasis="supporting"] h3 { font-size: 18px; }
+
+  .tech-section--compact .tech-tree { position: relative; gap: 28px; }
+  .tech-section--compact .tech-branch { position: relative; min-height: 160px; margin-right: 0; padding: 28px 20px 30px 0; border-right: 0; }
+  .tech-section--compact .tech-branch::before { content: ''; display: block; width: 36px; margin-bottom: 17px; border-top: 2px solid var(--museum-bronze); opacity: .72; }
+  .tech-section--compact .tech-branch h3 { margin-top: 0; }
+  .tech-section--compact .tech-branch:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 29px; width: 1px; height: 72px; background: rgba(201,195,184,.16); }
+  .tech-section--compact .branch-arrow { margin-top: 24px; }
+
+  .launch-step-metrics { display: grid; gap: 3px; margin-top: 8px; color: #C9D3D8; font-size: 12px; line-height: 1.45; }
+  .launch-step-metrics span { display: block; }
+  .launch-step-metrics span::before { color: #D0A46A; }
+  .launch-step-metrics .launch-step-height::before { content: '高度  '; }
+  .launch-step-metrics .launch-step-payload::before { content: '近地轨道运力  '; }
+}

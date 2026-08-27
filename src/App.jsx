@@ -1,12 +1,17 @@
-import { useEffect, useMemo, useState } from 'react'
-import SpaceScene from './components/SpaceScene/SpaceScene'
+import { lazy, Suspense, useEffect, useMemo, useState } from 'react'
 import Timeline from './components/Timeline/Timeline'
 import TechTree from './components/TechTree/TechTree'
-import HallPage from './pages/HallPage/HallPage'
-import GrandHallPage from './pages/GrandHallPage/GrandHallPage'
 import DevelopmentLines from './components/DevelopmentLines/DevelopmentLines'
 import halls from './data/halls.json'
 import grandHalls from './data/grandHalls.json'
+
+const SpaceScene = lazy(() => import('./components/SpaceScene/SpaceScene'))
+const HallPage = lazy(() => import('./pages/HallPage/HallPage'))
+const GrandHallPage = lazy(() => import('./pages/GrandHallPage/GrandHallPage'))
+
+function RouteFallback() {
+  return <main className="route-loading" aria-live="polite">正在加载展厅…</main>
+}
 
 function routeFromLocation() {
   const hash = window.location.hash
@@ -62,15 +67,15 @@ export default function App() {
   }
 
   if (route.type === 'mission' && activeHall) {
-    return <HallPage hall={activeHall} onBack={closeToHome} onBackToGrandHall={closeToGrandHall} />
+    return <Suspense fallback={<RouteFallback />}><HallPage hall={activeHall} onBack={closeToHome} onBackToGrandHall={closeToGrandHall} /></Suspense>
   }
   if (route.type === 'grandHall' && activeGrandHall) {
-    return <GrandHallPage hall={activeGrandHall} onBack={closeToHome} onOpenMission={openMission} />
+    return <Suspense fallback={<RouteFallback />}><GrandHallPage hall={activeGrandHall} onBack={closeToHome} onOpenMission={openMission} /></Suspense>
   }
 
   return (
     <main className="museum-shell">
-      <SpaceScene />
+      <Suspense fallback={<div className="space-scene space-scene--fallback" aria-hidden="true" />}><SpaceScene /></Suspense>
       <div className="noise" />
       <header className="topbar">
         <div className="brand">

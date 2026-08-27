@@ -5,8 +5,7 @@ import { spawn } from 'node:child_process'
 import { chromium } from 'playwright'
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
-const outputDirectory = join(projectRoot, 'docs', 'screenshots', 'review', 'latest')
-const mobileOutputDirectory = join(outputDirectory, 'mobile')
+const outputDirectory = join(projectRoot, 'docs', 'screenshots', 'v5.0-rc1-pc')
 const port = Number(process.env.REVIEW_SCREENSHOT_PORT || 4173)
 const baseUrl = `http://127.0.0.1:${port}`
 const outputFiles = [
@@ -17,6 +16,7 @@ const outputFiles = [
   '05-lunar.png',
   '06-planetary.png',
 ]
+const viewport = { width: 1600, height: 900 }
 
 const browserCandidates = [
   process.env.REVIEW_BROWSER_PATH,
@@ -122,25 +122,41 @@ async function inspectPage(page) {
 }
 
 async function capturePage(page, name, route, outputPath) {
-  await page.goto(`${baseUrl}${route}`, { waitUntil: 'domcontentloaded' })
-  await waitForStablePage(page)
-  const inspection = await inspectPage(page)
-  if (inspection.hasErrorOverlay || inspection.hasErrorText) throw new Error('检测到浏览器错误页或 Vite 错误覆盖层。')
-  if (inspection.failedImages.length) throw new Error(`图片加载失败：${inspection.failedImages.join('、')}`)
-  if (inspection.missingImageAlt.length) throw new Error(`图片缺少 alt：${inspection.missingImageAlt.join('、')}`)
-  if (inspection.missingLinkLabel.length) throw new Error(`链接缺少可访问名称：${inspection.missingLinkLabel.join('、')}`)
-  if (page.viewportSize()?.width <= 500 && inspection.hasHorizontalOverflow) throw new Error('移动端页面存在横向溢出。')
-  await page.screenshot({ path: outputPath, fullPage: true, type: 'png' })
-  const size = statSync(outputPath).size
-  if (!size) throw new Error('截图文件大小为 0。')
-  console.log(`✓ ${name} -> ${outputPath} (${size} bytes)`)
+  const runtimeErrors = []
+  const failedResponses = []
+  const onPageError = (error) => runtimeErrors.push(error.message)
+  const onConsole = (message) => { if (message.type() === 'error') runtimeErrors.push(message.text()) }
+  const onResponse = (response) => {
+    if (response.status() >= 400 && response.url().startsWith(baseUrl)) failedResponses.push(`${response.status()} ${response.url()}`)
+  }
+  page.on('pageerror', onPageError)
+  page.on('console', onConsole)
+  page.on('response', onResponse)
+  try {
+    await page.goto(`${baseUrl}${route}`, { waitUntil: 'domcontentloaded' })
+    await waitForStablePage(page)
+    const inspection = await inspectPage(page)
+    if (inspection.hasErrorOverlay || inspection.hasErrorText) throw new Error('检测到浏览器错误页或 Vite 错误覆盖层。')
+    if (failedResponses.length) throw new Error(`页面请求失败：${failedResponses.join('、')}`)
+    if (runtimeErrors.length) throw new Error(`浏览器运行时错误：${runtimeErrors.join('；')}`)
+    if (inspection.failedImages.length) throw new Error(`图片加载失败：${inspection.failedImages.join('、')}`)
+    if (inspection.missingImageAlt.length) throw new Error(`图片缺少 alt：${inspection.missingImageAlt.join('、')}`)
+    if (inspection.missingLinkLabel.length) throw new Error(`链接缺少可访问名称：${inspection.missingLinkLabel.join('、')}`)
+    if (inspection.hasHorizontalOverflow) throw new Error('页面存在横向溢出。')
+    await page.screenshot({ path: outputPath, fullPage: true, type: 'png' })
+    const size = statSync(outputPath).size
+    if (!size) throw new Error('截图文件大小为 0。')
+    console.log(`✓ ${name} -> ${outputPath} (${size} bytes)`)
+  } finally {
+    page.off('pageerror', onPageError)
+    page.off('console', onConsole)
+    page.off('response', onResponse)
+  }
 }
 
 async function main() {
   mkdirSync(outputDirectory, { recursive: true })
-  mkdirSync(mobileOutputDirectory, { recursive: true })
   for (const fileName of outputFiles) rmSync(join(outputDirectory, fileName), { force: true })
-  for (const fileName of outputFiles) rmSync(join(mobileOutputDirectory, fileName), { force: true })
 
   const grandHalls = readJson('grandHalls.json').sort((a, b) => String(a.index).localeCompare(String(b.index), 'zh-CN'))
   if (grandHalls.length !== 5) throw new Error(`grandHalls.json 当前读取到 ${grandHalls.length} 个展厅，预期 5 个。`)
@@ -158,21 +174,18 @@ async function main() {
   try {
     if (server) await waitForServer(server)
     browser = await chromium.launch({ headless: true, executablePath: browserPath })
-    const desktopPage = await browser.newPage({ viewport: { width: 1600, height: 900 }, deviceScaleFactor: 1 })
-    const mobilePage = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1, isMobile: true })
-    for (const [name, route, fileName] of pages) {
-      try {
-        await capturePage(desktopPage, name, route, join(outputDirectory, fileName))
-      } catch (error) {
-        failures.push(`桌面 · ${name}: ${error.message}`)
-        console.error(`✗ 桌面 · ${name}: ${error.message}`)
+    const page = await browser.newPage({ viewport, deviceScaleFactor: 1 })
+    try {
+      for (const [name, route, fileName] of pages) {
+        try {
+          await capturePage(page, name, route, join(outputDirectory, fileName))
+        } catch (error) {
+          failures.push(`1600×900 · ${name}: ${error.message}`)
+          console.error(`✗ 1600×900 · ${name}: ${error.message}`)
+        }
       }
-      try {
-        await capturePage(mobilePage, `移动端 · ${name}`, route, join(mobileOutputDirectory, fileName))
-      } catch (error) {
-        failures.push(`移动端 · ${name}: ${error.message}`)
-        console.error(`✗ 移动端 · ${name}: ${error.message}`)
-      }
+    } finally {
+      await page.close()
     }
   } finally {
     await browser?.close()
@@ -180,15 +193,13 @@ async function main() {
     if (server) await new Promise((resolvePromise) => setTimeout(resolvePromise, 250))
   }
 
-  const missingDesktop = outputFiles.filter((fileName) => !existsSync(join(outputDirectory, fileName)) || statSync(join(outputDirectory, fileName)).size === 0)
-  const missingMobile = outputFiles.filter((fileName) => !existsSync(join(mobileOutputDirectory, fileName)) || statSync(join(mobileOutputDirectory, fileName)).size === 0)
-  if (missingDesktop.length || missingMobile.length || failures.length) {
-    if (missingDesktop.length) console.error(`缺少桌面截图：${missingDesktop.join('、')}`)
-    if (missingMobile.length) console.error(`缺少移动端截图：${missingMobile.join('、')}`)
+  const missing = outputFiles.filter((fileName) => !existsSync(join(outputDirectory, fileName)) || statSync(join(outputDirectory, fileName)).size === 0)
+  if (missing.length || failures.length) {
+    if (missing.length) console.error(`缺少 1600×900 截图：${missing.join('、')}`)
     process.exitCode = 1
     return
   }
-  console.log(`自动验收截图完成：桌面 ${outputFiles.length} 张（1600×900）+ 移动端 ${outputFiles.length} 张（390×844），均为 fullPage PNG。`)
+  console.log(`自动验收截图完成：PC 1600×900 共 ${outputFiles.length} 张 fullPage PNG。`)
 }
 
 main().catch((error) => {
