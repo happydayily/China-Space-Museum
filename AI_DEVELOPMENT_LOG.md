@@ -1,5 +1,15 @@
 # AI 辅助开发日志
 
+## V5.0-RC1-PC 工作树清理
+
+### 清理范围与结果
+
+- 只保留 `docs/screenshots/review/latest/` 下 `01-home.png` 至 `06-planetary.png` 六张 `1600×900` PC fullPage PNG；历史 V4/V5 截图副本继续由 Git commit / Tag 承担归档职责。
+- `scripts/capture-review-pages.mjs` 改为只覆盖 `review/latest/`；`.gitignore` 增加历史截图目录和移动端截图目录规则，但不忽略最新六张图。
+- 删除当前项目 `dist/` 构建产物和历史截图目录；不删除 `node_modules`、Git 历史、Tag 或文档。
+- 对 `src/assets` 的 36 个本地媒体执行全仓库文本引用、数据注册和 SHA-256 审计：21 个 USED、0 个可确认 UNUSED、0 个 DUPLICATE、15 个 UNCERTAIN，未删除本地媒体。
+- 清理后重新执行 `npm.cmd run build` 和 `npm.cmd run screenshots`，六页 PC 自动验收通过；大 JavaScript chunk 警告仍为既有状态。
+
 ## V5.0-RC1-PC
 
 ### 人工提出的目标

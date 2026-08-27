@@ -61,7 +61,7 @@ npm run preview
 npm run screenshots
 ```
 
-PC 截图输出到 `docs/screenshots/v5.0-rc1-pc/`，固定为 `01-home.png` 至 `06-planetary.png`，不建立移动端、平板端或其他视口子目录。截图脚本复用本机 Edge/Chrome，不保存浏览器 Profile、缓存或 Cookie，并自动检查图片、链接、同源 404、运行时错误、错误覆盖层和 1600px 桌面横向溢出。
+PC 截图只输出到 `docs/screenshots/review/latest/`，固定为 `01-home.png` 至 `06-planetary.png`，不建立移动端、平板端或其他视口子目录。历史版本截图通过 Git commit / Tag 查询。截图脚本复用本机 Edge/Chrome，不保存浏览器 Profile、缓存或 Cookie，并自动检查图片、链接、同源 404、运行时错误、错误覆盖层和 1600px 桌面横向溢出。
 
 ## 项目结构
 
@@ -98,13 +98,13 @@ node_modules/           npm 依赖安装目录，不纳入 Git
 - [V5.0-E3 中文提示词](docs/prompts/v5.0-e3.md)
 - [V5.0-E4 迭代记录](docs/iterations/v5.0-e4.md)
 - [V5.0-E4 中文提示词](docs/prompts/v5.0-e4.md)
-- [V5.0-E4 六页归档截图](docs/screenshots/v5.0-e4/)
+- V5.0-E4 六页归档截图：通过 Git commit / Tag 查询
 - [V5.0-F 迭代记录](docs/iterations/v5.0-f.md)
 - [V5.0-F 中文提示词](docs/prompts/v5.0-f.md)
-- [V5.0-F 桌面与移动端归档截图](docs/screenshots/v5.0-f/)
+- V5.0-F 桌面与移动端归档截图：通过 Git commit / Tag 查询
 - [V5.0-RC1-PC 迭代记录](docs/iterations/v5.0-rc1-pc.md)
 - [V5.0-RC1-PC 中文提示词](docs/prompts/v5.0-rc1-pc.md)
-- [V5.0-RC1-PC 六张 PC 归档截图](docs/screenshots/v5.0-rc1-pc/)
+- [当前六张 PC 验收截图](docs/screenshots/review/latest/)
 - [AI 辅助开发总日志](AI_DEVELOPMENT_LOG.md)
 - [更新日志](CHANGELOG.md)
 

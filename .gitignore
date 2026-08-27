@@ -22,6 +22,11 @@ cypress/screenshots/
 *.tmp
 *.temp
 
+# 只在工作树保留最新一套 PC 验收截图；历史版本截图通过 Git commit / Tag 查询
+docs/screenshots/v4*/
+docs/screenshots/v5.0-*/
+docs/screenshots/**/mobile/
+
 # 浏览器测试 Profile 和本地浏览器数据
 docs/chrome-*/
 docs/edge-*/

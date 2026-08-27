@@ -5,7 +5,7 @@ import { spawn } from 'node:child_process'
 import { chromium } from 'playwright'
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
-const outputDirectory = join(projectRoot, 'docs', 'screenshots', 'v5.0-rc1-pc')
+const outputDirectory = join(projectRoot, 'docs', 'screenshots', 'review', 'latest')
 const port = Number(process.env.REVIEW_SCREENSHOT_PORT || 4173)
 const baseUrl = `http://127.0.0.1:${port}`
 const outputFiles = [
