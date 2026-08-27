@@ -21,12 +21,12 @@ export default function GrandHallPage({ hall, onBack, onOpenMission }) {
     <main className={`grand-hall-page grand-hall-page--${hall.id}`} style={{ '--hall-color': hall.color }}>
       <nav className="hall-page-nav">
         <button type="button" onClick={onBack}>← 返回序厅</button>
-        <div className="brand"><span className="brand-mark">中</span><span>中国航天<br /><em>数字博物馆 · V5.0</em></span></div>
+        <div className="brand"><span className="brand-mark">中</span><span>中国航天<br /><em>数字博物馆</em></span></div>
         <span>主题展厅 {hall.index}</span>
       </nav>
       <div className="grand-breadcrumb"><span>中国航天发展史</span><b>/</b><strong>{hall.name}</strong></div>
       {Story ? <Story hall={hall} nodes={hall.nodes} missions={missions} onOpenMission={onOpenMission} /> : null}
-      <footer className="footer"><span>中国航天发展史数字博物馆</span><span>{hall.name} · V5.0 主题展厅</span></footer>
+      <footer className="footer"><span>中国航天发展史数字博物馆</span><span>{hall.name} · 主题展厅</span></footer>
     </main>
   )
 }

@@ -35,7 +35,7 @@ export default function Timeline({ category, compact = false }) {
       <div className="section-heading">
         <span className="section-kicker">共同时间底座 · {String(items.length).padStart(2, '0')} 个节点</span>
         <h2>{compact ? '中国航天关键时刻' : '七十年，向星河深处。'}</h2>
-        <p>{compact ? '六个跨主线时刻，串起五条发展路径。' : '向下滚动，让关键年份依次点亮。'}</p>
+        <p>{compact ? '六个节点，串起五条发展路径；主展项与支撑节点各有位置。' : '向下滚动，让关键年份依次点亮。'}</p>
       </div>
       {compact ? <div className="timeline-compact-grid">{items.map((item) => <article data-emphasis={primaryCompactIds.has(item.id) ? 'major' : 'supporting'} key={item.id}><time>{item.year}</time><h3>{item.title}</h3><p>{item.description}</p></article>)}</div> : null}
       {!compact ? (

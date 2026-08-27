@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import developmentLines from '../../data/developmentLines.json'
 
-const years = ['1956', '1970', '1992', '2003', '2007', '2020', '2022', '2024', '未来']
+const years = ['1956', '1970', '1988', '1992', '2003', '2007', '2013', '2016', '2020', '2021', '2022', '2024', '未来']
 const lanes = [
   { id: 'access-to-space', nodes: [['1956', '航天起步'], ['1970', '长征一号'], ['2016', '长征五号']] },
   { id: 'satellite-applications', nodes: [['1970', '东方红一号'], ['1988', '风云'], ['2020', '北斗三号']] },
@@ -10,7 +10,7 @@ const lanes = [
   { id: 'planetary-exploration', nodes: [['2020', '天问一号'], ['2021', '祝融巡视'], ['未来', '火星采样']] },
 ]
 const laneY = { 'access-to-space': 58, 'satellite-applications': 116, 'human-spaceflight': 174, 'lunar-exploration': 232, 'planetary-exploration': 290 }
-const xForYear = (year) => 88 + years.indexOf(String(year)) * 103
+const xForYear = (year) => 60 + Math.max(0, years.indexOf(String(year))) * 75
 
 export default function DevelopmentLines({ onEnter }) {
   const [hovered, setHovered] = useState(null)

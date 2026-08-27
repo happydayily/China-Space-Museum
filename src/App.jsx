@@ -83,7 +83,7 @@ export default function App() {
           <span>中国航天<br /><em>数字博物馆</em></span>
         </div>
         <div className="topbar-status-group">
-          <div className="status"><span className="status-dot" />数字展览 · V5.0</div>
+          <div className="status"><span className="status-dot" />序厅 · 展览开放中</div>
           <a className="online-link" href="https://happydayily.github.io/China-Space-Museum/" target="_blank" rel="noreferrer">在线展馆 ↗</a>
         </div>
         <button className="enter-button" onClick={() => document.getElementById('halls')?.scrollIntoView({ behavior: 'smooth' })}>
@@ -108,11 +108,24 @@ export default function App() {
         <DevelopmentLines onEnter={openGrandHall} />
       </section>
 
+      <section className="museum-prologue" aria-labelledby="prologue-heading">
+        <div className="prologue-heading">
+          <span className="section-kicker">入馆导言 · 先看尺度如何改变</span>
+          <h2 id="prologue-heading">一部航天史，<br />也是一部能力不断外扩的历史。</h2>
+        </div>
+        <div className="prologue-register">
+          <article><time>1956</time><h3>建立国家体系</h3><p>从总体设计、试验到组织协同，航天事业开始拥有自己的起点。</p></article>
+          <article><time>1970</time><h3>进入地球轨道</h3><p>东方红一号让“进入太空”从目标变成可重复的工程能力。</p></article>
+          <article><time>2003</time><h3>把人送入太空</h3><p>神舟五号把火箭、飞船、测控、生命保障和安全返回连成闭环。</p></article>
+          <article><time>2024</time><h3>触及月球背面</h3><p>嫦娥六号完成月背采样返回，探测尺度继续向地月之外延伸。</p></article>
+        </div>
+      </section>
+
       <Timeline compact />
       <TechTree compact />
       <footer className="footer">
         <span>中国航天发展史数字博物馆</span>
-        <span>愿人类探索永无止境 · V5.0</span>
+        <span>愿人类探索永无止境</span>
       </footer>
     </main>
   )

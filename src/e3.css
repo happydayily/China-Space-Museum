@@ -462,3 +462,74 @@ button:focus-visible, a:focus-visible { outline-color: var(--museum-bronze); }
   .launch-step-metrics .launch-step-height::before { content: '高度  '; }
   .launch-step-metrics .launch-step-payload::before { content: '近地轨道运力  '; }
 }
+
+/* V5.0-RC3.1-PC：内容与策展深化，只调整 1600px 桌面展陈。 */
+@media (min-width: 801px) {
+  .museum-prologue {
+    display: grid;
+    grid-template-columns: minmax(300px, .85fr) minmax(0, 1.55fr);
+    gap: 7vw;
+    padding: 92px 7vw 88px;
+    border-top: 1px solid var(--museum-line);
+    background: var(--museum-paper-alt);
+    color: var(--museum-ink);
+  }
+  .prologue-heading h2 { margin: 18px 0 0; font-size: clamp(34px, 3.2vw, 50px); line-height: 1.18; letter-spacing: -.045em; font-weight: 500; }
+  .prologue-register { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 34px; }
+  .prologue-register article { min-height: 157px; padding: 6px 20px 20px 0; border-top: 1px solid var(--museum-line); }
+  .prologue-register time { color: var(--museum-bronze); font: 14px 'DM Mono'; }
+  .prologue-register h3 { margin: 15px 0 8px; color: var(--museum-ink); font-size: 21px; font-weight: 500; }
+  .prologue-register p { margin: 0; color: var(--museum-ink-soft); font-size: 16px; line-height: 1.7; }
+
+  .timeline-section--compact .timeline-compact-grid article[data-emphasis="major"] { min-height: 190px; padding-top: 29px; border-top: 2px solid var(--museum-bronze); background: #F7F3EB !important; }
+  .timeline-section--compact .timeline-compact-grid article[data-emphasis="major"] time { font-size: 16px; font-weight: 600; }
+  .timeline-section--compact .timeline-compact-grid article[data-emphasis="major"] h3 { margin-top: 15px; font-size: clamp(23px, 1.7vw, 29px); font-weight: 600; }
+  .timeline-section--compact .timeline-compact-grid article[data-emphasis="supporting"] { min-height: 140px; padding-top: 25px; opacity: .72; }
+  .timeline-section--compact .timeline-compact-grid article[data-emphasis="supporting"] h3 { font-size: 18px; }
+
+  .tech-section--compact .tech-tree { gap: 28px; }
+  .tech-section--compact .tech-branch { min-height: 190px; }
+  .tech-section--compact .tech-branch h3 { margin-bottom: 10px; }
+  .tech-section--compact .branch-relation { display: block; margin-top: 15px; color: #D0A46A; font-size: 13px; line-height: 1.55; }
+  .tech-section--compact .branch-arrow { opacity: .75; }
+
+  .satellite-use-cases { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 56px; border-top: 1px solid rgba(98,214,255,.5); border-bottom: 1px solid rgba(98,214,255,.28); }
+  .satellite-use-cases article { min-height: 245px; padding: 25px 28px 26px 0; border-right: 1px solid rgba(98,214,255,.2); }
+  .satellite-use-cases article + article { padding-left: 28px; }
+  .satellite-use-cases article:last-child { border-right: 0; }
+  .satellite-use-cases article > span { color: var(--hall-satellite); font: 13px 'DM Mono'; letter-spacing: .06em; }
+  .satellite-use-cases h3 { margin: 22px 0 14px; color: var(--museum-ink); font-size: 29px; font-weight: 500; line-height: 1.2; }
+  .satellite-use-cases strong { color: var(--museum-ink); font-size: 18px; font-weight: 600; }
+  .satellite-use-cases p { margin: 12px 0 0; color: var(--museum-ink-soft); font-size: 16px; line-height: 1.75; }
+  .satellite-use-case-note { margin: 24px 0 0; color: var(--museum-ink-soft); font-size: 15px; line-height: 1.7; }
+  .satellite-use-case-note b { color: var(--museum-ink); font-weight: 500; }
+  .satellite-use-case-note span { padding: 0 9px; color: #62D6FF; }
+
+  .launch-capability-chain { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; margin: 48px 0 8px; padding: 22px 0 20px; border-top: 1px solid rgba(255,177,92,.45); border-bottom: 1px solid rgba(255,177,92,.2); }
+  .launch-capability-chain article { min-height: 115px; padding-right: 20px; border-right: 1px solid rgba(255,177,92,.18); }
+  .launch-capability-chain article:last-child { border-right: 0; }
+  .launch-capability-chain span { color: var(--hall-launch); font: 13px 'DM Mono'; }
+  .launch-capability-chain strong { display: block; margin-top: 13px; color: var(--museum-ink); font-size: 18px; font-weight: 600; }
+  .launch-capability-chain p { margin: 9px 0 0; color: var(--museum-ink-soft); font-size: 15px; line-height: 1.6; }
+
+  .human-people-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; margin-top: 42px; padding-top: 22px; border-top: 1px solid rgba(117,230,195,.4); }
+  .human-people-strip > div { padding-right: 24px; border-right: 1px solid rgba(117,230,195,.2); }
+  .human-people-strip > div:last-child { border-right: 0; }
+  .human-people-strip span { color: var(--hall-human); font: 13px 'DM Mono'; }
+  .human-people-strip strong { display: block; margin-top: 12px; color: var(--museum-ink); font-size: 27px; font-weight: 500; }
+  .human-people-strip p { margin: 8px 0 0; color: var(--museum-ink-soft); font-size: 15px; line-height: 1.65; }
+
+  .lunar-sample-note { display: grid; grid-template-columns: 180px minmax(0, 1fr); column-gap: 24px; margin-top: 42px; padding: 22px 0 20px; border-top: 1px solid rgba(180,140,255,.5); border-bottom: 1px solid rgba(180,140,255,.2); }
+  .lunar-sample-note > span { color: #C8B6EA; font: 13px 'DM Mono'; }
+  .lunar-sample-note strong { color: var(--museum-ink); font-size: 22px; font-weight: 600; }
+  .lunar-sample-note p { grid-column: 2; margin: 9px 0 0; color: var(--museum-ink-soft); font-size: 16px; line-height: 1.7; }
+  .lunar-sample-note a { grid-column: 2; width: fit-content; margin-top: 12px; color: #C8B6EA; font-size: 13px; text-decoration: none; }
+  .lunar-sample-note a:hover, .lunar-sample-note a:focus-visible { text-decoration: underline; }
+
+  .planetary-engineering-chain { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 42px; padding-top: 22px; border-top: 1px solid rgba(255,113,141,.42); }
+  .planetary-engineering-chain article { min-height: 145px; padding-right: 24px; border-right: 1px solid rgba(255,113,141,.18); }
+  .planetary-engineering-chain article:last-child { border-right: 0; }
+  .planetary-engineering-chain span { color: var(--hall-planetary); font: 13px 'DM Mono'; }
+  .planetary-engineering-chain strong { display: block; margin-top: 13px; color: var(--museum-ink); font-size: 20px; font-weight: 600; }
+  .planetary-engineering-chain p { margin: 9px 0 0; color: var(--museum-ink-soft); font-size: 15px; line-height: 1.7; }
+}

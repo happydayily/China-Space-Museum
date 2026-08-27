@@ -17,8 +17,13 @@ export default function SatelliteNetworkStory({ hall, nodes, missions, onOpenMis
       <StoryTour items={[{ id: 'story-why', label: '为什么重要' }, { id: 'satellite-core', label: '天基网络' }, { id: 'deep-dive', label: '重点展项' }, { id: 'story-next', label: '下一步' }]} />
       <section className="story-why" id="story-why"><span className="section-kicker">为什么这条路线重要？</span><p>{hall.hallWhyItMatters}</p></section>
       <section className="grand-story grand-story--satellite" id="satellite-core">
-        <div className="story-heading"><span className="section-kicker">卫星应用网络</span><h2>从单颗卫星，<br />到多系统协同</h2><p>天基能力逐步覆盖通信、气象、遥感、导航、资源和高分辨率对地观测，成为社会运行的空间基础设施。</p></div>
-        <div className="satellite-network"><div className="satellite-core"><span>中国<br />天基系统</span><i /></div>{applications.map((application, index) => <div className={`satellite-orbit satellite-orbit-${index + 1}`} key={application}><span className="satellite-link" /><b>{application}</b></div>)}</div>
+        <div className="story-heading"><span className="section-kicker">卫星应用网络</span><h2>先问三个问题，<br />再看卫星怎样工作。</h2><p>天基系统的价值不在于星座图本身，而在于它持续把观测、定位和通信数据送到地面，变成可以依赖的社会服务。</p></div>
+        <div className="satellite-use-cases" aria-label="卫星应用进入日常生活的三个问题">
+          <article><span>01 · 导航</span><h3>我在哪里？</h3><strong>北斗三号</strong><p>定位、导航与授时进入交通、农业、测绘和应急系统。</p></article>
+          <article><span>02 · 气象</span><h3>天气正在发生什么？</h3><strong>风云卫星</strong><p>连续观测云图、台风和天气变化，让预报与灾害响应有了共同的天空视野。</p></article>
+          <article><span>03 · 遥感</span><h3>从太空能看清什么？</h3><strong>高分工程</strong><p>对地观测把土地、海洋和灾害变化转化为可分析的数据。</p></article>
+        </div>
+        <p className="satellite-use-case-note"><b>卫星</b><span>→</span><b>数据</b><span>→</span><b>服务与决策</b>　空间能力由此进入日常生活。</p>
         <div className="satellite-origin-card"><div><AssetMedia asset={getAssetById('curated-dongfanghong-1-news-1970')} label="东方红一号历史报道" /><small className="story-media-meta">《人民日报》 · 1970 · 历史档案</small></div><div><span className="section-kicker">1970 · 中国天基能力起点</span><h3>东方红一号</h3><p>从第一颗人造地球卫星开始，空间能力逐步进入国家治理、产业和日常生活。</p>{origin ? <button type="button" onClick={() => onOpenMission(origin.id)}>从东方红一号看起 ↗</button> : null}</div></div>
         <div className="satellite-evidence-grid" id="satellite-evidence"><article><b>导航 · 我在哪里？</b><strong>北斗三号</strong><span>定位、导航、授时进入交通与应急系统。</span><StoryMedia ids={['official-beidou-3-constellation-2020']} mode="compact" color={hall.color} /></article><article><b>气象 · 天气正在发生什么？</b><strong>风云卫星</strong><span>持续观测云图、台风和天气变化。</span><StoryMedia ids={['official-fy4a-cloud-image-2017']} mode="compact" color={hall.color} /></article><article><b>遥感 · 从太空能看清什么？</b><strong>高分工程</strong><span>高分辨率对地观测服务国土与资源管理。</span><StoryMedia ids={['open-gaofen-3-radar-images-2022']} mode="feature" color={hall.color} /></article></div>
         <div className="story-node-strip">{nodes.filter((node) => ['东方红一号', '返回式卫星', '风云气象卫星', '资源与海洋卫星', '高分工程', '北斗三号'].includes(node.name)).map((node) => <span className="story-node" key={node.id}><b>{node.year}</b>{node.name}</span>)}</div>
