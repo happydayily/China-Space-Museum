@@ -47,7 +47,7 @@ export default function OfficialMediaCard({ item, index = 0, mode = item.display
   const usageStatus = item.usageStatus || 'link-only'
   const imageSource = resolveAssetSource(item) || item.thumbnailUrl
   const attribution = item.attribution || item.author
-  const license = item.license || item.licenseNote
+  const license = item.license
   const actionLabel = item.mediaType === 'official-video' ? '观看官方影像' : '查看来源'
 
   if (mode === 'inline' || mode === 'compact') {

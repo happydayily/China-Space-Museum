@@ -1,5 +1,11 @@
 # AI 辅助开发日志
 
+## V5.0-RC4-PC
+
+- RC4.1 已先推送并完成 Pages 构建；RC4.2 只处理最终来源登记细节，不重做五厅结构、不修改移动端、启动器或 Three.js。
+- 修正 `OfficialMediaCard` 的授权字段映射：只有明确的许可证进入“许可”字段，`licenseNote` 只进入“授权说明”，避免 link-only 媒体在展开登记中重复显示。
+- 完成 RC4 最终构建、六张 `1600×900` PC fullPage 截图、六个展厅与旧任务路由、资源/console/404/broken image/overflow/关键交互验收后，提交并推送 `v5.0-rc4-pc`；不创建正式 `v5.0` Tag。
+
 ## V5.0-RC4.1-PC
 
 - RC3 已先成功推送 main、`v5.0-rc3-pc` 并确认 Pages workflow 在 `821cead9c4c8b6e88873fb44dcf7d072d429ea5c` 上成功部署后，才开始 RC4.1；没有重写或追加 RC3 历史。
