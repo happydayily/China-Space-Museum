@@ -108,10 +108,15 @@ async function inspectPage(page) {
       .map((image) => image.alt || image.src || '未命名图片')
     const errorOverlay = document.querySelector('vite-error-overlay, [data-vite-dev-id]')
     const errorText = /Cannot GET|Internal Server Error|404 Not Found|Failed to fetch|\[plugin:vite\]/i.test(bodyText)
+    const missingImageAlt = [...document.images].filter((image) => !image.hasAttribute('alt')).map((image) => image.src || '未命名图片')
+    const missingLinkLabel = [...document.querySelectorAll('a')].filter((link) => !(link.textContent || '').trim() && !link.getAttribute('aria-label') && !link.getAttribute('title')).map((link) => link.href || '未命名链接')
     return {
       failedImages,
       hasErrorOverlay: Boolean(errorOverlay),
       hasErrorText: errorText,
+      missingImageAlt,
+      missingLinkLabel,
+      hasHorizontalOverflow: document.documentElement.scrollWidth > document.documentElement.clientWidth + 1,
     }
   })
 }
@@ -122,6 +127,9 @@ async function capturePage(page, name, route, outputPath) {
   const inspection = await inspectPage(page)
   if (inspection.hasErrorOverlay || inspection.hasErrorText) throw new Error('检测到浏览器错误页或 Vite 错误覆盖层。')
   if (inspection.failedImages.length) throw new Error(`图片加载失败：${inspection.failedImages.join('、')}`)
+  if (inspection.missingImageAlt.length) throw new Error(`图片缺少 alt：${inspection.missingImageAlt.join('、')}`)
+  if (inspection.missingLinkLabel.length) throw new Error(`链接缺少可访问名称：${inspection.missingLinkLabel.join('、')}`)
+  if (page.viewportSize()?.width <= 500 && inspection.hasHorizontalOverflow) throw new Error('移动端页面存在横向溢出。')
   await page.screenshot({ path: outputPath, fullPage: true, type: 'png' })
   const size = statSync(outputPath).size
   if (!size) throw new Error('截图文件大小为 0。')

@@ -37,6 +37,7 @@ export default function OfficialMediaCard({ item, index = 0, mode = item.display
   const attribution = item.attribution || item.author
   const license = item.license || item.licenseNote
   const shortLicense = item.license || (item.mediaType === 'official-video' ? '官方外链' : '官方来源')
+  const actionLabel = item.mediaType === 'official-video' ? '观看官方影像' : '查看来源'
 
   if (mode === 'inline' || mode === 'compact') {
     return (
@@ -48,7 +49,7 @@ export default function OfficialMediaCard({ item, index = 0, mode = item.display
           {item.description ? <p>{item.description}</p> : null}
           <div className="official-media-status"><b>{statusLabels[usageStatus] || '资料状态待标注'}</b></div>
           <SourceDetails item={item} attribution={attribution} license={license} />
-          {url ? <a href={url} target="_blank" rel="noreferrer">查看来源 <b>↗</b></a> : null}
+          {url ? <a href={url} target="_blank" rel="noreferrer" aria-label={`${actionLabel}：${item.title || item.sourceTitle || ''}`}>{actionLabel} <b>↗</b></a> : null}
         </div>
       </article>
     )
@@ -66,7 +67,7 @@ export default function OfficialMediaCard({ item, index = 0, mode = item.display
         {item.description ? <p>{item.description}</p> : null}
         <div className="official-media-status"><b>{item.year ? `${item.year} · ${shortLicense}` : (statusLabels[usageStatus] || '资料状态待标注')}</b></div>
         <SourceDetails item={item} attribution={attribution} license={license} />
-        {url ? <a href={url} target="_blank" rel="noreferrer">查看来源 <b>↗</b></a> : null}
+        {url ? <a href={url} target="_blank" rel="noreferrer" aria-label={`${actionLabel}：${item.title || item.sourceTitle || ''}`}>{actionLabel} <b>↗</b></a> : null}
       </div>
     </article>
   )
