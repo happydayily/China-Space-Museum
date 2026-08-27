@@ -1,10 +1,10 @@
 # 中国航天发展史数字博物馆
 
-这是一个使用 React、Vite 和 Three.js 构建的中国航天发展史可视化数字博物馆实验项目。项目在人工提出需求、AI/Codex 辅助实现、人工验收和持续迭代的协作方式下逐步建设。
+这是一个使用 React、Vite 和 Three.js 构建的中国航天发展史可视化数字博物馆项目。项目在人工提出需求、AI/Codex 辅助实现、人工验收和持续迭代的协作方式下逐步建设。
 
 ## 当前版本
 
-V5.0-RC4-PC，已完成五厅策展去模板化与正式版前桌面视觉收口；当前仍只维护并验收 `1600×900` 桌面端，不修改移动端和平板端，未创建正式 `v5.0` Tag。
+V5.0，已完成五厅策展去模板化与正式版桌面视觉收口；当前仍只维护并验收 `1600×900` 桌面端，不修改移动端和平板端。
 
 ## 在线参观
 
@@ -66,7 +66,7 @@ npm run preview
 npm run screenshots
 ```
 
-PC 截图只输出到 `docs/screenshots/review/latest/`，固定为 `01-home.png` 至 `06-planetary.png`，不建立移动端、平板端或其他视口子目录。历史版本截图通过 Git commit / Tag 查询。截图脚本复用本机 Edge/Chrome，不保存浏览器 Profile、缓存或 Cookie，并自动检查图片、链接、同源 404、运行时错误、错误覆盖层和 1600px 桌面横向溢出。
+PC 截图只输出到 `docs/screenshots/v5.0/`，固定为 `01-home.png` 至 `06-planetary.png`，不建立移动端、平板端或其他视口子目录。历史版本截图通过 Git commit / Tag 查询。截图脚本复用本机 Edge/Chrome，不保存浏览器 Profile、缓存或 Cookie，并自动检查图片、链接、同源 404、运行时错误、错误覆盖层和 1600px 桌面横向溢出。
 
 ## 项目结构
 
@@ -110,7 +110,7 @@ node_modules/           npm 依赖安装目录，不纳入 Git
 - V5.0-F 桌面与移动端归档截图：通过 Git commit / Tag 查询
 - [V5.0-RC1-PC 迭代记录](docs/iterations/v5.0-rc1-pc.md)
 - [V5.0-RC1-PC 中文提示词](docs/prompts/v5.0-rc1-pc.md)
-- [当前六张 PC 验收截图](docs/screenshots/review/latest/)
+- [V5.0 六张 PC 正式截图](docs/screenshots/v5.0/)
 - [V5.0-RC2-PC 迭代记录](docs/iterations/v5.0-rc2-pc.md)
 - [V5.0-RC2-PC 中文开发记录](docs/prompts/v5.0-rc2-pc.md)
 - [V5.0-RC3.1-PC 迭代记录](docs/iterations/v5.0-rc3.1-pc.md)
@@ -124,7 +124,7 @@ node_modules/           npm 依赖安装目录，不纳入 Git
 
 ## 后续计划
 
-- V5.0-RC3-PC 已完成内容、策展、视觉与 PC 桌面终审；当前等待人工/ChatGPT 对六张 `1600×900` PC 截图进行最终验收，不创建正式 `v5.0` 标签。
+- V5.0 正式版已完成内容、策展、视觉与 PC 桌面终审；移动端与平板端不在本版本支持范围内。
 - 移动端与平板端在本轮明确冻结；发现的响应式问题统一记录到 V5.1 TODO，不为 PC 终审扩展截图或修改响应式结构。
 - 后续继续补强来源和授权明确的任务历史影像，不批量下载授权不清晰的媒体。
 - 为每轮迭代保存完整中文提示词、人工验收结果和遗留问题。
