@@ -6,6 +6,7 @@ import { chromium } from 'playwright'
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const outputDirectory = join(projectRoot, 'docs', 'screenshots', 'review', 'latest')
+const mobileOutputDirectory = join(outputDirectory, 'mobile')
 const port = Number(process.env.REVIEW_SCREENSHOT_PORT || 4173)
 const baseUrl = `http://127.0.0.1:${port}`
 const outputFiles = [
@@ -129,7 +130,9 @@ async function capturePage(page, name, route, outputPath) {
 
 async function main() {
   mkdirSync(outputDirectory, { recursive: true })
+  mkdirSync(mobileOutputDirectory, { recursive: true })
   for (const fileName of outputFiles) rmSync(join(outputDirectory, fileName), { force: true })
+  for (const fileName of outputFiles) rmSync(join(mobileOutputDirectory, fileName), { force: true })
 
   const grandHalls = readJson('grandHalls.json').sort((a, b) => String(a.index).localeCompare(String(b.index), 'zh-CN'))
   if (grandHalls.length !== 5) throw new Error(`grandHalls.json 当前读取到 ${grandHalls.length} 个展厅，预期 5 个。`)
@@ -147,13 +150,20 @@ async function main() {
   try {
     if (server) await waitForServer(server)
     browser = await chromium.launch({ headless: true, executablePath: browserPath })
-    const page = await browser.newPage({ viewport: { width: 1600, height: 900 }, deviceScaleFactor: 1 })
+    const desktopPage = await browser.newPage({ viewport: { width: 1600, height: 900 }, deviceScaleFactor: 1 })
+    const mobilePage = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1, isMobile: true })
     for (const [name, route, fileName] of pages) {
       try {
-        await capturePage(page, name, route, join(outputDirectory, fileName))
+        await capturePage(desktopPage, name, route, join(outputDirectory, fileName))
       } catch (error) {
-        failures.push(`${name}: ${error.message}`)
-        console.error(`✗ ${name}: ${error.message}`)
+        failures.push(`桌面 · ${name}: ${error.message}`)
+        console.error(`✗ 桌面 · ${name}: ${error.message}`)
+      }
+      try {
+        await capturePage(mobilePage, `移动端 · ${name}`, route, join(mobileOutputDirectory, fileName))
+      } catch (error) {
+        failures.push(`移动端 · ${name}: ${error.message}`)
+        console.error(`✗ 移动端 · ${name}: ${error.message}`)
       }
     }
   } finally {
@@ -162,13 +172,15 @@ async function main() {
     if (server) await new Promise((resolvePromise) => setTimeout(resolvePromise, 250))
   }
 
-  const missing = outputFiles.filter((fileName) => !existsSync(join(outputDirectory, fileName)) || statSync(join(outputDirectory, fileName)).size === 0)
-  if (missing.length || failures.length) {
-    if (missing.length) console.error(`缺少截图：${missing.join('、')}`)
+  const missingDesktop = outputFiles.filter((fileName) => !existsSync(join(outputDirectory, fileName)) || statSync(join(outputDirectory, fileName)).size === 0)
+  const missingMobile = outputFiles.filter((fileName) => !existsSync(join(mobileOutputDirectory, fileName)) || statSync(join(mobileOutputDirectory, fileName)).size === 0)
+  if (missingDesktop.length || missingMobile.length || failures.length) {
+    if (missingDesktop.length) console.error(`缺少桌面截图：${missingDesktop.join('、')}`)
+    if (missingMobile.length) console.error(`缺少移动端截图：${missingMobile.join('、')}`)
     process.exitCode = 1
     return
   }
-  console.log(`自动验收截图完成：${outputFiles.length} 张，视口 1600×900，fullPage PNG。`)
+  console.log(`自动验收截图完成：桌面 ${outputFiles.length} 张（1600×900）+ 移动端 ${outputFiles.length} 张（390×844），均为 fullPage PNG。`)
 }
 
 main().catch((error) => {

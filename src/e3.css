@@ -318,3 +318,92 @@ button:focus-visible, a:focus-visible { outline-color: var(--museum-bronze); }
   .deep-dive--launch .deep-dive-items, .deep-dive--satellite .deep-dive-items, .deep-dive--human .deep-dive-items, .deep-dive--lunar .deep-dive-items, .deep-dive--planetary .deep-dive-items { grid-template-columns: 1fr; }
   .deep-dive--human .deep-dive-item:nth-child(1) { grid-row: auto; }
 }
+
+/* V5.0-F1：把五厅 Deep Dive 从统一卡片组改为不同的展品构图。 */
+.deep-dive-item .asset-media { width: 100%; min-width: 0; min-height: 0; height: auto; }
+.deep-dive-item .asset-media img { display: block; width: 100%; height: auto; min-height: 0; object-fit: cover; }
+.deep-dive-item .asset-media figcaption { position: static; padding: 10px 0 0; background: none; color: var(--museum-ink-soft); font-size: 14px; line-height: 1.55; }
+.deep-dive-item .deep-dive-schematic { min-height: 240px; }
+.deep-dive-item .deep-dive-copy > p { max-width: 45em; }
+.story-page .asset-media figcaption { position: static; padding: 10px 0 0; background: none; color: var(--museum-ink-soft); font-size: 14px; line-height: 1.55; }
+.grand-story--launch .launch-support-copy h3 { color: var(--museum-ink); }
+.grand-story--launch .launch-support-copy p { color: var(--museum-ink-soft); }
+
+/* 进入太空：小档案 → 中等能力 → 占据半幅的长征五号主展品。 */
+.deep-dive--layout-scale .deep-dive-items { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 34px 26px; align-items: start; }
+.deep-dive--layout-scale .deep-dive-item:nth-child(1) { grid-column: span 3; }
+.deep-dive--layout-scale .deep-dive-item:nth-child(2) { grid-column: span 3; margin-top: 42px; }
+.deep-dive--layout-scale .deep-dive-item:nth-child(3) { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(170px, .75fr); grid-column: span 6; gap: 22px; align-items: start; }
+.deep-dive--layout-scale .deep-dive-item:nth-child(3) .deep-dive-meta { grid-column: 1 / -1; }
+.deep-dive--layout-scale .deep-dive-item:nth-child(3) > .asset-media, .deep-dive--layout-scale .deep-dive-item:nth-child(3) > .deep-dive-schematic { grid-column: 1; grid-row: 2; margin-bottom: 0; }
+.deep-dive--layout-scale .deep-dive-item:nth-child(3) .deep-dive-copy { grid-column: 2; grid-row: 2; align-self: center; }
+.deep-dive--layout-scale .deep-dive-item:nth-child(1) .asset-media img { min-height: 230px; }
+.deep-dive--layout-scale .deep-dive-item:nth-child(2) .deep-dive-schematic { min-height: 290px; }
+.deep-dive--layout-scale .deep-dive-item:nth-child(3) .asset-media img { min-height: 410px; }
+
+/* 天基中国：星座关系是入口，云图占更大的横向位置，遥感成为底部主视觉。 */
+.deep-dive--layout-observation .deep-dive-items { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 38px 28px; }
+.deep-dive--layout-observation .deep-dive-item:nth-child(1) { grid-column: span 4; }
+.deep-dive--layout-observation .deep-dive-item:nth-child(2) { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(190px, .75fr); grid-column: span 8; gap: 22px; align-items: center; }
+.deep-dive--layout-observation .deep-dive-item:nth-child(2) .deep-dive-meta { grid-column: 1 / -1; }
+.deep-dive--layout-observation .deep-dive-item:nth-child(2) > .deep-dive-schematic { grid-column: 1; grid-row: 2; min-height: 300px; margin-bottom: 0; }
+.deep-dive--layout-observation .deep-dive-item:nth-child(2) .deep-dive-copy { grid-column: 2; grid-row: 2; }
+.deep-dive--layout-observation .deep-dive-item:nth-child(3) { display: grid; grid-template-columns: minmax(260px, .95fr) minmax(0, 1.25fr); grid-column: 1 / -1; gap: 34px; align-items: center; padding-top: 26px; border-top-style: solid; }
+.deep-dive--layout-observation .deep-dive-item:nth-child(3) .deep-dive-meta { grid-column: 1 / -1; }
+.deep-dive--layout-observation .deep-dive-item:nth-child(3) > .asset-media { grid-column: 2; grid-row: 2; margin-bottom: 0; }
+.deep-dive--layout-observation .deep-dive-item:nth-child(3) .deep-dive-copy { grid-column: 1; grid-row: 2; }
+.deep-dive--layout-observation .deep-dive-item:nth-child(3) .asset-media img { min-height: 330px; }
+
+/* 人在太空：三个章节纵向展开，并让视觉位置左—右—全宽变化。 */
+.deep-dive--layout-chapters .deep-dive-items { display: flex; flex-direction: column; gap: 0; }
+.deep-dive--layout-chapters .deep-dive-item { display: grid; grid-template-columns: minmax(120px, .28fr) minmax(220px, .82fr) minmax(240px, 1fr); gap: 28px; width: min(100%, 1080px); padding: 30px 0 42px; }
+.deep-dive--layout-chapters .deep-dive-item:nth-child(1) { align-self: flex-start; }
+.deep-dive--layout-chapters .deep-dive-item:nth-child(2) { align-self: center; width: min(86%, 960px); margin-top: 10px; }
+.deep-dive--layout-chapters .deep-dive-item:nth-child(3) { align-self: flex-end; width: min(100%, 1160px); margin-top: 10px; grid-template-columns: minmax(140px, .3fr) minmax(280px, 1.2fr) minmax(260px, .85fr); }
+.deep-dive--layout-chapters .deep-dive-item > .deep-dive-meta { grid-column: 1; grid-row: 1; align-self: start; }
+.deep-dive--layout-chapters .deep-dive-item > .asset-media, .deep-dive--layout-chapters .deep-dive-item > .deep-dive-schematic { grid-column: 2; grid-row: 1; margin-bottom: 0; }
+.deep-dive--layout-chapters .deep-dive-item > .deep-dive-copy { grid-column: 3; grid-row: 1; align-self: center; }
+.deep-dive--layout-chapters .deep-dive-item:nth-child(2) > .deep-dive-schematic { grid-column: 3; }
+.deep-dive--layout-chapters .deep-dive-item:nth-child(2) > .deep-dive-copy { grid-column: 2; }
+.deep-dive--layout-chapters .deep-dive-item:nth-child(3) > .asset-media { grid-column: 2; }
+.deep-dive--layout-chapters .deep-dive-item:nth-child(3) > .deep-dive-copy { grid-column: 3; }
+.deep-dive--layout-chapters .deep-dive-item:nth-child(1) .asset-media img { min-height: 360px; }
+.deep-dive--layout-chapters .deep-dive-item:nth-child(3) .asset-media img { min-height: 300px; }
+
+/* 奔向月球：把三个展项排成带高度差的绕—落—回路线。 */
+.deep-dive--layout-route .deep-dive-items { position: relative; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 34px; }
+.deep-dive--layout-route .deep-dive-items::before { content: ''; position: absolute; left: 4%; right: 4%; top: 49px; border-top: 1px solid color-mix(in srgb, var(--hall-color) 48%, transparent); }
+.deep-dive--layout-route .deep-dive-item { position: relative; background: transparent; }
+.deep-dive--layout-route .deep-dive-item:nth-child(1) { padding-right: 24px; }
+.deep-dive--layout-route .deep-dive-item:nth-child(2) { margin-top: 72px; padding: 16px 24px 0; border-left: 1px solid var(--museum-line); border-right: 1px solid var(--museum-line); }
+.deep-dive--layout-route .deep-dive-item:nth-child(3) { margin-top: 26px; padding-left: 24px; border-top-style: dashed; }
+.deep-dive--layout-route .deep-dive-item:nth-child(1) .asset-media img { min-height: 230px; }
+.deep-dive--layout-route .deep-dive-item:nth-child(2) .asset-media img { min-height: 310px; }
+.deep-dive--layout-route .deep-dive-item:nth-child(3) .asset-media img { min-height: 360px; }
+
+/* 走向行星：首项铺开旅程，第二项落到表面，第三项退到更远的未来。 */
+.deep-dive--layout-distance .deep-dive-items { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 42px 28px; }
+.deep-dive--layout-distance .deep-dive-item:nth-child(1) { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(230px, .72fr); grid-column: 1 / -1; gap: 30px; align-items: center; padding-bottom: 20px; }
+.deep-dive--layout-distance .deep-dive-item:nth-child(1) .deep-dive-meta { grid-column: 1 / -1; }
+.deep-dive--layout-distance .deep-dive-item:nth-child(1) > .asset-media { grid-column: 1; grid-row: 2; margin-bottom: 0; }
+.deep-dive--layout-distance .deep-dive-item:nth-child(1) .deep-dive-copy { grid-column: 2; grid-row: 2; }
+.deep-dive--layout-distance .deep-dive-item:nth-child(2) { grid-column: span 7; }
+.deep-dive--layout-distance .deep-dive-item:nth-child(3) { grid-column: span 5; align-self: end; padding: 30px 0 0 28px; border-left: 1px solid var(--museum-line); border-top: 0; }
+.deep-dive--layout-distance .deep-dive-item:nth-child(1) .asset-media img { min-height: 390px; }
+.deep-dive--layout-distance .deep-dive-item:nth-child(2) .asset-media img { min-height: 310px; }
+.deep-dive--layout-distance .deep-dive-item:nth-child(3) .deep-dive-schematic { min-height: 260px; }
+
+@media (max-width: 800px) {
+  .deep-dive--layout-scale .deep-dive-items, .deep-dive--layout-observation .deep-dive-items, .deep-dive--layout-distance .deep-dive-items { grid-template-columns: 1fr; gap: 34px; }
+  .deep-dive--layout-scale .deep-dive-item:nth-child(1), .deep-dive--layout-scale .deep-dive-item:nth-child(2), .deep-dive--layout-scale .deep-dive-item:nth-child(3), .deep-dive--layout-observation .deep-dive-item:nth-child(1), .deep-dive--layout-observation .deep-dive-item:nth-child(2), .deep-dive--layout-observation .deep-dive-item:nth-child(3), .deep-dive--layout-distance .deep-dive-item:nth-child(1), .deep-dive--layout-distance .deep-dive-item:nth-child(2), .deep-dive--layout-distance .deep-dive-item:nth-child(3) { grid-column: auto; margin-top: 0; padding-left: 0; padding-right: 0; border-left: 0; }
+  .deep-dive--layout-scale .deep-dive-item:nth-child(3), .deep-dive--layout-observation .deep-dive-item:nth-child(2), .deep-dive--layout-observation .deep-dive-item:nth-child(3), .deep-dive--layout-distance .deep-dive-item:nth-child(1) { display: block; }
+  .deep-dive--layout-scale .deep-dive-item:nth-child(3) > .asset-media, .deep-dive--layout-scale .deep-dive-item:nth-child(3) > .deep-dive-schematic, .deep-dive--layout-observation .deep-dive-item:nth-child(2) > .deep-dive-schematic, .deep-dive--layout-observation .deep-dive-item:nth-child(3) > .asset-media, .deep-dive--layout-distance .deep-dive-item:nth-child(1) > .asset-media { margin-bottom: 18px; }
+  .deep-dive--layout-chapters .deep-dive-item { display: block; width: 100%; margin: 0; padding: 24px 0 34px; }
+  .deep-dive--layout-chapters .deep-dive-item > .deep-dive-meta, .deep-dive--layout-chapters .deep-dive-item > .asset-media, .deep-dive--layout-chapters .deep-dive-item > .deep-dive-schematic, .deep-dive--layout-chapters .deep-dive-item > .deep-dive-copy { display: block; }
+  .deep-dive--layout-chapters .deep-dive-item > .asset-media, .deep-dive--layout-chapters .deep-dive-item > .deep-dive-schematic { margin-bottom: 18px; }
+  .deep-dive--layout-route .deep-dive-items { grid-template-columns: 1fr; gap: 0; }
+  .deep-dive--layout-route .deep-dive-items::before { left: 18px; right: auto; top: 38px; bottom: 38px; border-top: 0; border-left: 1px solid color-mix(in srgb, var(--hall-color) 48%, transparent); }
+  .deep-dive--layout-route .deep-dive-item:nth-child(1), .deep-dive--layout-route .deep-dive-item:nth-child(2), .deep-dive--layout-route .deep-dive-item:nth-child(3) { margin: 0; padding: 22px 0 34px 42px; border: 0; }
+  .deep-dive--layout-route .deep-dive-item:nth-child(1) .asset-media img, .deep-dive--layout-route .deep-dive-item:nth-child(2) .asset-media img, .deep-dive--layout-route .deep-dive-item:nth-child(3) .asset-media img, .deep-dive--layout-distance .deep-dive-item:nth-child(1) .asset-media img { min-height: 0; }
+  .deep-dive--layout-distance .deep-dive-item:nth-child(3) { align-self: auto; }
+}

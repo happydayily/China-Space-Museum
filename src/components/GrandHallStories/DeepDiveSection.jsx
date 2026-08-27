@@ -17,17 +17,17 @@ function DeepDiveVisual({ item, label }) {
   )
 }
 
-export default function DeepDiveSection({ id = 'deep-dive', variant, hall, items, onOpenMission }) {
+export default function DeepDiveSection({ id = 'deep-dive', variant, layout = variant, hall, items, onOpenMission }) {
   return (
-    <section className={`deep-dive deep-dive--${variant}`} id={id}>
+    <section className={`deep-dive deep-dive--${variant} deep-dive--layout-${layout}`} id={id} data-depth="second-layer" aria-labelledby={`${id}-heading`}>
       <div className="deep-dive-heading">
         <span className="section-kicker">数字博物馆第二层</span>
-        <h2>重点展项 · 深入了解</h2>
+        <h2 id={`${id}-heading`}>重点展项 · 深入了解</h2>
         <p>从展厅总体叙事进入三个关键展项，再回到已有任务详情，补上“为什么需要这项能力”的具体证据。</p>
       </div>
       <div className="deep-dive-items">
         {items.slice(0, 3).map((item, index) => (
-          <article className={`deep-dive-item deep-dive-item--${item.kind || (item.assetId ? 'image' : 'diagram')}`} key={item.title}>
+          <article className={`deep-dive-item deep-dive-item--${item.kind || (item.assetId ? 'image' : 'diagram')}`} data-exhibit-index={index + 1} key={item.title}>
             <div className="deep-dive-meta"><b>{String(index + 1).padStart(2, '0')}</b><time>{item.year}</time></div>
             <DeepDiveVisual item={item} label={item.visualLabel || item.title} />
             <div className="deep-dive-copy">
