@@ -3,11 +3,31 @@ import developmentLines from '../../data/developmentLines.json'
 
 const years = ['1956', '1970', '1988', '1992', '2003', '2007', '2013', '2016', '2020', '2021', '2022', '2024', '未来']
 const lanes = [
-  { id: 'access-to-space', nodes: [['1956', '航天起步'], ['1970', '长征一号'], ['2016', '长征五号']] },
-  { id: 'satellite-applications', nodes: [['1970', '东方红一号'], ['1988', '风云'], ['2020', '北斗三号']] },
-  { id: 'human-spaceflight', nodes: [['1992', '921工程'], ['2003', '神舟五号'], ['2022', '空间站']] },
-  { id: 'lunar-exploration', nodes: [['2007', '嫦娥一号'], ['2013', '嫦娥三号'], ['2024', '嫦娥六号']] },
-  { id: 'planetary-exploration', nodes: [['2020', '天问一号'], ['2021', '祝融巡视'], ['未来', '火星采样']] },
+  { id: 'access-to-space', nodes: [
+    { year: '1956', label: '航天起步', labelTier: 1, labelAlign: 'start', labelOffsetX: 24 },
+    { year: '1970', label: '长征一号', labelTier: 2 },
+    { year: '2016', label: '长征五号', labelTier: 1 },
+  ] },
+  { id: 'satellite-applications', nodes: [
+    { year: '1970', label: '东方红一号', labelTier: 1, labelAlign: 'start', labelOffsetX: 24 },
+    { year: '1988', label: '风云', labelTier: 2 },
+    { year: '2020', label: '北斗三号', labelTier: 1 },
+  ] },
+  { id: 'human-spaceflight', nodes: [
+    { year: '1992', label: '921工程', labelTier: 1, labelAlign: 'start', labelOffsetX: 24 },
+    { year: '2003', label: '神舟五号', labelTier: 2 },
+    { year: '2022', label: '空间站', labelTier: 1 },
+  ] },
+  { id: 'lunar-exploration', nodes: [
+    { year: '2007', label: '嫦娥一号', labelTier: 1, labelAlign: 'start', labelOffsetX: 24 },
+    { year: '2013', label: '嫦娥三号', labelTier: 2 },
+    { year: '2024', label: '嫦娥六号', labelTier: 1 },
+  ] },
+  { id: 'planetary-exploration', nodes: [
+    { year: '2020', label: '天问一号', labelTier: 1, labelAlign: 'start', labelOffsetX: 24 },
+    { year: '2021', label: '祝融巡视', labelTier: 2 },
+    { year: '未来', label: '火星采样', labelTier: 1 },
+  ] },
 ]
 const laneY = { 'access-to-space': 58, 'satellite-applications': 116, 'human-spaceflight': 174, 'lunar-exploration': 232, 'planetary-exploration': 290 }
 const xForYear = (year) => 60 + Math.max(0, years.indexOf(String(year))) * 75
@@ -35,7 +55,7 @@ export default function DevelopmentLines({ onEnter }) {
             const dimmed = isDimmed(lane.id)
             return <g className={`network-lane ${dimmed ? 'is-dimmed' : ''} ${hovered === lane.id ? 'is-hovered' : ''}`} key={lane.id} onMouseEnter={() => setHovered(lane.id)} onMouseLeave={() => setHovered(null)} onFocus={() => setHovered(lane.id)} onBlur={() => setHovered(null)} onClick={() => onEnter(line.grandHallId)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); onEnter(line.grandHallId) } }} role="button" tabIndex="0" aria-label={`进入${line.name}主题展厅`}>
               <path className="network-lane-path" d={`M48 ${laneY[lane.id]} H950`} style={{ stroke: line.color }} />
-              {lane.nodes.map(([year, label], index) => <g className={`network-node network-node--${index + 1}`} key={`${year}-${label}`}><circle cx={xForYear(year)} cy={laneY[lane.id]} r={hovered === lane.id ? 7 : 5} style={{ stroke: line.color }} /><text x={xForYear(year)} y={laneY[lane.id] - 14} textAnchor="middle">{label}</text></g>)}
+              {lane.nodes.map((node) => <g className={`network-node network-node--tier-${node.labelTier}`} key={`${node.year}-${node.label}`}><circle cx={xForYear(node.year)} cy={laneY[lane.id]} r={hovered === lane.id ? 7 : 5} style={{ stroke: line.color }} /><text x={xForYear(node.year)} y={laneY[lane.id] - 14} textAnchor={node.labelAlign ?? 'middle'} style={{ '--label-offset-x': `${node.labelOffsetX ?? 0}px` }}>{node.label}</text></g>)}
               <text className="network-lane-label" x="10" y={laneY[lane.id] + 5} style={{ fill: line.color }}>{line.name}</text>
             </g>
           })}

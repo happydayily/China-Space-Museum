@@ -100,6 +100,7 @@ export default function App() {
             开始参观 <span>↓</span>
           </button>
         </div>
+        <div className="hero-orbit-motion" aria-hidden="true"><span className="hero-orbit-marker" /></div>
         <div className="hero-orbit-label"><span className="orbit-line" />地球轨道<br /><strong>轨道示意</strong></div>
         <div className="hero-year">1956—2026<span>中国航天发展史</span></div>
       </section>

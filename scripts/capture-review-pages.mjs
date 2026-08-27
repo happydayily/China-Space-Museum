@@ -6,6 +6,7 @@ import { chromium } from 'playwright'
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const outputDirectory = join(projectRoot, 'docs', 'screenshots', 'review', 'latest')
+const finalCheckDirectory = join(projectRoot, 'docs', 'screenshots', 'review', 'final-check')
 const port = Number(process.env.REVIEW_SCREENSHOT_PORT || 4173)
 const baseUrl = `http://127.0.0.1:${port}`
 const outputFiles = [
@@ -16,6 +17,7 @@ const outputFiles = [
   '05-lunar.png',
   '06-planetary.png',
 ]
+const finalCheckFiles = ['01-hero-orbit.png', '02-home-timeline.png']
 const viewport = { width: 1600, height: 900 }
 
 const browserCandidates = [
@@ -154,9 +156,24 @@ async function capturePage(page, name, route, outputPath) {
   }
 }
 
+async function capturePartial(page, name, selector, outputPath, clip = null) {
+  const target = page.locator(selector)
+  await target.scrollIntoViewIfNeeded()
+  if (clip) {
+    await page.screenshot({ path: outputPath, clip, type: 'png' })
+  } else {
+    await target.screenshot({ path: outputPath, type: 'png' })
+  }
+  const size = statSync(outputPath).size
+  if (!size) throw new Error('局部截图文件大小为 0。')
+  console.log(`✓ ${name} -> ${outputPath} (${size} bytes)`)
+}
+
 async function main() {
   mkdirSync(outputDirectory, { recursive: true })
+  mkdirSync(finalCheckDirectory, { recursive: true })
   for (const fileName of outputFiles) rmSync(join(outputDirectory, fileName), { force: true })
+  for (const fileName of finalCheckFiles) rmSync(join(finalCheckDirectory, fileName), { force: true })
 
   const grandHalls = readJson('grandHalls.json').sort((a, b) => String(a.index).localeCompare(String(b.index), 'zh-CN'))
   if (grandHalls.length !== 5) throw new Error(`grandHalls.json 当前读取到 ${grandHalls.length} 个展厅，预期 5 个。`)
@@ -184,6 +201,18 @@ async function main() {
           console.error(`✗ 1600×900 · ${name}: ${error.message}`)
         }
       }
+
+      await page.goto(`${baseUrl}/`, { waitUntil: 'domcontentloaded' })
+      await waitForStablePage(page)
+      const heroBox = await page.locator('.museum-hero').boundingBox()
+      if (!heroBox) throw new Error('找不到首页 Hero 区域，无法生成轨道局部截图。')
+      await capturePartial(page, '首页 Hero 轨道', '.museum-hero', join(finalCheckDirectory, finalCheckFiles[0]), {
+        x: heroBox.x + heroBox.width * .5,
+        y: heroBox.y + 24,
+        width: heroBox.width * .5,
+        height: heroBox.height - 48,
+      })
+      await capturePartial(page, '首页五条主线', '.development-lines', join(finalCheckDirectory, finalCheckFiles[1]))
     } finally {
       await page.close()
     }
@@ -193,7 +222,8 @@ async function main() {
     if (server) await new Promise((resolvePromise) => setTimeout(resolvePromise, 250))
   }
 
-  const missing = outputFiles.filter((fileName) => !existsSync(join(outputDirectory, fileName)) || statSync(join(outputDirectory, fileName)).size === 0).map((fileName) => join(outputDirectory, fileName))
+  const missing = [...outputFiles.map((fileName) => join(outputDirectory, fileName)), ...finalCheckFiles.map((fileName) => join(finalCheckDirectory, fileName))]
+    .filter((filePath) => !existsSync(filePath) || statSync(filePath).size === 0)
   if (missing.length || failures.length) {
     if (missing.length) console.error(`缺少 1600×900 截图：${missing.join('、')}`)
     process.exitCode = 1

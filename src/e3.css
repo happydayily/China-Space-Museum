@@ -429,6 +429,7 @@ button:focus-visible, a:focus-visible { outline-color: var(--museum-bronze); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+  .hero-orbit-marker { animation: none !important; offset-distance: 0%; }
 }
 
 /* V5.0-RC1-PC：只增强 1600px 桌面展陈，不改变移动端响应式结构。 */
@@ -1027,13 +1028,41 @@ button:focus-visible, a:focus-visible { outline-color: var(--museum-bronze); }
     line-height: 1.6;
   }
   .hero-orbit-label strong { font-size: 18px; }
+  .hero-orbit-motion {
+    position: absolute;
+    z-index: 1;
+    right: -4%;
+    top: 26%;
+    width: 820px;
+    height: 260px;
+    transform: rotate(-13deg);
+    pointer-events: none;
+  }
+  .hero-orbit-marker {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 9px;
+    height: 9px;
+    border: 1px solid var(--museum-bronze);
+    border-radius: 50%;
+    background: var(--museum-white);
+    offset-path: ellipse(410px 130px at 410px 130px);
+    offset-distance: 0%;
+    offset-rotate: 0deg;
+    animation: hero-orbit-marker-travel 28s linear infinite;
+    will-change: transform;
+  }
+  @keyframes hero-orbit-marker-travel { to { offset-distance: 100%; } }
   .hero-year { right: max(5vw, calc((100vw - 1380px) / 2)); font-size: 16px; line-height: 1.4; }
   .hero-year span { font-size: 15px; }
 
   .development-network-wrap { padding-top: 26px; padding-bottom: 20px; }
   .network-years text,
   .network-node text { font-size: 18px !important; }
-  .network-node--2 text { transform: translateY(24px); }
+  .network-node text { transform: translateX(var(--label-offset-x, 0px)) translateY(var(--label-offset-y, 0px)); }
+  .network-node--tier-1 text { --label-offset-y: 8px; }
+  .network-node--tier-2 text { --label-offset-y: 38px; }
   .network-lane-label { font-size: 18px; }
   .development-network-hint { font-size: 16px; line-height: 1.7; }
   .development-network-note { align-items: baseline; gap: 10px 18px; font-size: 17px; line-height: 1.7; }
