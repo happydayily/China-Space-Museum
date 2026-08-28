@@ -95,7 +95,7 @@ npm run preview
 npm run screenshots
 ```
 
-PC 截图只输出到 `docs/screenshots/v5.0/`，固定为 `01-home.png` 至 `06-planetary.png`，不建立移动端、平板端或其他视口子目录。历史版本截图通过 Git commit / Tag 查询。截图脚本复用本机 Edge/Chrome，不保存浏览器 Profile、缓存或 Cookie，并自动检查图片、链接、同源 404、运行时错误、错误覆盖层和 1600px 桌面横向溢出。
+PC 最新验收截图只输出到 `docs/screenshots/review/latest/`，固定为 `01-home.png` 至 `06-planetary.png`；`docs/screenshots/v5.0/` 保留正式版历史基线，不被后续迭代覆盖。截图流程不建立移动端、平板端或其他视口子目录。历史版本截图也可通过 Git commit / Tag 查询。截图脚本复用本机 Edge/Chrome，不保存浏览器 Profile、缓存或 Cookie，并自动检查图片、链接、同源 404、运行时错误、错误覆盖层和 1600px 桌面横向溢出。
 
 ## 项目结构
 

@@ -1055,7 +1055,7 @@ button:focus-visible, a:focus-visible { outline-color: var(--museum-bronze); }
   }
   @keyframes hero-orbit-marker-travel { to { offset-distance: 100%; } }
   .hero-year { right: max(5vw, calc((100vw - 1380px) / 2)); font-size: 16px; line-height: 1.4; }
-  .hero-year span { font-size: 15px; }
+  .hero-year span { font-size: 16px; }
 
   .development-network-wrap { padding-top: 26px; padding-bottom: 20px; }
   .network-years text,
